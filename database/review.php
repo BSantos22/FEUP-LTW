@@ -1,7 +1,28 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Manuel Gomes
- * Date: 26/11/2016
- * Time: 02:23
- */
+  function getRestaurantReviewByID($id) {
+    global $db;
+    
+    $stmt = $db->prepare('SELECT * FROM review WHERE id = ?');
+    $stmt->execute(array($id));
+    
+    return $stmt->fetchAll();  
+  }
+
+  function getRestaurantReviewByRestaurant($id) {
+    global $db;
+    
+    $stmt = $db->prepare('SELECT * FROM review WHERE idRestaurant = ?');
+    $stmt->execute(array($id));
+    
+    return $stmt->fetchAll();  
+  }
+  
+  function getRestaurantReviewByUser($id) {
+    global $db;
+    
+    $stmt = $db->prepare('SELECT * FROM review WHERE idReviewer = ?');
+    $stmt->execute(array($id));
+    
+    return $stmt->fetchAll();  
+  }
+?>
