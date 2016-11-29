@@ -12,7 +12,7 @@
 <header>
     <nav>
         <div id="logo" >
-            <img src="res/images/logo.png">
+            <img src="res/images/logoheader.png">
         </div>
         <div id="name" >
             <p>My Food Advisor</p>
