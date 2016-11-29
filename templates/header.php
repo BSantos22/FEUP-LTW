@@ -17,13 +17,19 @@
         <div id="name" >
             <p>My Food Advisor</p>
         </div>
+        <div id="search">
+            <input type="text" name="restaurant" value="" alt="Search Restaurants" id="searchbar"/>
+            <input type="submit" name="submit" value="" alt="Search" id="submit">
+        </div>
         <div id="menu">
             <ul>
-                <li>home</li>
-                <li>restaurants</li>
-                <li>reviews</li>
-                <li>search</li>
+                <li>Login</li>
+                <li>Register</li>
+                <li>Restaurants</li>
             </ul>
+        </div>
+        <div id="user" >
+            <img src="res/images/user.png">
         </div>
     </nav>
 </header>
