@@ -17,21 +17,24 @@
         <div id="name" >
             <p>My Food Advisor</p>
         </div>
-        <div id="search">
-            <input type="text" name="restaurant" value="" alt="Search Restaurants" id="searchbar"/>
-            <input type="submit" name="submit" value="" alt="Search" id="submit">
-        </div>
         <div id="menu">
             <ul>
-                <li>Login</li>
-                <li>Register</li>
-                <li>Restaurants</li>
+                <li>Entrar</li>
+                <li>Registar</li>
+                <li>Restaurantes</li>
             </ul>
         </div>
         <div id="user" >
             <img src="res/images/user.png">
         </div>
     </nav>
+    <div id="backg">
+        <div id="search">
+            <p>Encontre os melhores restaurantes ao virar da esquina</p> <br><br>
+            <input type="text" name="restaurant" value="" alt="Search Restaurants" placeholder="Procura por restaurante..." id="searchbar"/>
+            <input type="submit" value="Procurar" id="but">
+        </div>
+    </div>
 </header>
 
 <?php

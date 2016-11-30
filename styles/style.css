@@ -13,6 +13,11 @@
     src: url("../res/fonts/Caviar_Dreams_Bold.ttf"); /*URL to font*/
 }
 
+@font-face {
+    font-family: 'Source Sans';
+    src: url("../res/fonts/SourceSansPro-Regular.otf"); /*URL to font*/
+}
+
 * {
     margin: 0 auto;
     padding: 0;
@@ -25,14 +30,14 @@ body {
 header {
     background-color: #cf2230;
     display: block;
-    padding-top: 3px;
-    padding-bottom: 3px;
 }
 
 header nav {
     width: 80%;
     height: 100%;
     display: table;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 header nav #logo {
@@ -57,40 +62,6 @@ header nav #name {
     color: white;
 }
 
-header nav #search {
-    display: table-cell;
-    vertical-align: middle;
-    font-family: 'Caviar Dreams';
-}
-
-header nav #searchbar{
-    height: 25px;
-    width: 220px;
-    border: none;
-    border-radius: 5px;
-    background:url(../res/images/brush.png);
-    background-size: 16px;
-    background-position: left;
-    background-repeat: no-repeat;
-    background-color: white;
-    padding: 0 0 0 30px;
-}
-
-header nav #submit {
-    background:url(../res/images/search.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width:25px;
-    border: 0;
-    text-indent:-999px
-}
-
-header nav #submit img{
-    width:10px;
-    height:10px;
-    border: 0;
-}
-
 header nav #menu {
     display: table-cell;
     vertical-align: middle;
@@ -101,13 +72,13 @@ header nav #menu ul {
 }
 
 header nav #menu ul li {
-    width: 80px;
+    padding: 0 10px 0 10px;
     height: 30px;
     line-height: 30px;
     text-align: center;
     float: left;
     font-weight: bold;
-    font-family: 'Caviar Dreams';
+    font-family: 'Source Sans';
     font-size: 16px;
     color: white;
     margin-right: 20px;
@@ -130,8 +101,66 @@ header nav #user img {
     vertical-align: middle;
 }
 
+header #backg {
+    display: table;
+    width: 100%;
+    height: 300px;
+    background-image: url("../res/images/bg3.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header #search {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Source Sans';
+}
+
+header #search p {
+    font-family: 'Source Sans';
+    font-size: 30px;
+    color: white;
+}
+
+header #searchbar{
+    height: 40px;
+    width: 250px;
+    border: none;
+    border-radius: 3px;
+    background:url(../res/images/brush.png);
+    background-size: 14px;
+    background-position: 9px 12px;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 0 0 0 30px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+header #searchbar:focus {
+    outline : none;
+    width: 500px;
+}
+
+header #but {
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 3px;
+    background-color: #cf2230;
+    font-family: 'Source Sans';
+    color: white;
+    cursor: pointer;
+}
+
+header #but:hover {
+    background-color: #a72230;
+}
+
 .central {
-    font-family: 'Caviar Dreams';
+    font-family: 'Source Sans';
     background-color: #e8e8e8;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -145,30 +174,32 @@ header nav #user img {
     margin-left: 0;
     width: 100%;
     display: table;
-    padding: 10px;
     background-color: white;
     border: 1px solid #cccccc;
-    border-radius: 5px;
-
+    border-radius: 3px;
 }
 
-.central .container article:not(last-child) {
+.central .container > article:not(:last-child) {
     margin-bottom: 10px;
 }
 
 .central .container article .restaurantphoto {
     display: table-cell;
     width: 300px;
+    height: 152px;
     margin-right: 20px;
     margin-left: 10px;
     padding-right: 30px;
 }
 
 .central .container article .restaurantphoto img {
-    width: 100%;
+    width: inherit;
+    height: 150px;
+    border-radius: 3px 0 0 5px;
 }
 
 .central .container article .content {
+    padding-top: 5px;
     display: table-cell;
     vertical-align: top;
 }
@@ -183,11 +214,11 @@ footer {
 footer .container {
     width: 80%;
     height: 100%;
-    font-family: 'Caviar Dreams';
+    font-family: 'Source Sans';
     text-align: center;
-    color: white;
+    color: #d9d9d9;
     font-size: 12px;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 footer .container .info {
@@ -207,6 +238,11 @@ footer .container .info #github {
 
 footer .container .info #github img {
     width: 50px;
+    opacity: 0.5;
+}
+
+footer .container .info #github img:hover {
+    opacity: 1;
 }
 
 footer .container .info #github a{
@@ -221,11 +257,16 @@ footer .container .social {
 
 footer .container .social div {
     display: inline-block;
-    padding-right: 5px;
+    padding-right: 20px;
 }
 
 footer .container .social img {
     width: 25px;
+    opacity: 0.5;
+}
+
+footer .container .social img:hover {
+    opacity: 1;
 }
 
 

@@ -7,7 +7,7 @@
                     <img src="res/images/restaurants/restaurant1.png">
                 </div>
                 <div class= "content">
-                    <h3><?=$restaurant['name']?></h3><br>
+                    <h4><?=$restaurant['name']?></h4><br>
                     <p><?=$restaurant['city']?></p><br><br>
                     <p>Restaurante muito bom! Recomendo-o vivamente!</p>
                 </div>
@@ -19,7 +19,7 @@
                     <img src="res/images/restaurants/restaurant1.png">
                 </div>
                 <div class= "content">
-                    <h3><?=$restaurant['name']?></h3>
+                    <h4><?=$restaurant['name']?></h4>
                     <p><?=$restaurant['city']?></p>
                     <p>Restaurante muito bom! Recomendo-o vivamente!</p>
                 </div>
