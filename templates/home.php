@@ -1,5 +1,8 @@
 <section class = "central">
     <div class="container">
+        <div id="verrestaunrates">
+            <a href="list_restaurants.php"><h2>Ver Restaurantes</h2></a>
+        </div>
         <?php foreach($restaurants as $restaurant) { ?>
             <article class="listrestaurant">
                 <div class="restaurantphoto">

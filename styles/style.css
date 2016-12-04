@@ -18,6 +18,11 @@
     src: url("../res/fonts/SourceSansPro-Regular.otf"); /*URL to font*/
 }
 
+
+
+
+
+
 * {
     margin: 0 auto;
     padding: 0;
@@ -28,13 +33,22 @@ body {
 }
 
 header {
-    background-color: #cf2230;
     display: block;
+}
+
+header .backHeader {
+    height: 56px;
+}
+
+header .pageHeader {
+    background-color: #cf2230;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
 }
 
 header nav {
     width: 80%;
-    height: 100%;
     display: table;
     padding-top: 3px;
     padding-bottom: 3px;
@@ -43,23 +57,29 @@ header nav {
 header nav #logo {
     display: table-cell;
     vertical-align: middle;
-    width: 32px;
     height: auto;
 }
 
 header nav #logo img {
-    width: inherit;
+    width: 32px;
     height: auto;
+    float: left;
 }
-
-header nav #name {
+header nav #texto {
     display: table-cell;
-    padding-left: 20px;
     vertical-align: middle;
+    height: 40px;
+}
+header nav #logo p {
+    padding-left: 20px;
     font-family: 'Kaushan';
     font-size: larger;
     font-weight: bold;
     color: white;
+}
+
+header nav #logo a{
+    text-decoration: none;
 }
 
 header nav #menu {
@@ -120,6 +140,7 @@ header #search {
 header #search p {
     font-family: 'Source Sans';
     font-size: 30px;
+    font-weight: bolder;
     color: white;
 }
 
@@ -144,7 +165,7 @@ header #searchbar:focus {
     width: 500px;
 }
 
-header #but {
+header #butt {
     height: 40px;
     width: 100px;
     border: none;
@@ -164,44 +185,72 @@ header #but:hover {
     background-color: #e8e8e8;
     padding-top: 20px;
     padding-bottom: 20px;
+    color: #595959;
+}
+
+.central #verrestaunrates h2 {
+    font-family: 'Source Sans';
+    color: #595959;
+    text-align: center;
+}
+
+.central #verrestaunrates a {
+    text-decoration: none;
 }
 
 .central .container {
     width: 80%;
 }
 
-.central .container article {
-    margin-left: 0;
-    width: 100%;
-    display: table;
+.central .container .listrestaurant {
+     margin-left: 0;
+     width: 100%;
+     display: table;
+     background-color: white;
+     border: 1px solid #cccccc;
+     border-radius: 3px;
+ }
+
+.central .container .listrestaurant:hover {
+    box-shadow: 0 0 4px 2px #b7b7b7;
+}
+
+.central .container article a {
+    text-decoration: none;
+    color: #595959;
+}
+.central .container > .listrestaurant:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.central .container .listrestaurant .restaurantphoto {
+    display: table-cell;
+    width: 300px;
+    height: 150px;
+    padding-right: 30px;
+}
+
+.central .container .listrestaurant .restaurantphoto img {
+    width: inherit;
+    height: 150px;
+    border-radius: 3px 0 0 3px;
+    float: left;
+}
+
+.central .container .listrestaurant .content {
+    padding-top: 5px;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.central .contentRestaurant article {
     background-color: white;
     border: 1px solid #cccccc;
     border-radius: 3px;
 }
 
-.central .container > article:not(:last-child) {
+.central .contentRestaurant > article:not(:last-child) {
     margin-bottom: 10px;
-}
-
-.central .container article .restaurantphoto {
-    display: table-cell;
-    width: 300px;
-    height: 152px;
-    margin-right: 20px;
-    margin-left: 10px;
-    padding-right: 30px;
-}
-
-.central .container article .restaurantphoto img {
-    width: inherit;
-    height: 150px;
-    border-radius: 3px 0 0 5px;
-}
-
-.central .container article .content {
-    padding-top: 5px;
-    display: table-cell;
-    vertical-align: top;
 }
 
 footer {
@@ -225,19 +274,15 @@ footer .container .info {
     float: left;
 }
 
-footer .container .info #copyright {
-    display: table-cell;
-    vertical-align: middle;
-}
-
 footer .container .info #github {
-    width: 100px;
+    width: 25px;
+    height: auto;
     display: table-cell;
     vertical-align: middle;
 }
 
 footer .container .info #github img {
-    width: 50px;
+    width: 25px;
     opacity: 0.5;
 }
 
@@ -247,15 +292,28 @@ footer .container .info #github img:hover {
 
 footer .container .info #github a{
     text-decoration: none;
-    color: white;
     font-size: 12px;
+    color: #d9d9d9;
+}
+
+footer .container .info #github a:hover{
+    color: white;
 }
 
 footer .container .social {
     float: right;
 }
 
-footer .container .social div {
+footer .container #copyright {
+    display: block;
+    text-align: center;
+}
+
+footer .container #copyright p{
+    text-align: center;
+}
+
+footer .container .social a{
     display: inline-block;
     padding-right: 20px;
 }
@@ -268,7 +326,6 @@ footer .container .social img {
 footer .container .social img:hover {
     opacity: 1;
 }
-
 
 @media screen and (max-width: 767px) {
 
