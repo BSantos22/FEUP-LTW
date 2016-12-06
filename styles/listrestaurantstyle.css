@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Kaushan';
+    src: url("../res/fonts/KaushanScript.otf"); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Caviar Dreams';
+    src: url("../res/fonts/CaviarDreams.ttf"); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Caviar Dreams Bold';
+    src: url("../res/fonts/Caviar_Dreams_Bold.ttf"); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Source Sans';
+    src: url("../res/fonts/SourceSansPro-Regular.otf"); /*URL to font*/
+}

@@ -60,13 +60,15 @@ INSERT INTO user VALUES('mgomes', 'Manuel Gomes', 'mg@gmail.com', 'abc123', '198
 INSERT INTO user VALUES('joseoliv','José Oliveira', 'joseoliv@hotmail.com', 'abc123', '1994-03-22', 'Porto', 'Portugal', 'reviewer');
 INSERT INTO user VALUES('bsantos', 'Bruno Santos', 'bsantos@hotmail.com', 'abc123', '1989-03-19', 'Porto', 'Portugal', 'owner');
 INSERT INTO user VALUES('ruibento', 'Rui Bento', 'ruibento@gmail.com', 'abc123', '1983-08-20', 'Braga', 'Portugal', 'reviewer');
-INSERT INTO user VALUES('jonhy', 'John Adams', 'adams@yahoo.com', 'abc123', '1973-03-04', 'Aveiro', 'Portugal', 'reviewer');					
+INSERT INTO user VALUES('jonhy', 'John Adams', 'adams@yahoo.com', 'abc123', '1973-03-04', 'London', 'United Kingdom', 'reviewer');
 
-INSERT INTO restaurant VALUES(1, 'Flow Restaurant & Bar', 'mgomes', 'Porto', 'Portugal', 'Comtemporâneo', 4.5, '11:00:00', '01:00:00');
-INSERT INTO restaurant VALUES(2, 'Ode Porto Wine House', 'bsantos', 'Porto', 'Portugal', 'Mediterrâneo', 4.5,'11:30:00', '00:00:00');
+INSERT INTO restaurant VALUES(1, 'Flow Restaurant & Bar', 'mgomes', 'Porto', 'Portugal', 'Comtemporâneo', 4.0, '11:00:00', '01:00:00');
+INSERT INTO restaurant VALUES(2, 'Ode Porto Wine House', 'bsantos', 'Porto', 'Portugal', 'Mediterrâneo', 5.0,'11:30:00', '00:00:00');
+INSERT INTO restaurant VALUES(3, 'Restaurante Filha da Mãe Preta', 'joseoliv', 'Porto', 'Portugal', 'Tradicional', 3.0,'10:30:00', '23:00:00');
 
 INSERT INTO owner VALUES('mgomes', 1);
 INSERT INTO owner VALUES('joseoliv', 2);
+INSERT INTO owner VALUES('bsantos', 3);
 
 INSERT INTO review VALUES(1, 'joseoliv', 1, 5, 'Muito bom atendimento!');
 INSERT INTO review VALUES(2, 'ruibento', 2, 3.5, 'Prato muito bom mas demorado.');

@@ -7,6 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link type="text/css" rel="stylesheet" href="../styles/style.css"/>
+    <link type="text/css" rel="stylesheet" href="<?=$cssStyle?>"/>
     <link type="text/css" rel="stylesheet" href="../styles/modalstyle.css"/>
     <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>

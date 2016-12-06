@@ -12,6 +12,8 @@ try {
     die($e->getMessage());
 }
 
+$cssStyle = "../styles/restaurantstyle.css";
+
 require('../templates/header.php');
 require('../templates/restaurant.php');
 require('../templates/footer.php');

@@ -5,4 +5,11 @@ function getReviewByRestaurant($db, $id){
 
   return $stmt->fetchAll();
 }
+
+function insertReview($db, $idReviewer, $idRestaurant, $rating, $text) {
+    $stmt = $db->prepare('INSERT INTO review VALUES (NULL, ?, ?, ?, ?)');
+    $stmt->execute(array($idReviewer, $idRestaurant, $rating, $text));
+}
+
+
 ?>

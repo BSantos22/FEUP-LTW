@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Kaushan';
+    src: url("../res/fonts/KaushanScript.otf"); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Caviar Dreams';
+    src: url("../res/fonts/CaviarDreams.ttf"); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Caviar Dreams Bold';
+    src: url("../res/fonts/Caviar_Dreams_Bold.ttf"); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Source Sans';
+    src: url("../res/fonts/SourceSansPro-Regular.otf"); /*URL to font*/
+}
+
+.central #verrestaunrates h2 {
+    font-family: 'Source Sans';
+    color: #595959;
+    text-align: center;
+}
+
+.central #verrestaunrates a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+

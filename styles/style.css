@@ -177,43 +177,34 @@ header #butt-search:hover {
 
 .central {
     font-family: 'Source Sans';
-    background-color: #e8e8e8;
+    background-color: #f3f3f3;
     padding-top: 20px;
     padding-bottom: 20px;
     color: #595959;
-}
-
-.central #verrestaunrates h2 {
-    font-family: 'Source Sans';
-    color: #595959;
-    text-align: center;
-}
-
-.central #verrestaunrates a {
-    text-decoration: none;
 }
 
 .central .container {
     width: 80%;
 }
 
-.central .container .listrestaurant {
-     margin-left: 0;
-     width: 100%;
-     display: table;
-     background-color: white;
-     border: 1px solid #cccccc;
-     border-radius: 3px;
- }
-
-.central .container .listrestaurant:hover {
-    box-shadow: 0 0 4px 2px #b7b7b7;
-}
-
 .central .container article a {
     text-decoration: none;
     color: #595959;
 }
+
+.central .container .listrestaurant {
+    margin-left: 0;
+    width: 100%;
+    display: table;
+    background-color: white;
+    border: 1px solid #e3e3e3;
+    border-radius: 3px;
+}
+
+.central .container .listrestaurant:hover {
+    box-shadow: 0 0 10px 1px #b7b7b7;
+}
+
 .central .container > .listrestaurant:not(:last-child) {
     margin-bottom: 10px;
 }
@@ -236,16 +227,6 @@ header #butt-search:hover {
     padding-top: 5px;
     display: table-cell;
     vertical-align: top;
-}
-
-.central .contentRestaurant article {
-    background-color: white;
-    border: 1px solid #cccccc;
-    border-radius: 3px;
-}
-
-.central .contentRestaurant > article:not(:last-child) {
-    margin-bottom: 10px;
 }
 
 footer {

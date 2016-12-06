@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Kaushan';
+    src: url("../res/fonts/KaushanScript.otf"); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Caviar Dreams';
+    src: url("../res/fonts/CaviarDreams.ttf"); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Caviar Dreams Bold';
+    src: url("../res/fonts/Caviar_Dreams_Bold.ttf"); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Source Sans';
+    src: url("../res/fonts/SourceSansPro-Regular.otf"); /*URL to font*/
+}
+
+.central .contentRestaurant article {
+    background-color: white;
+    border: 1px solid #e3e3e3;
+    border-radius: 3px;
+}
+
+.central .contentRestaurant > article:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.central #price img {
+    height: 16px;
+}
+
+.central #rating img {
+    height: 12px;
+}
+
+.central .review {
+    padding: 10px;
+}

@@ -9,6 +9,8 @@
         die($e->getMessage());
     }
 
+    $cssStyle = "../styles/listrestaurantstyle.css";
+
     require('../templates/header.php');
     require('../templates/list_restaurants.php');
     require('../templates/footer.php');

@@ -9,6 +9,8 @@
         die($e->getMessage());
     }
 
+    $cssStyle = "../styles/homestyle.css";
+
     require('../templates/header.php');
     require('../templates/home.php');
     require('../templates/footer.php');
