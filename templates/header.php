@@ -48,7 +48,7 @@
 </header>
 
 <section id="modal-login" class="modal">
-    <form class="modal-content animate" action="../actions/action_login.php">
+    <form class="modal-content animate" action="../actions/action_login.php" method="post">
         <section class="imgcontainer">
             <img src="../res/images/logo.png">
             <span class="close" title="Fechar">&times;</span>
@@ -56,10 +56,10 @@
 
         <section class="container">
             <label><b>Nome de utilizador / Email</b></label>
-            <input type="text" name="uname" required>
+            <input type="text" name="username" required>
 
             <label><b>Palavra-passe</b></label>
-            <input type="password" name="psw" required>
+            <input type="password" name="password" required>
 
             <button class="enter" type="submit">Entrar</button>
             <input type="checkbox" checked="checked"> Lembrar-me

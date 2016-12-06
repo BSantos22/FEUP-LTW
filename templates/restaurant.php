@@ -34,7 +34,7 @@
             <br>
             <p>Criar opinião</p>
             <form action="../actions/create_review.php" method="post" id="editRestaurant">
-                <input type="hidden" name="idUsername" value="mgomes">
+                <input type="hidden" name="idUsername" value="<?=$_SESSION['username']?>">
                 <input type="hidden" name="idRestaurant" value="<?=$restaurant['id']?>">
                 <label>Classificação:
                     <input type="number" name="rating" value="" required="required">
