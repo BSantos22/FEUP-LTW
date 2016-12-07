@@ -197,12 +197,11 @@ header #butt-search:hover {
     width: 100%;
     display: table;
     background-color: white;
-    border: 1px solid #e3e3e3;
-    border-radius: 3px;
+    border: 1px solid #ececec;
 }
 
 .central .container .listrestaurant:hover {
-    box-shadow: 0 0 10px 1px #b7b7b7;
+    box-shadow: 0 0 10px 1px #c0c0c0;
 }
 
 .central .container > .listrestaurant:not(:last-child) {
@@ -212,14 +211,11 @@ header #butt-search:hover {
 .central .container .listrestaurant .restaurantphoto {
     display: table-cell;
     width: 300px;
-    height: 150px;
-    padding-right: 30px;
+    padding: 2px 30px 2px 2px;
 }
 
 .central .container .listrestaurant .restaurantphoto img {
     width: inherit;
-    height: 150px;
-    border-radius: 3px 0 0 3px;
     float: left;
 }
 

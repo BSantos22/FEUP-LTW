@@ -52,6 +52,10 @@ input[type=text], input[type=password] {
     width: 100%;
 }
 
+#userbutton:hover {
+    background-color: #a72230;
+}
+
 #userbutton:active {
     border: none;
     outline: none;
