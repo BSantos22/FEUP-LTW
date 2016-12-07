@@ -47,7 +47,7 @@
 
 </header>
 
-<!--
+
 <section id="modal-login" class="modal">
     <form class="modal-content animate" action="../actions/action_login.php" method="post">
         <section class="imgcontainer">
@@ -70,8 +70,7 @@
         </section>
     </form>
 </section>
--->
-<!-- -->
+<!--
 <section id="modal-register" class="modal">
     <form class="modal-content animate" action="../actions/action_login.php" method="post">
         <section class="imgcontainer">

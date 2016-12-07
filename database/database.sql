@@ -56,11 +56,11 @@ CREATE TABLE reply (
 );
 
 
-INSERT INTO user VALUES('mgomes', 'Manuel Gomes', 'mg@gmail.com', 'abc123', '1987-04-25', 'Porto', 'Portugal', 'owner');
-INSERT INTO user VALUES('joseoliv','José Oliveira', 'joseoliv@hotmail.com', 'abc123', '1994-03-22', 'Porto', 'Portugal', 'reviewer');
-INSERT INTO user VALUES('bsantos', 'Bruno Santos', 'bsantos@hotmail.com', 'abc123', '1989-03-19', 'Porto', 'Portugal', 'owner');
-INSERT INTO user VALUES('ruibento', 'Rui Bento', 'ruibento@gmail.com', 'abc123', '1983-08-20', 'Braga', 'Portugal', 'reviewer');
-INSERT INTO user VALUES('jonhy', 'John Adams', 'adams@yahoo.com', 'abc123', '1973-03-04', 'London', 'United Kingdom', 'reviewer');
+INSERT INTO user VALUES('mgomes', 'Manuel Gomes', 'mg@gmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1987-04-25', 'Porto', 'Portugal', 'owner');
+INSERT INTO user VALUES('joseoliv','José Oliveira', 'joseoliv@hotmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1994-03-22', 'Porto', 'Portugal', 'reviewer');
+INSERT INTO user VALUES('bsantos', 'Bruno Santos', 'bsantos@hotmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1989-03-19', 'Porto', 'Portugal', 'owner');
+INSERT INTO user VALUES('ruibento', 'Rui Bento', 'ruibento@gmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1983-08-20', 'Braga', 'Portugal', 'reviewer');
+INSERT INTO user VALUES('jonhy', 'John Adams', 'adams@yahoo.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1973-03-04', 'London', 'United Kingdom', 'reviewer');
 
 INSERT INTO restaurant VALUES(1, 'Flow Restaurant & Bar', 'mgomes', 'Porto', 'Portugal', 'Comtemporâneo', 4.0, '11:00:00', '01:00:00');
 INSERT INTO restaurant VALUES(2, 'Ode Porto Wine House', 'bsantos', 'Porto', 'Portugal', 'Mediterrâneo', 5.0,'11:30:00', '00:00:00');
