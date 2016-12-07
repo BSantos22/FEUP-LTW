@@ -47,6 +47,7 @@
 
 </header>
 
+<!--
 <section id="modal-login" class="modal">
     <form class="modal-content animate" action="../actions/action_login.php" method="post">
         <section class="imgcontainer">
@@ -55,11 +56,9 @@
         </section>
 
         <section class="container">
-            <label><b>Nome de utilizador / Email</b></label>
-            <input type="text" name="username" required>
+            <input type="text" name="username" placeholder="Nome do Utilizador/E-Mail" required>
 
-            <label><b>Palavra-passe</b></label>
-            <input type="password" name="password" required>
+            <input type="password" name="password" placeholder="Password" required>
 
             <button class="enter" type="submit">Entrar</button>
             <input type="checkbox" checked="checked"> Lembrar-me
@@ -71,3 +70,32 @@
         </section>
     </form>
 </section>
+-->
+<!-- -->
+<section id="modal-register" class="modal">
+    <form class="modal-content animate" action="../actions/action_login.php" method="post">
+        <section class="imgcontainer">
+            <img src="../res/images/logo.png">
+            <span class="close" title="Fechar">&times;</span>
+        </section>
+
+        <section class="container">
+            <input type="text" name="username" placeholder="Nome do Utilizador" required>
+
+            <input type="text" name="email" placeholder="E-Mail" required>
+
+            <input type="password" name="password" placeholder="Password" required>
+
+            <input type="password" name="password" placeholder="Confirme a password" required>
+
+            <button class="enter" type="submit">Entrar</button>
+            <input type="checkbox" checked="checked"> Lembrar-me
+        </section>
+
+        <section class="cancelar-container">
+            <button type="button" class="cancelbtn">Cancelar</button>
+            <span class="psw">Esqueceu-se da <a href="#">palavra-passe?</a></span>
+        </section>
+    </form>
+</section>
+<!-- -->
