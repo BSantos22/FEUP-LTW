@@ -45,7 +45,7 @@ input[type=text], input[type=password] {
     width: 100%;
 }
 
-#userbutton {
+#btn-user {
     background-color: #cf2230;
     border: none;
     border-radius: 50%;
@@ -53,20 +53,20 @@ input[type=text], input[type=password] {
     width: 100%;
 }
 
-#userbutton:hover {
+#btn-user:hover {
     background-color: #a72230;
 }
 
-#userbutton:active {
+#btn-user:active {
     border: none;
     outline: none;
 }
 
-#userbutton:focus {
+#btn-user:focus {
     outline:0;
 }
 
-.cancelbtn {
+.btn-cancel {
     width: auto;
     padding: 10px 18px;
     background-color: #cf2230;

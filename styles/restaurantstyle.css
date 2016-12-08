@@ -18,13 +18,85 @@
     src: url("../res/fonts/SourceSansPro-Regular.otf"); /*URL to font*/
 }
 
-.central .contentRestaurant article {
-    background-color: white;
-    border: 1px solid #ececec;
+.restaurant img {
+    padding: 2px 2px 2px 2px;
+}
+
+.restaurantdescription {
+    padding: 10px;
+}
+
+#open {
+    color: #096E09;
+}
+
+#close {
+    color: #cf2230;
+}
+
+.contentRestaurant {
+    color: #9f9f9f;
+}
+
+.contentRestaurant h2, h4, #opentime, #price {
+    color: #595959;
 }
 
 .central .contentRestaurant > article:not(:last-child) {
     margin-bottom: 10px;
+}
+
+#price {
+    font-weight: bolder;
+}
+
+#btn-createreview {
+    border: none;
+    padding: 10px 18px;
+    background-color: #cf2230;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+
+}
+
+#btn-createreview:focus {
+    outline: 0;
+    border-radius: 3px;
+}
+
+#btn-createreview:active {
+    outline: none;
+}
+
+#btn-createreview:hover {
+    background-color: #a72230;
+}
+
+#btn-submit {
+    border: none;
+    padding: 10px 18px;
+    background-color: #cf2230;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#btn-submit:focus {
+    outline:0;
+}
+
+#btn-submit:active {
+    border: none;
+    outline: none;
+}
+
+#btn-submit:hover {
+    background-color: #a72230;
+}
+
+#addreview {
+    display: none;
 }
 
 .central #price img {

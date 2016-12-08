@@ -26,11 +26,11 @@
                     <ul>
                         <li>Entrar</li>
                         <li>Registar</li>
-                        <li>Restaurantes</li>
+                        <li><a href="../actions/action_logout.php">Sair</a></li>
                     </ul>
                 </div>
                 <div id="user">
-                    <button type="button" id="userbutton" title="Entrar/Registar"><img src="../res/images/user.png"></button>
+                    <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
                 </div>
             </nav>
         </section>
@@ -65,7 +65,7 @@
         </section>
 
         <section class="cancelar-container">
-            <button type="button" class="cancelbtn">Cancelar</button>
+            <button type="button" class="btn-cancel">Cancelar</button>
             <span class="psw">Esqueceu-se da <a href="#">palavra-passe?</a></span>
         </section>
     </form>
@@ -92,7 +92,7 @@
         </section>
 
         <section class="cancelar-container">
-            <button type="button" class="cancelbtn">Cancelar</button>
+            <button type="button" class="btn-cancel">Cancelar</button>
             <span class="psw">Esqueceu-se da <a href="#">palavra-passe?</a></span>
         </section>
     </form>

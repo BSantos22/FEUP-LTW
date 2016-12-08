@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
+    // Modal dialog boxes
     // Show the modal dialog box selected
-    $("#userbutton").click(function() {
+    $("#btn-user").click(function() {
         $(".modal").show();
     });
 
@@ -11,7 +12,7 @@ $(document).ready(function() {
     });
 
     // Hides the modal dialog boxes selected
-    $(".cancelbtn").click(function() {
+    $(".btn-cancel").click(function() {
         $(".modal").hide();
     });
 
@@ -23,4 +24,14 @@ $(document).ready(function() {
             modal.style.display = "none";
         }
     };
+
+    // Show review input
+    $("#btn-createreview").click(function() {
+        var session = document.getElementById('sessionvar').value;
+
+        if (session == 'logged')
+            $("#addreview").toggle("show");
+        else
+            $("#modal-login").show();
+    });
 });

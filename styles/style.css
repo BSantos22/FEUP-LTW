@@ -175,6 +175,11 @@ header #butt-search:hover {
     background-color: #a72230;
 }
 
+header a {
+    text-decoration: none;
+    color: white;
+}
+
 .central {
     font-family: 'Source Sans';
     background-color: #f3f3f3;
@@ -196,8 +201,6 @@ header #butt-search:hover {
     margin-left: 0;
     width: 100%;
     display: table;
-    background-color: white;
-    border: 1px solid #ececec;
 }
 
 .central .container .listrestaurant:hover {
@@ -223,6 +226,13 @@ header #butt-search:hover {
     padding-top: 5px;
     display: table-cell;
     vertical-align: top;
+}
+
+.box {
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    color: #9f9f9f;
+    border-radius: 3px;
 }
 
 footer {

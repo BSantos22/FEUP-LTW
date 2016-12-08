@@ -1,7 +1,7 @@
 <section class = "central">
     <div class="container">
         <?php foreach($restaurants as $restaurant) { ?>
-            <article class="listrestaurant">
+            <article class="listrestaurant box">
                 <div class="restaurantphoto">
                     <img src="../res/images/restaurants/restaurant1.png">
                 </div>
