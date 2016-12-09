@@ -26,9 +26,9 @@
                 </div>
                 <div id="menu">
                     <ul>
-                        <li><a href="home.php">Inicio</a></li>
-                        <li><a href="list_restaurants.php">Restaurantes</a></li>
-                        <li><a href="../actions/action_logout.php">Sair</a></li>
+                        <li class="header-button"><a href="home.php">Inicio</a></li>
+                        <li class="header-button"><a href="list_restaurants.php">Restaurantes</a></li>
+                        <li class="header-button"><a href="../actions/action_logout.php">Sair</a></li>
                     </ul>
                 </div>
                 <?php if(isset($_SESSION['username'])){
@@ -67,8 +67,7 @@
     <section id="backg">
         <div id="search">
             <p>Encontre os melhores restaurantes ao virar da esquina</p> <br><br>
-            <input type="text" name="restaurant" value="" alt="Search Restaurants"
-                   placeholder="Procura por restaurante..." id="searchbar"/>
+            <input type="text" name="restaurant" value="" alt="Search Restaurants" placeholder="Procura por restaurante..." id="searchbar"/>
             <input type="submit" value="Procurar" id="butt-search">
         </div>
     </section>
@@ -109,11 +108,14 @@
 
             <input type="text" name="email" placeholder="E-Mail" required>
 
+            <input type="date" name="birth" placeholder="Data de Nascimento" required>
+
             <input type="password" name="password" placeholder="Password" required>
 
             <input type="password" name="password" placeholder="Confirme a password" required>
 
             <button class="enter" type="submit">Entrar</button>
+
             <input type="checkbox" checked="checked"> Lembrar-me
         </section>
 
