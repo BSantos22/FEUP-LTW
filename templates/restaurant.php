@@ -8,8 +8,8 @@
                 <div class="restaurantdescription">
                     <h2><?= $restaurant['name'] ?></h2>
                     <p><?= $restaurant['city'] ?> &middot <?= $restaurant['category']?></p><br>
-                    <div id="rating">
-                        <?php for ($i = 0; $i < 5; $i++){ ?>
+                    <div class="rating">
+                        <?php for ($i = 0; $i < intval($restaurant['reviewersRating']); $i++){ ?>
                             <img src="../res/images/star.png">
                         <?php } ?>
                     </div>
@@ -48,7 +48,7 @@
             <?php foreach ($reviews as $review) { ?>
                 <article class="review box">
                     <h4><?= $review['idReviewer'] ?></h4><br>
-                    <div id="rating">
+                    <div class="rating">
                         <?php for ($i = 0; $i < intval($review['rating']); $i++){ ?>
                             <img src="../res/images/star.png">
                         <?php } ?>
@@ -61,14 +61,6 @@
 
         <section class="createreview">
             <br>
-            <?php
-            if (isset($_SESSION['username'])) {
-                echo "<input type=\"hidden\" id=\"sessionvar\" value=\"logged\"/>";
-            }
-            else {
-                echo "<input type=\"hidden\" id=\"sessionvar\" value=\"notlogged\"/>";
-            }
-            ?>
             <button type="button" id="btn-createreview" title="Criar avaliação">Criar avaliação</button>
             <form action="../actions/create_review.php" method="post" id="addreview">
                 <input type="hidden" name="idUsername" value="<?=$_SESSION['username']?>">
@@ -81,8 +73,7 @@
                     <textarea rows="4" cols="100" name="text" value="">
                     </textarea>
                 </label>
-
-                <input type="submit" id="btn-submit" name="btnSubmit" value="Publicar">
+                <input type="submit" id="btn-submit" class="btn" name="btnSubmit" value="Publicar">
             </form>
         </section>
     </div>

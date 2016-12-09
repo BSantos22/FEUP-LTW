@@ -3,8 +3,12 @@
 
     require_once('../database/connection.php');
     require_once ('../database/restaurant.php');
+    require_once ('../database/user.php');
 
     try {
+        if (isset($_SESSION['username']))
+            $user = getUserByUsername($db, $_SESSION['username']);
+
         $restaurants = getAllRestaurants($db);
     }
     catch(PDOException $e) {

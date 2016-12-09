@@ -4,14 +4,18 @@
     require_once('../database/connection.php');
     require_once('../database/restaurant.php');
     require_once('../database/review.php');
+    require_once('../database/user.php');
 
     $id = $_GET['id'];
 
     try {
-      $restaurant = getRestaurantById($db, $id);
-      $reviews = getReviewByRestaurant($db, $id);
+        if (isset($_SESSION['username']))
+            $user = getUserByUsername($db, $_SESSION['username']);
+
+        $restaurant = getRestaurantById($db, $id);
+        $reviews = getReviewsByRestaurant($db, $id);
     } catch (PDOException $e) {
-      die($e->getMessage());
+        die($e->getMessage());
     }
 
     $cssStyle = "../styles/restaurantstyle.css";

@@ -60,11 +60,13 @@ header nav #logo img {
     height: auto;
     float: left;
 }
+
 header nav #texto {
     display: table-cell;
     vertical-align: middle;
     height: 40px;
 }
+
 header nav #logo p {
     padding-left: 20px;
     font-family: 'Kaushan';
@@ -180,31 +182,86 @@ header a {
     color: white;
 }
 
+.arrow_box {
+    position: relative;
+    background: #ffffff;
+}
+
+.arrow_box:after {
+    bottom: 100%;
+    right: 80%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 10px;
+    margin-left: -10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 170px;
+    box-shadow: 0px 16px 24px 0px rgba(0, 0, 0, 0.7);
+}
+
+.menu-dropdown a {
+    font-family: 'Source Sans';
+    color: #595959;
+    padding: 12px 8px;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-dropdown a:hover {
+    color: #cf2230;
+    background-color: #f6f6f6;
+}
+
+
+.menu-dropdown:hover {
+    display:block;
+}
+
 .central {
     font-family: 'Source Sans';
     background-color: #f3f3f3;
     padding-top: 20px;
     padding-bottom: 20px;
-    color: #595959;
+    color: #333333;
 }
 
 .central .container {
     width: 80%;
 }
 
-.central .container article a {
-    text-decoration: none;
-    color: #595959;
+.central .container article {
+    color: #333333;
 }
 
-.central .container .listrestaurant {
+.central .container article a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.central .container .listrestaurant{
     margin-left: 0;
     width: 100%;
     display: table;
 }
 
 .central .container .listrestaurant:hover {
-    box-shadow: 0 0 10px 1px #c0c0c0;
+    box-shadow: 0 0 10px 1px #b9b9b9;
 }
 
 .central .container > .listrestaurant:not(:last-child) {
@@ -226,13 +283,40 @@ header a {
     padding-top: 5px;
     display: table-cell;
     vertical-align: top;
+    color: #8e8e8e;
 }
 
 .box {
     background-color: white;
     border: 1px solid #e1e1e1;
-    color: #9f9f9f;
+    color: #8e8e8e;
     border-radius: 3px;
+}
+
+.central .rating img {
+    height: 12px;
+}
+
+.btn {
+    border: none;
+    padding: 10px 18px;
+    background-color: #cf2230;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline:0;
+}
+
+.btn:active {
+    border: none;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: #a72230;
 }
 
 footer {

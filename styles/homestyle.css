@@ -18,15 +18,6 @@
     src: url("../res/fonts/SourceSansPro-Regular.otf"); /*URL to font*/
 }
 
-.central #verrestaunrates h2 {
-    font-family: 'Source Sans';
-    color: #595959;
-    text-align: center;
-}
-
-.central #verrestaunrates a {
-    text-decoration: none;
-}
 
 @media screen and (max-width: 767px) {
 

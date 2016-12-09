@@ -53,10 +53,6 @@ input[type=text], input[type=password] {
     width: 100%;
 }
 
-#btn-user:hover {
-    background-color: #a72230;
-}
-
 #btn-user:active {
     border: none;
     outline: none;
@@ -94,7 +90,7 @@ span.psw {
 
 .modal {
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 999;
     left: 0;
     top: 0;
@@ -102,7 +98,7 @@ span.psw {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.7);
-    padding-top: 100px;
+    padding-top: 55px;
 }
 
 .modal-content {
@@ -115,8 +111,7 @@ span.psw {
 .close {
     position: absolute;
     color: #cf2230;
-    font-size: 35px;
-    font-weight: bolder;
+    font-size: 28px;
     right: 25px;
     top: 0;
 }

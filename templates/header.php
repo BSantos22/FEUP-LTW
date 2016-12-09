@@ -9,6 +9,8 @@
     <link type="text/css" rel="stylesheet" href="../styles/style.css"/>
     <link type="text/css" rel="stylesheet" href="<?=$cssStyle?>"/>
     <link type="text/css" rel="stylesheet" href="../styles/modalstyle.css"/>
+    <link type="text/css" rel="stylesheet" href="../styles/font-awesome.css"/>
+    <link type="text/css" rel="stylesheet" href="../styles/font-awesome.min.css"/>
     <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
 </head>
@@ -24,14 +26,40 @@
                 </div>
                 <div id="menu">
                     <ul>
-                        <li>Entrar</li>
-                        <li>Registar</li>
+                        <li><a href="home.php">Inicio</a></li>
+                        <li><a href="list_restaurants.php">Restaurantes</a></li>
                         <li><a href="../actions/action_logout.php">Sair</a></li>
                     </ul>
                 </div>
-                <div id="user">
-                    <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
-                </div>
+                <?php if(isset($_SESSION['username'])){
+                    if($user['status']=='owner'){?>
+                        <div id="user" class="dropdown">
+                            <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
+                            <div class="menu-dropdown">
+                                <a href="profile.php" id="btn-profile" class="arrow_box"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Perfil</a>
+                                <a href="#" id="btn-myreviews"><i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Minhas Avaliações</a>
+                                <a href="#" id="btn-myrestaurants"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Meus Restaurantes</a>
+                                <a href="../actions/action_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Sair</a>
+                            </div>
+                        </div>
+                    <?php } else { ?>
+                        <div id="user" class="dropdown">
+                            <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
+                            <div class="menu-dropdown">
+                                <a href="profile.php" id="btn-profile" class="arrow_box"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Perfil</a>
+                                <a href="#" id="btn-myreviews"><i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Minhas Avaliações</a>
+                                <a href="../actions/action_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Sair</a>
+                            </div>
+                        </div>
+                 <?php }} else { ?>
+                    <div id="user" class="dropdown">
+                        <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
+                        <div class="menu-dropdown">
+                            <a href="#" id="btn-login" class="arrow_box"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Entrar</a>
+                            <a href="#" id="btn-register"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Registar</a>
+                        </div>
+                    </div>
+                <?php } ?>
             </nav>
         </section>
     </section>
@@ -44,15 +72,13 @@
             <input type="submit" value="Procurar" id="butt-search">
         </div>
     </section>
-
 </header>
 
-
 <section id="modal-login" class="modal">
-    <form class="modal-content animate" action="../actions/action_login.php" method="post">
+    <form class="modal-content animate" action="../actions/action_login.php" method="post" autocomplete="off">
         <section class="imgcontainer">
             <img src="../res/images/logo.png">
-            <span class="close" title="Fechar">&times;</span>
+            <span class="close" title="Fechar"><i class="fa fa-times" aria-hidden="true"></i></span>
         </section>
 
         <section class="container">
@@ -70,12 +96,12 @@
         </section>
     </form>
 </section>
-<!--
+
 <section id="modal-register" class="modal">
-    <form class="modal-content animate" action="../actions/action_login.php" method="post">
+    <form class="modal-content animate" action="../actions/action_login.php" method="post" autocomplete="off">
         <section class="imgcontainer">
             <img src="../res/images/logo.png">
-            <span class="close" title="Fechar">&times;</span>
+            <span class="close" title="Fechar"><i class="fa fa-times" aria-hidden="true"></i></span>
         </section>
 
         <section class="container">
@@ -97,4 +123,3 @@
         </section>
     </form>
 </section>
-<!-- -->
