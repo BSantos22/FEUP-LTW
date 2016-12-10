@@ -117,17 +117,24 @@
 
             <input type="text" name="country" placeholder="País" required>
 
-            <div class="btns-register">
+            <select name="user_type" placeholder="Tipo de Utilizador" required>
+              <option value="owner">Proprietário</option>
+              <option value="reviewer">Cliente</option>
+            </select>
+
+
+            <button class="enter" type="submit" name="submit" value="user">Registar</button>
+
+            <!-- div class="btns-register">
                 <button class="btn-register-user" type="submit" name="submit" value="user">Registar como Utilizador</button>
                 <button class="btn-register-owner" type="submit" name="submit" value="owner">Registar como Proprietário</button>
-            </div>
+            </div --->
 
             <input type="checkbox" checked="checked"> Lembrar-me
         </section>
 
         <section class="cancelar-container">
             <button type="button" class="btn-cancel">Cancelar</button>
-            <span class="psw">Esqueceu-se da <a href="#">palavra-passe?</a></span>
         </section>
     </form>
 </section>

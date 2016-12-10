@@ -21,13 +21,15 @@
 .cancelar-container {
     background-color:#f1f1f1;
     padding: 16px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 input[type="date"]::-webkit-inner-spin-button{
     display: none;
 }
 
-input[type=text], input[type=password], input[type=date] {
+input[type=text], input[type=password], input[type=date], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -127,6 +129,7 @@ span.psw {
     margin-right: auto;
     background-color: white;
     width: 40%;
+    border-radius: 20px;
 }
 
 .close {
