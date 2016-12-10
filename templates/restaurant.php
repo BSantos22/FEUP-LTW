@@ -3,11 +3,13 @@
         <section class="contentRestaurant">
             <div class="restaurant box">
                 <div class="viewrestaurantphoto">
-                    <img src="../res/images/restaurants/restaurant1.png">
+                    <img src="../uploads/restaurants/restaurant1.png">
+                    <div id="map"></div>
                 </div>
                 <div class="restaurantdescription">
                     <h2><?= $restaurant['name'] ?></h2>
-                    <p><?= $restaurant['city'] ?> &middot <?= $restaurant['category']?></p><br>
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;<?= $restaurant['city'] ?> &middot <?= $restaurant['country']?></p><br>
+                    <p><?= $restaurant['category']?></p><br>
                     <div class="rating">
                         <?php for ($i = 0; $i < intval($restaurant['reviewersRating']); $i++){ ?>
                             <img src="../res/images/star.png">
@@ -42,39 +44,49 @@
                     </p>
                 </div>
             </div>
-
-            <br><br>
-            <h4>Opiniões (<?=sizeof($reviews)?>)</h4><br>
-            <?php foreach ($reviews as $review) { ?>
-                <article class="review box">
-                    <h4><?= $review['idReviewer'] ?></h4><br>
-                    <div class="rating">
-                        <?php for ($i = 0; $i < intval($review['rating']); $i++){ ?>
-                            <img src="../res/images/star.png">
+            <section class="restaurantreview">
+                <div class="sectiondescription">
+                    <h3>Avaliações
+                        <?php if(sizeof($reviews)>0){ ?>
+                            <span class="number"><?=sizeof($reviews)?></span>
+                        <?php } else { ?>
+                            <span class="zero"><?=sizeof($reviews)?></span>
                         <?php } ?>
-                    </div>
-                    <br>
-                    <p><?= $review['text'] ?></p>
-                </article>
-            <?php } ?>
+                    </h3>
+                </div>
+                <?php foreach ($reviews as $review) { ?>
+                    <article class="review box">
+                        <h4><?= $review['idReviewer'] ?></h4><br>
+                        <div class="rating">
+                            <?php for ($i = 0; $i < intval($review['rating']); $i++){ ?>
+                                <img src="../res/images/star.png">
+                            <?php } ?>
+                        </div>
+                        <br>
+                        <p><?= $review['text'] ?></p>
+                    </article>
+                <?php } ?>
+            </section>
         </section>
 
-        <section class="createreview">
-            <br>
-            <button type="button" id="btn-createreview" title="Criar avaliação">Criar avaliação</button>
-            <form action="../actions/create_review.php" method="post" id="addreview">
-                <input type="hidden" name="idUsername" value="<?=$_SESSION['username']?>">
-                <input type="hidden" name="idRestaurant" value="<?=$restaurant['id']?>">
-                <label>Classificação:
-                    <input type="number" name="rating" value="" required="required">
-                </label>
-                <br><br>
-                <label>Opinião:
+        <?php if($user['status']=='reviewer' || ($user['username']!=$restaurant['idOwner'])) { ?>
+            <section class="createreview">
+                <br>
+                <button type="button" id="btn-createreview" title="Criar avaliação">Criar avaliação</button>
+                <form action="../actions/create_review.php" method="post" id="addreview">
+                    <input type="hidden" name="idUsername" value="<?=$_SESSION['username']?>">
+                    <input type="hidden" name="idRestaurant" value="<?=$restaurant['id']?>">
+                    <label>Classificação:
+                        <input type="number" name="rating" value="" required="required">
+                    </label>
+                    <br><br>
+                    <label>Opinião:
                     <textarea rows="4" cols="100" name="text" value="">
                     </textarea>
-                </label>
-                <input type="submit" id="btn-submit" class="btn" name="btnSubmit" value="Publicar">
-            </form>
-        </section>
+                    </label>
+                    <input type="submit" id="btn-submit" class="btn" name="btnSubmit" value="Publicar">
+                </form>
+            </section>
+        <?php } ?>
     </div>
 </section>

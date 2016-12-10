@@ -16,6 +16,14 @@ function getRestaurantById($db, $id) {
 function getRestaurantByName($db, $name) {
     $stmt = $db->prepare('SELECT * FROM restaurant WHERE name = ?');
     $stmt->execute(array($name));
+
     return $stmt->fetch();
+}
+
+function getRestaurantByOwner($db, $owner) {
+    $stmt = $db->prepare('SELECT * FROM restaurant WHERE idOwner = ?');
+    $stmt->execute(array($owner));
+
+    return $stmt->fetchAll();
 }
 ?>

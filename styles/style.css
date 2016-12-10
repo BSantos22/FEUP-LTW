@@ -286,15 +286,46 @@ header a {
     color: #8e8e8e;
 }
 
+.central .rating img {
+    height: 12px;
+}
+
+.central .review {
+    padding: 10px;
+}
+
+.central .number {
+    color: white;
+    padding: 2px 10px 2px 10px;
+    background-color: #cf2230;
+    border-radius: 3px;
+}
+
+.central .zero {
+    color: white;
+    padding: 2px 10px 2px 10px;
+    background-color: #8e8e8e;
+    border-radius: 3px;
+}
+
+.central .sectiondescription {
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.central .sectiondescription p {
+    color: #8e8e8e;
+}
+
+h2, h3, h4 {
+    color: #333333;
+}
+
 .box {
     background-color: white;
     border: 1px solid #e1e1e1;
     color: #8e8e8e;
     border-radius: 3px;
-}
-
-.central .rating img {
-    height: 12px;
 }
 
 .btn {

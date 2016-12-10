@@ -12,6 +12,7 @@
     <link type="text/css" rel="stylesheet" href="../styles/font-awesome.css"/>
     <link type="text/css" rel="stylesheet" href="../styles/font-awesome.min.css"/>
     <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLmVqAaxaE-M76Om97S-PXC4n4U3yJe6g"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
 </head>
 <body>
@@ -28,7 +29,6 @@
                     <ul>
                         <li class="header-button"><a href="home.php">Inicio</a></li>
                         <li class="header-button"><a href="list_restaurants.php">Restaurantes</a></li>
-                        <li class="header-button"><a href="../actions/action_logout.php">Sair</a></li>
                     </ul>
                 </div>
                 <?php if(isset($_SESSION['username'])){
@@ -37,8 +37,6 @@
                             <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
                             <div class="menu-dropdown">
                                 <a href="profile.php" id="btn-profile" class="arrow_box"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Perfil</a>
-                                <a href="#" id="btn-myreviews"><i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Minhas Avaliações</a>
-                                <a href="#" id="btn-myrestaurants"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Meus Restaurantes</a>
                                 <a href="../actions/action_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Sair</a>
                             </div>
                         </div>
@@ -47,7 +45,6 @@
                             <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
                             <div class="menu-dropdown">
                                 <a href="profile.php" id="btn-profile" class="arrow_box"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Perfil</a>
-                                <a href="#" id="btn-myreviews"><i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Minhas Avaliações</a>
                                 <a href="../actions/action_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Sair</a>
                             </div>
                         </div>

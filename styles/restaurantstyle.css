@@ -18,6 +18,16 @@
     src: url("../res/fonts/SourceSansPro-Regular.otf"); /*URL to font*/
 }
 
+.restaurant {
+    margin-bottom: 60px;
+}
+
+#map {
+    width: 300px;
+    height: 200px;
+    background-color: #a72230;
+}
+
 .restaurant img {
     padding: 2px 2px 2px 2px;
 }
@@ -34,11 +44,11 @@
     color: #cf2230;
 }
 
-.contentRestaurant h2, h4, #opentime, #price {
+.contentRestaurant #opentime, #price {
     color: #333333;
 }
 
-.central .contentRestaurant > article:not(:last-child) {
+.central .restaurantreview > article:not(:last-child) {
     margin-bottom: 10px;
 }
 
@@ -75,8 +85,4 @@
 
 .central #price img {
     height: 16px;
-}
-
-.central .review {
-    padding: 10px;
 }

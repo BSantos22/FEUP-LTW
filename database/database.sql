@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS restaurant;
 CREATE TABLE restaurant (
 	id INTEGER PRIMARY KEY,
 	name VARCHAR,
-	idOwner INTEGER REFERENCES user(username),
+	idOwner VARCHAR REFERENCES user(username),
 	street VARCHAR,
 	zipcode VARCHAR,
 	city VARCHAR,
@@ -30,7 +30,7 @@ CREATE TABLE restaurant (
 
 DROP TABLE IF EXISTS owner;
 CREATE TABLE owner (
-	idOwner INTEGER REFERENCES user(username),	
+	idOwner VARCHAR REFERENCES user(username),
 	idRestaurant INTEGER REFERENCES restaurant(id)
 );
 
@@ -84,8 +84,11 @@ INSERT INTO owner VALUES('joseoliv', 2);
 INSERT INTO owner VALUES('bsantos', 3);
 
 INSERT INTO review VALUES(1, 'joseoliv', 1, 5, 'Muito bom atendimento!');
-INSERT INTO review VALUES(2, 'ruibento', 2, 3.5, 'Prato muito bom mas demorado.');
-INSERT INTO review VALUES(3, 'jonhy', 2, 4.5, 'Amazing atmosphere with delicious wines to taste!');
+INSERT INTO review VALUES(2, 'ruibento', 1, 4.5, 'Pratos com muito boa apresentação');
+INSERT INTO review VALUES(3, 'joseoliv', 2, 3, 'Bom atendimento!');
+INSERT INTO review VALUES(4, 'ruibento', 2, 3.5, 'Prato muito bom mas demorado.');
+INSERT INTO review VALUES(5, 'jonhy', 2, 2, 'Not the quickest service.');
+INSERT INTO review VALUES(6, 'jonhy', 3, 4.5, 'Amazing atmosphere with delicious wines to taste!');
 
 INSERT INTO reply VALUES(1, 1, 'mgomes', 'ty');
 INSERT INTO reply VALUES(2, 2, 'joseoliv', 'nao se pode ter tudo');

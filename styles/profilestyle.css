@@ -1,3 +1,34 @@
-.profile {
+#myprofile {
+    display: block;
+    text-align: center;
     padding: 10px;
+    margin-bottom: 60px;
+}
+
+#userlogo {
+    display: inline-block;
+    padding-right: 40px;
+}
+
+#myprofile img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+#userpresentation {
+    display: inline-block;
+    text-align: justify;
+}
+
+#userpresentation h2 {
+    vertical-align: middle;
+}
+
+.myrestaurants {
+    margin-bottom: 60px;
+}
+
+.myreviews > article:not(:last-child) {
+    margin-bottom: 10px;
 }
