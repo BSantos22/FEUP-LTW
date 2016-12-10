@@ -51,6 +51,21 @@ input[type=text], input[type=password], input[type=date] {
     width: 100%;
 }
 
+.btn-register-user {
+     width: 49%;
+     float: left;
+}
+
+.btn-register-owner {
+    width: 49%;
+    float: right;
+}
+
+.btns-register {
+
+
+}
+
 #btn-user {
     background-color: #cf2230;
     border: none;

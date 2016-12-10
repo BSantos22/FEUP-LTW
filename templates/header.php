@@ -94,7 +94,7 @@
 </section>
 
 <section id="modal-register" class="modal">
-    <form class="modal-content animate" action="../actions/action_login.php" method="post" autocomplete="off">
+    <form class="modal-content animate" action="../actions/action_register.php" method="post" autocomplete="off">
         <section class="imgcontainer">
             <img src="../res/images/logo.png">
             <span class="close" title="Fechar"><i class="fa fa-times" aria-hidden="true"></i></span>
@@ -103,15 +103,24 @@
         <section class="container">
             <input type="text" name="username" placeholder="Nome do Utilizador" required>
 
-            <input type="text" name="email" placeholder="E-Mail" required>
+            <input type="text" name="name" placeholder="Nome" required>
 
-            <input type="date" name="birth" placeholder="Data de Nascimento" required>
+            <input type="text" name="email" placeholder="E-Mail" required>
 
             <input type="password" name="password" placeholder="Password" required>
 
             <input type="password" name="password" placeholder="Confirme a password" required>
 
-            <button class="enter" type="submit">Entrar</button>
+            <input type="date" name="birthday" placeholder="Data de Nascimento" required>
+
+            <input type="text" name="city" placeholder="Cidade" required>
+
+            <input type="text" name="country" placeholder="País" required>
+
+            <div class="btns-register">
+                <button class="btn-register-user" type="submit" name="submit" value="user">Registar como Utilizador</button>
+                <button class="btn-register-owner" type="submit" name="submit" value="owner">Registar como Proprietário</button>
+            </div>
 
             <input type="checkbox" checked="checked"> Lembrar-me
         </section>

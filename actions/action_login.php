@@ -1,13 +1,15 @@
 <?php
-  session_start();
 
-  include_once('../database/connection.php');
-  include_once('../database/user.php');
+session_start();
 
-  if (userExists($db, $_POST['username'], $_POST['password'])){
+include_once('../database/connection.php');
+include_once('../database/user.php');
+
+if (userExists($db, $_POST['username'], $_POST['password'])){
     $_SESSION['username'] = $_POST['username'];
     $_SESSION['user-logged'] = true;
-  }
+}
 
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
+header('Location: ' . $_SERVER['HTTP_REFERER']);
+
 ?>
