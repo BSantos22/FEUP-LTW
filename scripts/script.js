@@ -44,6 +44,12 @@ $(document).ready(function() {
         return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
     }
 
+    // Formats the address data received as JSON format
+    function formatAddress(address){
+        return address.street + ", " + address.zipcode + ", " +
+            address.city + ", " + address.country;
+    }
+
     // Show restaurant location using google maps
     $(function(){
         if ($('div').hasClass('restaurant')) {
@@ -55,8 +61,7 @@ $(document).ready(function() {
                 data: {id : getUrlParameterByName('id')},
                 success: function(data) {
                     console.log('sim');
-                    var restaurantAddress = data.street + ", " + data.zipcode + ", " +
-                     data.city + ", " + data.country;
+                    var restaurantAddress = formatAddress(data);
 
                     $('#restaurantmap')
                         .gmap3({
