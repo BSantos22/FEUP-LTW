@@ -15,8 +15,6 @@
         die($e->getMessage());
     }
 
-
-
     $cssStyle = "../styles/homestyle.css";
 
     require('../templates/header.php');

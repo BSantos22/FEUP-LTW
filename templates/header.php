@@ -13,6 +13,7 @@
     <link type="text/css" rel="stylesheet" href="../styles/font-awesome.min.css"/>
     <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLmVqAaxaE-M76Om97S-PXC4n4U3yJe6g"></script>
+    <script type="text/javascript" src="../libs/gmap3.js"></script>
     <script type="text/javascript" src="../scripts/script.js"></script>
 </head>
 <body>

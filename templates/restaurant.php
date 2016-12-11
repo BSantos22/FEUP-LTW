@@ -4,7 +4,7 @@
             <div class="restaurant box">
                 <div class="viewrestaurantphoto">
                     <img src="../uploads/restaurants/restaurant1.png">
-                    <div id="map"></div>
+                    <div id="restaurantmap" class="gmap3"></div>
                 </div>
                 <div class="restaurantdescription">
                     <h2><?= $restaurant['name'] ?></h2>

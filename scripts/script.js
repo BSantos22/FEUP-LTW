@@ -38,6 +38,39 @@ $(document).ready(function() {
         }
     };
 
+    // Returns an Url parameter of the current page
+    function getUrlParameterByName(name) {
+        var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+        return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+    }
+
+    // Show restaurant location using google maps
+    $(function(){
+        if ($('div').hasClass('restaurant')) {
+
+            console.log('sim');
+            $.ajax ({
+                url: "../scripts/get_map_info.php",
+                type: "get",
+                data: {id : getUrlParameterByName('id')},
+                success: function(data) {
+                    console.log('sim');
+                    var restaurantAddress = data.street + ", " + data.zipcode + ", " +
+                     data.city + ", " + data.country;
+
+                    $('#restaurantmap')
+                        .gmap3({
+                            address: restaurantAddress,
+                            zoom:15
+                        })
+                        .marker([
+                            {address: restaurantAddress}
+                        ]);
+                }
+            });
+        }
+    });
+
     // Show review input if a user is logged
     $("#btn-createreview").click(function() {
         $.getJSON("../scripts/session_status.php", function(result){
