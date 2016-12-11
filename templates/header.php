@@ -64,8 +64,10 @@
     <section id="backg">
         <div id="search">
             <p>Encontre os melhores restaurantes ao virar da esquina</p> <br><br>
-            <input type="text" name="restaurant" value="" alt="Search Restaurants" placeholder="Procura por restaurante..." id="searchbar"/>
-            <input type="submit" value="Procurar" id="butt-search">
+            <form class="search-restaurants" action="../actions/action_search.php" method="get" autocomplete="off">
+                <input type="text" name="search" value="" alt="Search Restaurants" placeholder="Procura por restaurante..." id="searchbar"/>
+                <input type="submit" value="Procurar" id="butt-search">
+            </form>
         </div>
     </section>
 </header>
