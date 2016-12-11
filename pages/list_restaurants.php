@@ -9,7 +9,13 @@
         if (isset($_SESSION['username']))
             $user = getUserByUsername($db, $_SESSION['username']);
 
-        $restaurants = getAllRestaurants($db);
+        if (isset($_GET['search'])) {
+            $keywords = preg_split("/[^a-zA-Z0-9À-ỳ]/u", $_GET['search']);
+            $restaurants = searchRestaurantsByKeywords($db, $keywords);
+        }
+        else {
+            $restaurants = getAllRestaurants($db);
+        }
     }
     catch(PDOException $e) {
         die($e->getMessage());

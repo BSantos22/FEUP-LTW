@@ -50,9 +50,10 @@ function searchRestaurantsByKeywords($db, $keywords) {
 
     usort($entries, "cmp_entries");
 
+    /*
     foreach ($entries as $a) {
         echo nl2br ("{$a[0]['name']} - {$a[1]} \n");
-    }
+    }*/
 
     foreach ($entries as $entry) {
         array_push($final_results, $entry[0]);
