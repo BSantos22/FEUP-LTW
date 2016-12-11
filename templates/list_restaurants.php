@@ -13,7 +13,7 @@
                         <?php } ?>
                     </div>
                     <br>
-                    <p><?=$restaurant['city']?>&middot<?=$restaurant['country']?></p><br>
+                    <p><?=$restaurant['city']?> &middot <?=$restaurant['country']?></p><br>
                     <a href="../pages/restaurant.php?id=<?=$restaurant['id']?>"><button class="btn" id="btn-details">Ver detalhes</button></a>
                 </div>
             </article>

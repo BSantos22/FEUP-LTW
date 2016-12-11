@@ -69,7 +69,7 @@
             </section>
         </section>
 
-        <?php if($user['status']=='reviewer' || ($user['username']!=$restaurant['idOwner'])) { ?>
+        <?php if(!isset($_SESSION['username']) || $user['status']=='reviewer' || ($user['username']!=$restaurant['idOwner'])) { ?>
             <section class="createreview">
                 <br>
                 <button type="button" id="btn-createreview" title="Criar avaliação">Criar avaliação</button>
