@@ -45,20 +45,22 @@ $(document).ready(function() {
     }
 
     // Formats the address data received as JSON format
-    function formatAddress(address){
+    function formatAddress(address) {
         return address.street + ", " + address.zipcode + ", " +
             address.city + ", " + address.country;
     }
 
     // Show restaurant location using google maps
-    $(function(){
+    $(function() {
         if ($('div').hasClass('restaurant')) {
 
             console.log('sim');
-            $.ajax ({
+            $.ajax({
                 url: "../scripts/get_map_info.php",
                 type: "get",
-                data: {id : getUrlParameterByName('id')},
+                data: {
+                    id: getUrlParameterByName('id')
+                },
                 success: function(data) {
                     console.log('sim');
                     var restaurantAddress = formatAddress(data);
@@ -66,11 +68,11 @@ $(document).ready(function() {
                     $('#restaurantmap')
                         .gmap3({
                             address: restaurantAddress,
-                            zoom:15
+                            zoom: 15
                         })
-                        .marker([
-                            {address: restaurantAddress}
-                        ]);
+                        .marker([{
+                            address: restaurantAddress
+                        }]);
                 }
             });
         }
@@ -78,14 +80,79 @@ $(document).ready(function() {
 
     // Show review input if a user is logged
     $("#btn-createreview").click(function() {
-        $.getJSON("../scripts/session_status.php", function(result){
-                if (result.logged) // User is logged
-                    $("#addreview").toggle("show");
-                else
-                    $("#modal-login").show();
+        $.getJSON("../scripts/session_status.php", function(result) {
+            if (result.logged) // User is logged
+                $("#addreview").toggle("show");
+            else
+                $("#modal-login").show();
 
         });
     });
+    //validation of the register fields
+    $("#reg-user").keyup(function() {
+        if ($("#reg-user").val() == null || $("#reg-user").val() == "")
+            $("#reg-user").css("background-color", "white");
+        else if (/^([a-z0-9]*)$/.test($("#reg-user").val()) && /^\S/.test($("#reg-user").val()))
+            $("#reg-user").css("background-color", "lightgreen");
+        else
+            $("#reg-user").css("background-color", "red");
+
+    });
+
+    $("#reg-name").keyup(function() {
+        if ($("#reg-name").val() == null || $("#reg-name").val() == "")
+            $("#reg-name").css("background-color", "white");
+        else if (/^([^0-9]*)$/.test($("#reg-name").val()))
+            $("#reg-name").css("background-color", "lightgreen");
+        else
+            $("#reg-name").css("background-color", "red");
+    });
+
+    $("#reg-mail").keyup(function() {
+        if ($("#reg-mail").val() == null || $("#reg-mail").val() == "")
+            $("#reg-mail").css("background-color", "white");
+        else if (	/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test($("#reg-mail").val()))
+            $("#reg-mail").css("background-color", "lightgreen");
+        else
+            $("#reg-mail").css("background-color", "red");
+    });
+
+    $("#reg-pass1").keyup(function() {
+        if ($("#reg-pass1").val() == null || $("#reg-pass1").val() == "")
+            $("#reg-pass1").css("background-color", "white");
+        else
+            $("#reg-pass1").css("background-color", "lightgreen");
+    });
+
+    $("#reg-pass2").keyup(function() {
+        if ($("#reg-pass2").val() == null || $("#reg-pass2").val() == "")
+            $("#reg-pass2").css("background-color", "white");
+        else if($("#reg-pass2").val() == $("#reg-pass1").val())
+            $("#reg-pass2").css("background-color", "lightgreen");
+        else
+            $("#reg-pass2").css("background-color", "red");
+    });
+
+    $("#reg-bdate").focus(function() {
+        document.getElementById("reg-bdate").type = "date";
+    });
+
+    $("#reg-bdate").blur(function() {
+        if ($("#reg-bdate").val() == "") {
+            document.getElementById("reg-bdate").type = "text";
+        }
+    });
+
+    $("#reg-bdate").keyup(function() {
+        if ($("#reg-bdate").val() == null || $("#reg-bdate").val() == "")
+            $("#reg-bdate").css("background-color", "white");
+        else if($("#reg-pass2").val() == $("#reg-pass1").val())
+            $("#reg-pass2").css("background-color", "lightgreen");
+        else
+            $("#reg-pass2").css("background-color", "red");
+    });
+
+
 });
 
 /* $.ajax({

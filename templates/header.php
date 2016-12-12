@@ -104,17 +104,17 @@
         </section>
 
         <section class="container">
-            <input type="text" name="username" placeholder="Nome do Utilizador" required>
+            <input type="text" name="username" placeholder="Nome do Utilizador" required id="reg-user" pattern="a">
 
-            <input type="text" name="name" placeholder="Nome" required>
+            <input type="text" name="name" placeholder="Nome" required id="reg-name">
 
-            <input type="text" name="email" placeholder="E-Mail" required>
+            <input type="text" name="email" placeholder="E-Mail" required id="reg-mail">
 
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="password" placeholder="Password" required id="reg-pass1">
 
-            <input type="password" name="password" placeholder="Confirme a password" required>
+            <input type="password" name="password" placeholder="Confirme a password" required id="reg-pass2">
 
-            <input type="date" name="birthday" placeholder="Data de Nascimento" required>
+            <input type="text" name="birthday" placeholder="Data de Nascimento" required id="reg-bdate">
 
             <input type="text" name="city" placeholder="Cidade" required>
 
