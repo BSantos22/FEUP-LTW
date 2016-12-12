@@ -81,8 +81,7 @@
                     </label>
                     <br><br>
                     <label>Opinião:
-                    <textarea rows="4" cols="100" name="text" value="">
-                    </textarea>
+                    <textarea rows="4" cols="100" name="text" value=""></textarea>
                     </label>
                     <input type="submit" id="btn-submit" class="btn" name="btnSubmit" value="Publicar">
                 </form>

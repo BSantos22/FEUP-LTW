@@ -1,28 +1,30 @@
 #myprofile {
-    display: block;
-    text-align: center;
+    width: 100%;
     padding: 10px;
     margin-bottom: 60px;
 }
 
-#userlogo {
-    display: inline-block;
-    padding-right: 40px;
+#td-image {
+    vertical-align: top;
+    padding-right: 50px;
+}
+
+#td-user {
+    text-align: left;
+}
+
+.td-icon {
+    text-align: center;
+    padding-right: 10px;
+}
+
+.td-info {
+    text-align: left;
 }
 
 #myprofile img {
     width: 150px;
     height: auto;
-    border-radius: 50%;
-}
-
-#userpresentation {
-    display: inline-block;
-    text-align: justify;
-}
-
-#userpresentation h2 {
-    vertical-align: middle;
 }
 
 .myrestaurants {

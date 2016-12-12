@@ -14,7 +14,7 @@ CREATE TABLE user (
 
 DROP TABLE IF EXISTS restaurant;
 CREATE TABLE restaurant (
-	id INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	name VARCHAR,
 	idOwner VARCHAR REFERENCES user(username),
 	street VARCHAR,
@@ -36,23 +36,30 @@ CREATE TABLE owner (
 
 DROP TABLE IF EXISTS review;
 CREATE TABLE review (
-	id INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	idReviewer VARCHAR REFERENCES user(username),
 	idRestaurant INTEGER REFERENCES restaurant(id),
 	rating FLOAT,
 	text VARCHAR
 );
 
-DROP TABLE IF EXISTS photo;
-CREATE TABLE photo (
-	id INTEGER PRIMARY KEY,
+DROP TABLE IF EXISTS photo_restaurant;
+CREATE TABLE photo_restaurant (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	idRestaurant INTEGER REFERENCES restaurant(id),
-	link VARCHAR
+	name VARCHAR
+);
+
+DROP TABLE IF EXISTS photo_user;
+CREATE TABLE photo_user(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	idUser INTEGER REFERENCES user(username),
+	name VARCHAR
 );
 
 DROP TABLE IF EXISTS reply;
 CREATE TABLE reply (
-	id INTEGER PRIMARY KEY,
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	idReview INTEGER REFERENCES review(id),
 	idUser VARCHAR REFERENCES user(username),
 	content VARCHAR

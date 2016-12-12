@@ -244,6 +244,7 @@ header a {
     padding-top: 20px;
     padding-bottom: 20px;
     color: #333333;
+    width: 100%;
 }
 
 .central .container {
