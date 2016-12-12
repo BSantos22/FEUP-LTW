@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+    // Unlocks submit button only if a file has been chosen
+    $('input:file').change(function(){
+        if ($(this).val()) {
+            $('input:submit').attr('disabled',false);
+            $('input:submit').css('background-color','#cf2230');
+        }
+    });
+
     // Shows the user menu
     $(".dropdown").hover(function() {
         $(".menu-dropdown").toggle();
@@ -15,26 +23,44 @@ $(document).ready(function() {
         $("#modal-register").toggle();
     });
 
+    // Shows login dialog
+    $("#btn-uploaduserphoto").click(function() {
+        $("#modal-uploaduserphoto").toggle();
+    });
+
     // Hides any modal dialog when clicking in close
     $(".close").click(function() {
+        $(".inputfile").val('');
         $(".modal").hide();
     });
 
     // Hides the modal dialog boxes selected
     $(".btn-cancel").click(function() {
+        $(".inputfile").val('');
         $(".modal").hide();
     });
 
     var modalLogin = document.getElementById('modal-login');
     var modalRegister = document.getElementById('modal-register');
+    var modalUserPhoto = document.getElementById('modal-uploaduserphoto');
+    var modalRestaurantPhoto = document.getElementById('modal-uploadrestaurantphoto');
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
+
         if (event.target == modalLogin) {
             modalLogin.style.display = "none";
         }
         if (event.target == modalRegister) {
             modalRegister.style.display = "none";
+        }
+        if (event.target == modalUserPhoto) {
+            $(".inputfile").val('');
+            modalUserPhoto.style.display = "none";
+        }
+        if (event.target == modalRestaurantPhoto) {
+            $(".inputfile").val('');
+            modalRestaurantPhoto.style.display = "none";
         }
     };
 
@@ -88,6 +114,7 @@ $(document).ready(function() {
 
         });
     });
+
     //validation of the register fields
     $("#reg-user").keyup(function() {
         if ($("#reg-user").val() == null || $("#reg-user").val() == "")

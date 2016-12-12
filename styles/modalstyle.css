@@ -46,7 +46,7 @@ input[type=text], input[type=password], input[type=date], select {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 .enter {
@@ -61,11 +61,6 @@ input[type=text], input[type=password], input[type=date], select {
 .btn-register-owner {
     width: 49%;
     float: right;
-}
-
-.btns-register {
-
-
 }
 
 #btn-user {
@@ -95,6 +90,7 @@ input[type=text], input[type=password], input[type=date], select {
     text-align: left;
     margin: 24px 0 12px 0;
     position: relative;
+    border-bottom: 1px solid #f3f3f3;
 }
 
 .imgcontainer img {
@@ -122,6 +118,8 @@ span.psw {
     overflow: auto;
     background-color: rgba(0,0,0,0.7);
     padding-top: 55px;
+    font-family: 'Source Sans';
+    color: #333333;
 }
 
 .modal-content {
@@ -130,6 +128,10 @@ span.psw {
     background-color: white;
     width: 40%;
     border-radius: 3px;
+}
+
+.btn-submitfile {
+    background-color: #8e8e8e;
 }
 
 .close {

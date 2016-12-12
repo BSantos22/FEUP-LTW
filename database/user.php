@@ -17,9 +17,14 @@ function getUserByUsername($db, $username) {
 }
 
 function createUser($db, $username, $name, $email, $password, $birthday, $city, $country, $status) {
-    $query = "INSERT INTO user VALUES(?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO user VALUES(?,?,?,?,?,?,?,?,?)";
     $stmt = $db->prepare($query);
-    $stmt->execute(array($username, $name, $email, hash('sha256', $password), $birthday, $city, $country, $status));
+    $stmt->execute(array($username, $name, $email, hash('sha256', $password), $birthday, $city, $country, $status, 'defaultlogo.png'));
+}
+
+function updateUserPhoto($dbh, $username, $photo){
+    $stmt = $dbh->prepare('UPDATE user SET photopath = ? WHERE username = ?');
+    $stmt->execute(array($photo, $username));
 }
 
 ?>

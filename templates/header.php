@@ -73,6 +73,7 @@
     </section>
 </header>
 
+<!--LOGIN-->
 <section id="modal-login" class="modal">
     <form class="modal-content animate" action="../actions/action_login.php" method="post" autocomplete="off">
         <section class="imgcontainer">
@@ -96,6 +97,7 @@
     </form>
 </section>
 
+<!--REGISTER-->
 <section id="modal-register" class="modal">
     <form class="modal-content animate" action="../actions/action_register.php" method="post" autocomplete="off">
         <section class="imgcontainer">
@@ -141,3 +143,44 @@
         </section>
     </form>
 </section>
+
+<!--UPLOAD USER PHOTO-->
+<section id="modal-uploaduserphoto" class="modal">
+    <form class="modal-content animate" action="../actions/upload_user_photo.php" method="post" enctype="multipart/form-data">
+        <section class="imgcontainer">
+            <img src="../res/images/logo.png">
+            <span class="close" title="Fechar"><i class="fa fa-times" aria-hidden="true"></i></span>
+        </section>
+
+        <section class="container">
+            Carregar imagem (Tamanho Máximo: 1 MB):<br>
+            <input type="file" class="inputfile" name="userphoto" accept="image/*">
+            <input type="submit" class="btn btn-submitfile" name="uploaduserphoto" disabled>
+        </section>
+
+        <section class="cancelar-container">
+            <button type="button" class="btn-cancel">Cancelar</button>
+        </section>
+    </form>
+</section>
+
+<!--UPLOAD RESTAURANT PHOTO-->
+<section id="modal-uploadrestaurantphoto" class="modal">
+    <form class="modal-content animate" action="../actions/upload_restaurant_photo.php" method="post" enctype="multipart/form-data">
+        <section class="imgcontainer">
+            <img src="../res/images/logo.png">
+            <span class="close" title="Fechar"><i class="fa fa-times" aria-hidden="true"></i></span>
+        </section>
+
+        <section class="container">
+            Carregar imagem (Tamanho Máximo: 1 MB):<br>
+            <input type="file" class="inputfile" name="restaurantphoto" accept="image/*">
+            <input type="submit" class="btn btn-submitfile" name="uploadrestaurantphoto" disabled>
+        </section>
+
+        <section class="cancelar-container">
+            <button type="button" class="btn-cancel">Cancelar</button>
+        </section>
+    </form>
+</section>
+

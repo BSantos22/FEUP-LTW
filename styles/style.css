@@ -352,7 +352,7 @@ h2, h3, h4 {
     outline: none;
 }
 
-.btn:hover {
+.btn:not([disabled]):hover{
     background-color: #a72230;
 }
 

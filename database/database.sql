@@ -9,7 +9,8 @@ CREATE TABLE user (
 	birthday DATE,
 	city VARCHAR,
 	country VARCHAR,
-	status VARCHAR
+	status VARCHAR,
+	photopath VARCHAR
 );
 
 DROP TABLE IF EXISTS restaurant;
@@ -50,13 +51,6 @@ CREATE TABLE photo_restaurant (
 	name VARCHAR
 );
 
-DROP TABLE IF EXISTS photo_user;
-CREATE TABLE photo_user(
-	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	idUser INTEGER REFERENCES user(username),
-	name VARCHAR
-);
-
 DROP TABLE IF EXISTS reply;
 CREATE TABLE reply (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -76,11 +70,11 @@ BEGIN
 	WHERE (restaurant.id = NEW.idRestaurant);
 END;
 
-INSERT INTO user VALUES('mgomes', 'Manuel Gomes', 'mg@gmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1987-04-25', 'Porto', 'Portugal', 'owner');
-INSERT INTO user VALUES('joseoliv','José Oliveira', 'joseoliv@hotmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1994-03-22', 'Porto', 'Portugal', 'owner');
-INSERT INTO user VALUES('bsantos', 'Bruno Santos', 'bsantos@hotmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1989-03-19', 'Porto', 'Portugal', 'owner');
-INSERT INTO user VALUES('ruibento', 'Rui Bento', 'ruibento@gmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1983-08-20', 'Braga', 'Portugal', 'reviewer');
-INSERT INTO user VALUES('jonhy', 'John Adams', 'adams@yahoo.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1973-03-04', 'London', 'United Kingdom', 'reviewer');
+INSERT INTO user VALUES('mgomes', 'Manuel Gomes', 'mg@gmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1987-04-25', 'Porto', 'Portugal', 'owner', 'defaultlogo.png');
+INSERT INTO user VALUES('joseoliv','José Oliveira', 'joseoliv@hotmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1994-03-22', 'Porto', 'Portugal', 'owner', 'defaultlogo.png');
+INSERT INTO user VALUES('bsantos', 'Bruno Santos', 'bsantos@hotmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1989-03-19', 'Porto', 'Portugal', 'owner', 'defaultlogo.png');
+INSERT INTO user VALUES('ruibento', 'Rui Bento', 'ruibento@gmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1983-08-20', 'Braga', 'Portugal', 'reviewer', 'defaultlogo.png');
+INSERT INTO user VALUES('jonhy', 'John Adams', 'adams@yahoo.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1973-03-04', 'London', 'United Kingdom', 'reviewer', 'defaultlogo.png');
 
 INSERT INTO restaurant VALUES(1, 'Flow Restaurant & Bar', 'mgomes', 'Rua da Conceição 63', '4050-213', 'Porto', 'Portugal', 'Contemporâneo', 4.0, '11:00:00', '01:00:00', 5.0);
 INSERT INTO restaurant VALUES(2, 'Restaurante Filha da Mãe Preta', 'joseoliv', 'Cais da Ribeira 39','4050-510', 'Porto', 'Portugal', 'Tradicional', 3.0,'10:30:00', '23:00:00', 5.0);

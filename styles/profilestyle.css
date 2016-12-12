@@ -8,6 +8,7 @@
 
 .img-col {
     padding-right: 40px;
+    text-align: center;
 }
 
 #td-user {
@@ -25,7 +26,8 @@
 
 #myprofile img {
     width: 150px;
-    height: auto;
+    height: 150px;
+    border-radius: 50%;
 }
 
 .myrestaurants {

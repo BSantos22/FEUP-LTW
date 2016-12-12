@@ -3,7 +3,7 @@
         <article id="myprofile" class="box">
             <table>
                 <tr>
-                    <td id="td-image" class="img-col" rowspan="5"><img src="../uploads/users/defaultlogo.png"></td>
+                    <td id="td-image" class="img-col" rowspan="5"><img src="../uploads/users/<?=$user['photopath']?>"></td>
                 </tr>
                 <tr>
                     <td colspan="2" id="td-user"><h2><?= $user['name'] ?></h2></td>
@@ -21,10 +21,12 @@
                     <td class="td-icon"><i class="fa fa-envelope" aria-hidden="true"></i></td>
                     <td class="td-info"><?= $user['email'] ?></td>
                 </tr>
-                <tr style="text-align: center"><td class="img-col"><button type="button" id="btn-uploaduserphoto" title="Carregar foto">Carregar foto</button></td><form action="upload_file.php" method="post" enctype="multipart/form-data">
-                        <input type="file" name="file">
-                    </form><td></td><td></td></tr>
+                <tr style="text-align: center">
+                    <td class="img-col"><button type="button" id="btn-uploaduserphoto" class="btn" title="Editar foto de perfil">Editar foto</button></td>
+                    <td></td><td></td></tr>
+
             </table>
+
         </article>
 
         <?php if ($user['status'] == 'owner') { ?>
