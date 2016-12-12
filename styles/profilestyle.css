@@ -1,12 +1,13 @@
 #myprofile {
-    width: 100%;
     padding: 10px;
     margin-bottom: 60px;
 }
 
 #td-image {
-    vertical-align: top;
-    padding-right: 50px;
+}
+
+.img-col {
+    padding-right: 40px;
 }
 
 #td-user {
