@@ -134,17 +134,13 @@ $(document).ready(function() {
     });
 
     $("#reg-bdate").focus(function() {
-        if ($("#reg-bdate").val() == "") {
-          $("#reg-bdate").val("Data de Nascimento");
-        }
-        console.log();
+        document.getElementById("reg-bdate").type = "date";
     });
 
     $("#reg-bdate").blur(function() {
         if ($("#reg-bdate").val() == "") {
-          $("#reg-bdate").val("Data de Nascimento");
+            document.getElementById("reg-bdate").type = "text";
         }
-        console.log();
     });
 
     $("#reg-bdate").keyup(function() {

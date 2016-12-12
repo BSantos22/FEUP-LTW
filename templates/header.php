@@ -114,7 +114,7 @@
 
             <input type="password" name="password" placeholder="Confirme a password" required id="reg-pass2">
 
-            <input type="text" onfocus="(this.type='date')" name="birthday" placeholder="Data de Nascimento" required id="reg-bdate">
+            <input type="text" name="birthday" placeholder="Data de Nascimento" required id="reg-bdate">
 
             <input type="text" name="city" placeholder="Cidade" required>
 
