@@ -40,6 +40,11 @@
     margin-bottom: 60px;
 }
 
+.central .myrestaurants> article:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+
 .myreviews > article:not(:last-child) {
     margin-bottom: 10px;
 }
