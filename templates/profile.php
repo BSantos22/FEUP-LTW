@@ -3,30 +3,29 @@
         <article id="myprofile" class="box">
             <table>
                 <tr>
-                    <td id="td-image" class="img-col" rowspan="5"><img src="../uploads/users/<?=$user['photopath']?>"></td>
+                    <td id="td-image" class="img-col" rowspan="5"><img src="../uploads/users/<?= $user['photopath'] ?>"></td>
                 </tr>
                 <tr>
+                    <td class="edit-col"><a href="#" alt="Editar foto de perfil"><i class="fa fa-pencil" aria-hidden="true" id="btn-uploaduserphoto"></i></a></td>
                     <td colspan="2" id="td-user"><h2><?= $user['name'] ?></h2></td>
-                    <h2>
+                    <td class="edit-col">&nbsp;&nbsp;<a href="edit_profile.php" alt="Editar perfil"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                 </tr>
                 <tr>
+                    <td></td>
                     <td class="td-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></td>
                     <td class="td-info"><?= $user['city'] ?>&nbsp;&middot&nbsp;<?= $user['country'] ?></td>
                 </tr>
                 <tr>
+                    <td></td>
                     <td class="td-icon"><i class="fa fa-birthday-cake" aria-hidden="true"></i></td>
                     <td class="td-info"><?= $user['birthday'] ?></td>
                 </tr>
                 <tr>
+                    <td></td>
                     <td class="td-icon"><i class="fa fa-envelope" aria-hidden="true"></i></td>
                     <td class="td-info"><?= $user['email'] ?></td>
                 </tr>
-                <tr style="text-align: center">
-                    <td class="img-col"><button type="button" id="btn-uploaduserphoto" class="btn" title="Editar foto de perfil">Editar foto</button></td>
-                    <td></td><td></td></tr>
-
             </table>
-
         </article>
 
         <?php if ($user['status'] == 'owner') { ?>

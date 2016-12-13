@@ -8,7 +8,7 @@
     try {
         if (isset($_SESSION['username'])) {
             $user = getUserByUsername($db, $_SESSION['username']);
-            $restaurant = getRestaurantById($db, $_GET['id']);
+            $restaurants = getAllRestaurants($db);
         }
 
         else
@@ -18,9 +18,9 @@
         die($e->getMessage());
     }
 
-    $cssStyle = "../styles/editrestaurantstyle.css";
+    $cssStyle = "../styles/addrestaurantstyle.css";
 
     require('../templates/header.php');
-    require('../templates/edit_restaurant.php');
+    require('../templates/add_restaurant.php');
     require('../templates/footer.php');
 ?>

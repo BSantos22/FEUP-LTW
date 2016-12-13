@@ -1,4 +1,18 @@
 <?php
+
+function createRestaurant($db, $name, $username, $address, $zipcode, $city, $country, $category, $price, $opentime, $closetime) {
+    $query = "INSERT INTO restaurant VALUES(NULL, ?,?,?,?,?,?,?,?,?,?,?)";
+    $stmt = $db->prepare($query);
+    $stmt->execute(array($name, $username, $address, $zipcode, $city, $country, $category, $price, $opentime, $closetime, 5));
+}
+
+
+function updateRestaurant($db, $id, $name, $address, $zipcode, $city, $country, $category, $price, $opentime, $closetime) {
+    $query = $db->prepare('UPDATE restaurant SET name = ?, address = ?, zipcode = ?, city = ?, country = ?, category = ?, price = ?, opentime = ?, closetime = ? WHERE id = ?');
+    $stmt = $db->prepare($query);
+    $stmt->execute(array($name, $address, $zipcode, $city, $country, $category, $price, $opentime, $closetime, $id));
+}
+
 function getAllRestaurants($db){
     $stmt = $db->prepare('SELECT * FROM restaurant');
     $stmt->execute();

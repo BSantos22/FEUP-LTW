@@ -3,13 +3,19 @@
     margin-bottom: 60px;
 }
 
-#td-image {
-}
-
 .img-col {
-    padding-right: 40px;
     text-align: center;
 }
+
+.edit-col {
+    padding-right: 30px;
+}
+
+.edit-col i:hover {
+    color: #a72230;
+    cursor: pointer;
+}
+
 
 #td-user {
     text-align: left;

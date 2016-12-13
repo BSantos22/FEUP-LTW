@@ -22,6 +22,12 @@ function createUser($db, $username, $name, $email, $password, $birthday, $city, 
     $stmt->execute(array($username, $name, $email, hash('sha256', $password), $birthday, $city, $country, $status, 'defaultlogo.png'));
 }
 
+function updateUser($db, $username, $name, $birthday, $email, $city, $country){
+    $stmt = $db->prepare('UPDATE user SET name = ?, birthday = ?, email = ?,  city = ?, country = ? WHERE username = ?');
+    $stmt->execute(array($name, $birthday, $email, $city, $country, $username));
+}
+
+
 function updateUserPhoto($dbh, $username, $photo){
     $stmt = $dbh->prepare('UPDATE user SET photopath = ? WHERE username = ?');
     $stmt->execute(array($photo, $username));

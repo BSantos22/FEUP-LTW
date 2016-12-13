@@ -69,20 +69,20 @@
             </section>
         </section>
 
-        <?php if(!isset($_SESSION['username']) || $user['status']=='reviewer' || ($user['username']!=$restaurant['idOwner'])) { ?>
+        <?php if(!isset($_SESSION['username']) || $user['status']=='reviewer') { ?>
             <section class="createreview">
                 <br>
                 <button type="button" id="btn-createreview" title="Criar avaliação">Criar avaliação</button>
-                <form action="../actions/create_review.php" method="post" id="addreview">
+                <form action="../actions/add_review.php" method="post" id="addreview">
                     <input type="hidden" name="idUsername" value="<?=$_SESSION['username']?>">
                     <input type="hidden" name="idRestaurant" value="<?=$restaurant['id']?>">
                     <label>Classificação:
                         <input type="number" name="rating" value="" required="required">
                     </label>
                     <br><br>
-                    <label>Opinião:
+                    <label>Opinião:<br>
                     <textarea rows="4" cols="100" name="text" value=""></textarea>
-                    </label>
+                    </label><br>
                     <input type="submit" id="btn-submit" class="btn" name="btnSubmit" value="Publicar">
                 </form>
             </section>

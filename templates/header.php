@@ -37,7 +37,9 @@
                         <div id="user" class="dropdown">
                             <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
                             <div class="menu-dropdown">
-                                <a href="profile.php" id="btn-profile" class="arrow_box"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Perfil</a>
+                                <a href="profile.php" id="btn-profile" class="arrow_box"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Ver Perfil</a>
+                                <a href="edit_profile.php"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Editar Perfil</a>
+                                <a href="add_restaurant.php"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Criar restaurante</a>
                                 <a href="../actions/action_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Sair</a>
                             </div>
                         </div>
@@ -45,7 +47,8 @@
                         <div id="user" class="dropdown">
                             <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
                             <div class="menu-dropdown">
-                                <a href="profile.php" id="btn-profile" class="arrow_box"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Perfil</a>
+                                <a href="profile.php" id="btn-profile" class="arrow_box"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Ver Perfil</a>
+                                <a href="edit_profile.php"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Editar Perfil</a>
                                 <a href="../actions/action_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Sair</a>
                             </div>
                         </div>
@@ -127,15 +130,7 @@
               <option value="reviewer">Cliente</option>
             </select>
 
-
             <button class="enter" type="submit" name="submit" value="user">Registar</button>
-
-            <!-- div class="btns-register">
-                <button class="btn-register-user" type="submit" name="submit" value="user">Registar como Utilizador</button>
-                <button class="btn-register-owner" type="submit" name="submit" value="owner">Registar como Proprietário</button>
-            </div --->
-
-            <input type="checkbox" checked="checked"> Lembrar-me
         </section>
 
         <section class="cancelar-container">
@@ -154,7 +149,7 @@
 
         <section class="container">
             Carregar imagem (Tamanho Máximo: 1 MB):<br>
-            <input type="file" class="inputfile" name="userphoto" accept="image/*">
+            <input type="file" class="inputfile" name="userphoto" accept="image/*"><br><br>
             <input type="submit" class="btn btn-submitfile" name="uploaduserphoto" disabled>
         </section>
 
