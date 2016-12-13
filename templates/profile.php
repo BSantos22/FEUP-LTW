@@ -58,6 +58,9 @@
                             <a href="../pages/restaurant.php?id=<?= $restaurant['id'] ?>">
                                 <button class="btn" id="btn-details">Ver detalhes</button>
                             </a>
+                            <a href="../pages/edit_restaurant.php?id=<?= $restaurant['id'] ?>">
+                                <button class="btn" id="btn-editrestaurant">Editar restaurante</button>
+                            </a>
                         </div>
                     </article>
                 <?php } ?>

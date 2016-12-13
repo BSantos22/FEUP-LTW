@@ -6,11 +6,10 @@ function createRestaurant($db, $name, $username, $address, $zipcode, $city, $cou
     $stmt->execute(array($name, $username, $address, $zipcode, $city, $country, $category, $price, $opentime, $closetime, 5));
 }
 
-
-function updateRestaurant($db, $id, $name, $address, $zipcode, $city, $country, $category, $price, $opentime, $closetime) {
-    $query = $db->prepare('UPDATE restaurant SET name = ?, address = ?, zipcode = ?, city = ?, country = ?, category = ?, price = ?, opentime = ?, closetime = ? WHERE id = ?');
+function updateRestaurant($db, $id, $name, $street, $zipcode, $city, $country, $category, $price, $opentime, $closetime) {
+    $query = $db->prepare('UPDATE restaurant SET name = ?, street = ?, zipcode = ?, city = ?, country = ?, category = ?, price = ?, opentime = ?, closetime = ? WHERE id = ?');
     $stmt = $db->prepare($query);
-    $stmt->execute(array($name, $address, $zipcode, $city, $country, $category, $price, $opentime, $closetime, $id));
+    $stmt->execute(array($name, $street, $zipcode, $city, $country, $category, $price, $opentime, $closetime, $id));
 }
 
 function getAllRestaurants($db){

@@ -17,7 +17,7 @@
                             <td class="table-title">Rua</td>
                         </tr>
                         <tr>
-                            <td><input type="text" name="address" value="<?=$restaurant['address']?>" required></td>
+                            <td><input type="text" name="street" value="<?=$restaurant['street']?>" required></td>
                         </tr>
                         <tr>
                             <td class="table-title">Código Postal</td>
