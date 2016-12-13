@@ -118,46 +118,42 @@ $(document).ready(function() {
     //validation of the register fields
     $("#reg-user").keyup(function() {
         if ($("#reg-user").val() == null || $("#reg-user").val() == "")
-            $("#reg-user").css("background-color", "white");
+            $("#reg-user").css("border", "1px solid #ccc");
         else if (/^([a-z0-9]*)$/.test($("#reg-user").val()) && /^\S/.test($("#reg-user").val()))
-            $("#reg-user").css("background-color", "lightgreen");
+            $("#reg-user").css("border", "2px solid #3fa246");
         else
-            $("#reg-user").css("background-color", "red");
+            $("#reg-user").css("border", "2px solid #c21212");
 
     });
 
     $("#reg-name").keyup(function() {
         if ($("#reg-name").val() == null || $("#reg-name").val() == "")
-            $("#reg-name").css("background-color", "white");
+            $("#reg-name").css("border", "1px solid #ccc");
         else if (/^([^0-9]*)$/.test($("#reg-name").val()))
-            $("#reg-name").css("background-color", "lightgreen");
+            $("#reg-name").css("border", "2px solid #3fa246");
         else
-            $("#reg-name").css("background-color", "red");
+            $("#reg-name").css("border", "2px solid #c21212");
     });
 
-    $("#reg-mail").keyup(function() {
+    $("#reg-mail").blur(function() {
         if ($("#reg-mail").val() == null || $("#reg-mail").val() == "")
-            $("#reg-mail").css("background-color", "white");
+            $("#reg-mail").css("border", "1px solid #ccc");
         else if (	/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test($("#reg-mail").val()))
-            $("#reg-mail").css("background-color", "lightgreen");
+            $("#reg-mail").css("border", "2px solid #3fa246");
         else
-            $("#reg-mail").css("background-color", "red");
+            $("#reg-mail").css("border", "2px solid #c21212");
     });
 
-    $("#reg-pass1").keyup(function() {
-        if ($("#reg-pass1").val() == null || $("#reg-pass1").val() == "")
-            $("#reg-pass1").css("background-color", "white");
-        else
-            $("#reg-pass1").css("background-color", "lightgreen");
-    });
-
-    $("#reg-pass2").keyup(function() {
+    $("#reg-pass2").blur(function() {
         if ($("#reg-pass2").val() == null || $("#reg-pass2").val() == "")
-            $("#reg-pass2").css("background-color", "white");
-        else if($("#reg-pass2").val() == $("#reg-pass1").val())
-            $("#reg-pass2").css("background-color", "lightgreen");
-        else
-            $("#reg-pass2").css("background-color", "red");
+            $("#reg-pass2").css("border", "1px solid #ccc");
+        else if($("#reg-pass2").val() == $("#reg-pass1").val()){
+            $("#reg-pass1").css("border", "2px solid #3fa246");
+            $("#reg-pass2").css("border", "2px solid #3fa246");
+        }else{
+            $("#reg-pass1").css("border", "2px solid #c21212");
+            $("#reg-pass2").css("border", "2px solid #c21212");
+        }
     });
 
     $("#reg-bdate").focus(function() {
@@ -172,11 +168,11 @@ $(document).ready(function() {
 
     $("#reg-bdate").keyup(function() {
         if ($("#reg-bdate").val() == null || $("#reg-bdate").val() == "")
-            $("#reg-bdate").css("background-color", "white");
+            $("#reg-bdate").css("border", "1px solid #ccc");
         else if($("#reg-pass2").val() == $("#reg-pass1").val())
-            $("#reg-pass2").css("background-color", "lightgreen");
+            $("#reg-pass2").css("border", "2px solid #3fa246");
         else
-            $("#reg-pass2").css("background-color", "red");
+            $("#reg-pass2").css("border", "2px solid #c21212");
     });
 
 
