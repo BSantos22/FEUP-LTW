@@ -40,21 +40,59 @@ function getRestaurantByOwner($db, $owner) {
     return $stmt->fetchAll();
 }
 
-function searchRestaurantByName($db, $keyword) {
+function searchRestaurant($db, $parameter ,$keyword)
+{
     $word = "%{$keyword}%";
 
-    $stmt = $db->prepare('SELECT * FROM restaurant WHERE name LIKE ?');
+    switch($parameter) {
+        case "name":
+            $stmt = $db->prepare('SELECT * FROM restaurant WHERE name LIKE ?');
+            break;
+        case "street":
+            $stmt = $db->prepare('SELECT * FROM restaurant WHERE street LIKE ?');
+            break;
+        case "zipcode":
+            $stmt = $db->prepare('SELECT * FROM restaurant WHERE zipcode LIKE ?');
+            break;
+        case "city":
+            $stmt = $db->prepare('SELECT * FROM restaurant WHERE city LIKE ?');
+            break;
+        case "country":
+            $stmt = $db->prepare('SELECT * FROM restaurant WHERE country LIKE ?');
+            break;
+        case "category":
+            $stmt = $db->prepare('SELECT * FROM restaurant WHERE category LIKE ?');
+            break;
+    }
+
     $stmt->execute(array($word));
 
     return $stmt->fetchAll();
 }
 
-function searchRestaurantsByKeywords($db, $keywords) {
+function searchRestaurantsByKeywords($db, $keywords, $type) {
     $entries = [];
     $final_results = [];
 
     foreach ($keywords as $value) {
-        $result = searchRestaurantByName($db, $value);
+        $result = [];
+
+        switch($type) {
+            case "restaurant":
+                $result = searchRestaurant($db, "name", $value);
+                break;
+            case "location":
+                $result1 = searchRestaurant($db, "street", $value);
+                $result2 = searchRestaurant($db, "zipcode", $value);
+                $result3 = searchRestaurant($db, "city", $value);
+                $result4 = searchRestaurant($db, "country", $value);
+                $result = array_merge($result1, $result2, $result3, $result4);
+                break;
+            case "category":
+                $result = searchRestaurant($db, "category", $value);
+                break;
+        }
+
 
         foreach($result as $restaurant) {
             add_entry($entries, $restaurant);
@@ -62,11 +100,6 @@ function searchRestaurantsByKeywords($db, $keywords) {
     }
 
     usort($entries, "cmp_entries");
-
-    /*
-    foreach ($entries as $a) {
-        echo nl2br ("{$a[0]['name']} - {$a[1]} \n");
-    }*/
 
     foreach ($entries as $entry) {
         array_push($final_results, $entry[0]);

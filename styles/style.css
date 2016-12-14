@@ -155,6 +155,27 @@ header #search p {
     color: white;
 }
 
+header #search-type {
+    height: 40px;
+    width: 120px;
+    border: none;
+    border-radius: 2px;
+    background-color: #cf2230;
+    font-family: 'Source Sans';
+    color: white;
+    padding:0px 6px;
+}
+
+header #search-type option{
+    background-color: #cf2230;
+    font-family: 'Source Sans';
+    color: white;
+}
+
+header #search-type:hover {
+    outline : none;
+}
+
 header #searchbar{
     height: 40px;
     width: 250px;
