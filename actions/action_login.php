@@ -9,5 +9,10 @@
         $_SESSION['user-logged'] = true;
     }
 
+    else if (($loginUser = userEmailExists($db, $_POST['username'], $_POST['password'])) != null){
+        $_SESSION['username'] = $loginUser['username'];
+        $_SESSION['user-logged'] = true;
+    }
+
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
