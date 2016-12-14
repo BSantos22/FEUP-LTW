@@ -3,7 +3,6 @@
 
     include_once('../database/connection.php');
     include_once('../database/user.php');
-    include_once('../database/countries.php');
 
     try {
         if (isset($_SESSION['username']))
@@ -16,7 +15,6 @@
         die($e->getMessage());
     }
 
-    $countries = getCountries($db);
     $cssStyle = "../styles/editprofilestyle.css";
 
     include ('../templates/header.php');
