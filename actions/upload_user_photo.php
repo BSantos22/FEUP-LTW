@@ -24,7 +24,6 @@
 
         if ($_FILES["userphoto"]["size"] > 1048576) {
             header('Location: ' . $_SERVER['HTTP_REFERER']);
-            echo "File should not be bigger than 1 MB. ";
         }
 
         $targetDir = "../uploads/users/"; // Directory to save the file
@@ -34,18 +33,14 @@
         $targetFile = $targetDir . $fileName; // Final path to save the file
 
         if(file_exists($fileName)) {
-            chmod($fileName); //Change the file permissions if allowed
-            unlink($fileName); //remove the file
+            chmod($fileName); // Change the file permissions if allowed
+            unlink($fileName); // Remove the file
         }
 
         if (move_uploaded_file($_FILES['userphoto']['tmp_name'], $targetFile)) {
             updateUserPhoto($db, $_SESSION['username'], $_SESSION['username']);
-
-            echo 'File saved.';
-        } else {
-            echo 'File failed to save\n';
         }
     }
 
-    header('Location: ' . '../pages/profile.php');
+    header("Refresh:0; url=../pages/profile.php");
 ?>

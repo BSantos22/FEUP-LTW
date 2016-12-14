@@ -39,7 +39,8 @@
                         <div id="user" class="dropdown">
                             <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
                             <div class="menu-dropdown">
-                                <a href="profile.php" id="btn-profile" class="arrow_box"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Ver Perfil</a>
+                                <div id="btn-image" class="arrow_box"><img src="../uploads/users/<?= $user['photopath'] ?>"></i>&nbsp;&nbsp;Olá<br><?= $user['name'] ?></div>
+                                <a href="profile.php" id="btn-profile"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Ver Perfil</a>
                                 <a href="edit_profile.php"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Editar Perfil</a>
                                 <a href="add_restaurant.php"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Criar restaurante</a>
                                 <a href="../actions/action_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Sair</a>
@@ -49,7 +50,8 @@
                         <div id="user" class="dropdown">
                             <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
                             <div class="menu-dropdown">
-                                <a href="profile.php" id="btn-profile" class="arrow_box"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Ver Perfil</a>
+                                <div href="profile.php" id="btn-image" class="arrow_box"><img src="../uploads/users/<?= $user['photopath'] ?>">&nbsp;&nbsp;Olá<br><?= $user['name'] ?></div>
+                                <a href="profile.php" id="btn-profile"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Ver Perfil</a>
                                 <a href="edit_profile.php"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Editar Perfil</a>
                                 <a href="../actions/action_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Sair</a>
                             </div>
@@ -58,7 +60,7 @@
                     <div id="user" class="dropdown">
                         <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
                         <div class="menu-dropdown">
-                            <a href="#" id="btn-login" class="arrow_box"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Entrar</a>
+                            <a href="#" id="btn-login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Entrar</a>
                             <a href="#" id="btn-register"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Registar</a>
                         </div>
                     </div>
