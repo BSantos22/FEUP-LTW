@@ -65,15 +65,15 @@
     padding-top: 20px;
 }
 
-#restaurantbtns {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 #addreviewphoto {
     width: 100%;
     padding-left: 10px;
     margin-bottom: 40px;
+}
+
+#restaurantbtns {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #btn-createreview {

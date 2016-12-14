@@ -1,7 +1,7 @@
 <section class="central">
     <div class="container">
         <section class="contentRestaurant">
-            <section class="restaurant box">
+            <div class="restaurant box">
                 <div class="restaurantgallery">
                     <ul class="bxslider">
                         <li><img src="../uploads/restaurants/restaurant1.png"/></li>
@@ -50,7 +50,7 @@
                     </p>
                     <div id="restaurantmap" class="gmap3"></div>
                 </div>
-            </section>
+            </div>
 
             <section id="addreviewphoto" class="box">
                 <div id="restaurantbtns">
