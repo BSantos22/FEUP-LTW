@@ -145,7 +145,7 @@ $(document).ready(function() {
         if ($("#reg-user").val() == null || $("#reg-user").val() == ""){
             $("#reg-user").css("border", "1px solid #ccc");
             user = false;
-        }else if (/^([a-z0-9]*)$/.test($("#reg-user").val()) && /^\S/.test($("#reg-user").val())){
+        }else if (/^([A-Za-z0-9]*)$/.test($("#reg-user").val()) && /^\S/.test($("#reg-user").val())){
             $("#reg-user").css("border", "2px solid #3fa246");
             user = true;
         }else{
@@ -159,7 +159,7 @@ $(document).ready(function() {
         if ($("#reg-name").val() == null || $("#reg-name").val() == ""){
             $("#reg-name").css("border", "1px solid #ccc");
             name = false;
-        }else if (/^([^0-9]*)$/.test($("#reg-name").val())){
+        }else if (/^([^0-9]*)$/.test($("#reg-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#reg-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#reg-user").val())){
             $("#reg-name").css("border", "2px solid #3fa246");
             name = true;
         }else{
