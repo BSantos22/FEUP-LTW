@@ -62,7 +62,14 @@
                             <td class="table-title">País</td>
                         </tr>
                         <tr>
-                            <td><input type="text" value="<?= $user['country'] ?>" name="country" required></td>
+                            <td>
+                                <select name="country" id="country-list" class="country" required>
+                                    <option value="" disabled selected hidden>País</option>
+                                    <?php
+                                    require('../templates/countries.php');
+                                    ?>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <td class="table-title">Nova password</td>

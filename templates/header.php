@@ -129,11 +129,7 @@
             <select name="country" id="country-list" class="country" required>
                 <option value="" disabled selected hidden>País</option>
                 <?php
-                foreach($countries as $country) {
-                    ?>
-                    <option value="<?php echo $country["name"]; ?>"><?php echo $country["name"]; ?></option>
-                    <?php
-                }
+                require('../templates/countries.php');
                 ?>
             </select>
 
