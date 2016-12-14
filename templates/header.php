@@ -122,9 +122,9 @@
 
             <input type="text" name="birthday" placeholder="Data de Nascimento" required id="reg-bdate">
 
-            <input type="text" name="city" placeholder="Cidade" required>
+            <input type="text" name="city" placeholder="Cidade" required id="city">
 
-            <select name="country" id="country-list" class="country">
+            <select name="country" id="country-list" class="country" required>
                 <option value="" disabled selected hidden>País</option>
                 <?php
                 foreach($countries as $country) {
@@ -135,13 +135,13 @@
                 ?>
             </select>
 
-            <select name="user_type" required>
+            <select name="user_type" required id="sel-ut">
                 <option value="" disabled selected hidden>Tipo de utilizador</option>
                 <option value="owner">Proprietário</option>
                 <option value="reviewer">Cliente</option>
             </select>
 
-            <button class="enter" type="submit" name="submit" value="user">Registar</button>
+            <button class="enter" type="submit" name="submit" value="user" disabled id="reg-btn">Registar</button>
         </section>
 
         <section class="cancelar-container">
@@ -189,4 +189,3 @@
         </section>
     </form>
 </section>
-
