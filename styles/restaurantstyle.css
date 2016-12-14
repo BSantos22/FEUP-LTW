@@ -29,10 +29,6 @@
     display: inline-block;
 }
 
-.restaurant img {
-    padding: 2px 2px 2px 2px;
-}
-
 .restaurantdescription {
     padding: 10px;
 }
@@ -76,8 +72,16 @@
     padding-bottom: 10px;
 }
 
-#btn-createreview {
+.btnreview {
     margin-right: 40px;
+}
+
+#btn-createreviewcancel {
+    display: none;
+}
+
+#btn-createreview {
+
 }
 
 #createreviewbtn {
@@ -87,6 +91,11 @@
 #addreview {
     display: none;
     margin-bottom: 10px;
+}
+
+#input-ativatereview {
+    max-width: 30%;
+    padding: 9px 12px;
 }
 
 .userimage {

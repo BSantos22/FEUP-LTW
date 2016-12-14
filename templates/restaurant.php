@@ -6,8 +6,6 @@
                     <ul class="bxslider">
                         <li><img src="../uploads/restaurants/restaurant1.png"/></li>
                         <li><img src="../uploads/restaurants/restaurant1.png"/></li>
-                        <li><img src="../uploads/restaurants/restaurant1.png"/></li>
-                        <li><img src="../uploads/restaurants/restaurant1.png"/></li>
                     </ul>
                 </div>
                 <div class="restaurantdescription">
@@ -54,12 +52,15 @@
 
             <section id="addreviewphoto" class="box">
                 <div id="restaurantbtns">
-                    <div class="userimage">
-                        <img src="../uploads/users/<?= $user['photopath'] ?>">
-                    </div>
+                    <?php if (isset($_SESSION['username'])) { ?>
+                        <div class="userimage">
+                            <img src="../uploads/users/<?= $user['photopath'] ?>">
+                        </div>
+                    <?php } ?>
                     <?php if (!isset($_SESSION['username']) || $user['status'] == 'reviewer') { ?>
-                        <button type="button" id="btn-createreview" class="btn" title="Criar avaliação">Criar avaliação
-                        </button>
+                        <input type="text" id="input-ativatereview"placeholder="Escreva uma avaliação...">
+                        <button type="button" id="btn-createreview" class="btn btnreview" title="Criar avaliação">Criar avaliação</button>
+                        <button type="button" id="btn-createreviewcancel" class="btn btnreview" title="Cancelar">Cancelar</button>
                     <?php } ?>
                     <button type="button" id="btn-addphoto" class="btn" title="Adicionar foto">Adicionar foto</button>
                 </div>

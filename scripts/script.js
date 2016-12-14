@@ -112,13 +112,53 @@ $(document).ready(function() {
     // Show review input if a user is logged
     $("#btn-createreview").click(function() {
         $.getJSON("../scripts/session_status.php", function(result) {
-            if (result.logged) // User is logged
+            if (result.logged) { // User is logged
+                $("#input-ativatereview").toggle();
+                $("#btn-createreview").toggle();
                 $("#addreview").toggle("show");
+                $("#btn-createreviewcancel").toggle("show");
+            }
             else
                 $("#modal-login").show();
 
         });
     });
+
+    $("#input-ativatereview").focus(function() {
+        $.getJSON("../scripts/session_status.php", function(result) {
+            if (result.logged) { // User is logged
+                $("#input-ativatereview").toggle();
+                $("#btn-createreview").toggle();
+                $("#addreview").toggle("show");
+                $("#btn-createreviewcancel").toggle("show");
+            }
+            else
+                $("#modal-login").show();
+
+        });
+    });
+
+    $("#btn-createreviewcancel").click(function() {
+        $("#input-ativatereview").toggle();
+        $("#btn-createreview").toggle();
+        $("#addreview").toggle();
+        $("#btn-createreviewcancel").toggle();
+    });
+
+    // Show photo input if a user is logged
+    $("#btn-addphoto").click(function() {
+        $.getJSON("../scripts/session_status.php", function(result) {
+            if (result.logged) // User is logged
+                $("#modal-uploadrestaurantphoto").toggle("show");
+            else
+                $("#modal-login").show();
+
+        });
+    });
+
+
+
+
 
     //validation of the register fields
 
