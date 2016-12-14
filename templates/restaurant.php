@@ -2,16 +2,13 @@
     <div class="container">
         <section class="contentRestaurant">
             <div class="restaurant box">
-                <div class="viewrestaurantphoto">
-                    <div class="restaurantgallery">
-                        <ul class="bxslider">
-                            <li><img src="../uploads/restaurants/restaurant1.png"/></li>
-                            <li><img src="../uploads/restaurants/restaurant1.png"/></li>
-                            <li><img src="../uploads/restaurants/restaurant1.png"/></li>
-                            <li><img src="../uploads/restaurants/restaurant1.png"/></li>
-                        </ul>
-                    </div>
-                    <div id="restaurantmap" class="gmap3"></div>
+                <div class="restaurantgallery">
+                    <ul class="bxslider">
+                        <li><img src="../uploads/restaurants/restaurant1.png"/></li>
+                        <li><img src="../uploads/restaurants/restaurant1.png"/></li>
+                        <li><img src="../uploads/restaurants/restaurant1.png"/></li>
+                        <li><img src="../uploads/restaurants/restaurant1.png"/></li>
+                    </ul>
                 </div>
                 <div class="restaurantdescription">
                     <h2><?= $restaurant['name'] ?></h2>
@@ -49,6 +46,7 @@
                         ?>
                         </span>
                     </p>
+                    <div id="restaurantmap" class="gmap3"></div>
                 </div>
             </div>
             <section class="restaurantreview">

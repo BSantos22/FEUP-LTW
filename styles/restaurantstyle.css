@@ -22,10 +22,11 @@
     margin-bottom: 60px;
 }
 
-#map {
-    width: 300px;
-    height: 200px;
-    background-color: #a72230;
+.gmap3 {
+    padding-top: 10px;
+    width: 400px;
+    height: 300px;
+    display: inline-block;
 }
 
 .restaurant img {
@@ -85,4 +86,8 @@
 
 .central #price img {
     height: 16px;
+}
+
+.restaurantgallery {
+    padding-top: 20px;
 }

@@ -35,7 +35,7 @@
 	box-shadow: 0 0 5px #ccc;
 	border:  5px solid #fff;
 	left: -5px;
-	background: #fff;
+	background: black;
 	
 	/*fix other elements on the page moving (on Chrome)*/
 	-webkit-transform: translatez(0);
@@ -62,7 +62,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 2000;
+	z-index: 20;
 }
 
 /* PAGER */
@@ -129,7 +129,7 @@
 	width: 32px;
 	height: 32px;
 	text-indent: -9999px;
-	z-index: 9999;
+	z-index: 20;
 }
 
 .bx-wrapper .bx-controls-direction a.disabled {
