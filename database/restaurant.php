@@ -40,8 +40,8 @@ function getRestaurantByOwner($db, $owner) {
     return $stmt->fetchAll();
 }
 
-function searchRestaurant($db, $parameter ,$keyword)
-{
+function searchRestaurant($db, $parameter ,$keyword) {
+    $results = [];
     $word = "%{$keyword}%";
 
     switch($parameter) {
@@ -65,9 +65,16 @@ function searchRestaurant($db, $parameter ,$keyword)
             break;
     }
 
-    $stmt->execute(array($word));
+    for ($i=1; $i<strlen($keyword); $i++) {
+        $approximate_word = $word;
+        $approximate_word[$i] = '_';
 
-    return $stmt->fetchAll();
+        $stmt->execute(array($approximate_word));
+        $result = $stmt->fetchAll();
+        $results = array_merge($results, $result);
+    }
+
+    return $results;
 }
 
 function searchRestaurantsByKeywords($db, $keywords, $type) {
