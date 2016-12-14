@@ -72,21 +72,18 @@
                         <br>
                         <p><?= $review['text'] ?></p>
                     </article>
-                    <?php if ($user['status'] == 'owner') { ?>
-                        <p>Comentar</p>
-                    <?php } ?>
                 <?php } ?>
             </section>
         </section>
 
         <?php if (!isset($_SESSION['username']) || $user['status'] == 'reviewer') { ?>
-        <br>
-        <button type="button" id="btn-createreview" title="Criar avaliação">Criar avaliação</button>
-        <form action="../actions/add_review.php" method="post" id="addreview">
-            <input type="hidden" name="idUsername" value="<?= $_SESSION['username'] ?>">
-            <input type="hidden" name="idRestaurant" value="<?= $restaurant['id'] ?>">
-            <section class="createreview">
-                <br>
+        <section class="addreviewphoto">
+            <button type="button" id="btn-createreview" class="btn" title="Criar avaliação">Criar avaliação</button>
+            <form action="../actions/add_review.php" method="post" id="addreview">
+                <input type="hidden" name="idUsername" value="<?= $_SESSION['username'] ?>">
+                <input type="hidden" name="idRestaurant" value="<?= $restaurant['id'] ?>">
+                <section class="createreview">
+                    <br>
                 <span class="rating">
                     <input type="radio" name="rating" class="rating-input" id="rating-input-1-5" value="5"/>
                     <label for="rating-input-1-5" class="rating-star"></label>
@@ -99,12 +96,14 @@
                     <input type="radio" name="rating" class="rating-input" id="rating-input-1-1" value="1"/>
                     <label for="rating-input-1-1" class="rating-star"></label>
                 </span>
-                <br><br>
-                <label>Opinião:<br>
-                    <textarea rows="4" cols="100" name="text" value=""></textarea>
-                </label><br>
-                <input type="submit" id="btn-submit" class="btn" name="btnSubmit" value="Publicar">
-        </form>
+                    <br><br>
+                    <label>Opinião:<br>
+                        <textarea rows="4" cols="100" name="text" value=""></textarea>
+                    </label><br>
+                    <input type="submit" id="btn-submit" class="btn" name="btnSubmit" value="Publicar">
+                </section>
+            </form>
+        </section>
 </section>
 <?php } ?>
 </div>

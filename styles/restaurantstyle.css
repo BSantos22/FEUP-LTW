@@ -24,8 +24,8 @@
 
 .gmap3 {
     padding-top: 10px;
-    width: 400px;
-    height: 300px;
+    width: 300px;
+    height: 250px;
     display: inline-block;
 }
 
@@ -57,31 +57,23 @@
     font-weight: bolder;
 }
 
+.createreview {
+    width: 100%;
+    padding-left: 10px;
+    margin-bottom: 40px;
+}
+
 #btn-createreview {
-    border: none;
-    padding: 10px 18px;
-    background-color: #cf2230;
-    color: white;
-    border-radius: 3px;
-    cursor: pointer;
-
+    margin-right: 40px;
 }
 
-#btn-createreview:focus {
-    outline: 0;
-    border-radius: 3px;
-}
-
-#btn-createreview:active {
-    outline: none;
-}
-
-#btn-createreview:hover {
-    background-color: #a72230;
+#createreviewbtn {
+    margin-bottom: 20px;
 }
 
 #addreview {
     display: none;
+    margin-bottom: 10px;
 }
 
 .central #price img {
@@ -90,6 +82,20 @@
 
 .restaurantgallery {
     padding-top: 20px;
+}
+
+.userimage {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 50px;
+}
+
+.userimage img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
 
 .rating {
@@ -119,4 +125,8 @@
     width: 16px;
     height: 16px;
     background: url("../res/images/starrating.png") 0 -16px;
+}
+
+textarea {
+    font-family: 'Source Sans';
 }
