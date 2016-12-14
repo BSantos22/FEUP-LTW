@@ -29,7 +29,7 @@ input[type="date"]::-webkit-inner-spin-button{
     display: none;
 }
 
-input[type=text], input[type=password], textarea, input[type=time], input[type=number], input[type=email], input[type=date], select {
+input[type=text], input[type=password], input[type=time], input[type=number], input[type=email], input[type=date], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

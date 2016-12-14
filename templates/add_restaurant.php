@@ -75,12 +75,6 @@
                             <td><input type="time" name="closetime" required></td>
                         </tr>
                         <tr>
-                            <td class="table-title">Palavra-passe</td>
-                        </tr>
-                        <tr>
-                            <td><input type="password" name="currentpassword" value="" required></td>
-                        </tr>
-                        <tr>
                             <td><input type="submit" class="btn" name="submitaddrestaurant"</td>
                         </tr>
                     </table>
