@@ -4,6 +4,7 @@
     require_once('../database/connection.php');
     require_once ('../database/restaurant.php');
     require_once ('../database/user.php');
+    require_once('../database/countries.php');
 
     try {
         if (isset($_SESSION['username']))
@@ -21,6 +22,7 @@
         die($e->getMessage());
     }
 
+    $countries = getCountries($db);
     $cssStyle = "../styles/listrestaurantstyle.css";
 
     require('../templates/header.php');

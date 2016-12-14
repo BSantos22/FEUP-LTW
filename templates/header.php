@@ -108,7 +108,7 @@
         </section>
 
         <section class="container">
-            <input type="text" name="username" placeholder="Nome do Utilizador" required id="reg-user" pattern="a">
+            <input type="text" name="username" placeholder="Nome do Utilizador" required id="reg-user">
 
             <input type="text" name="name" placeholder="Nome" required id="reg-name">
 
@@ -122,11 +122,21 @@
 
             <input type="text" name="city" placeholder="Cidade" required>
 
-            <input type="text" name="country" placeholder="País" required>
+            <select name="country" id="country-list" class="country">
+                <option value="" disabled selected hidden>País</option>
+                <?php
+                foreach($countries as $country) {
+                    ?>
+                    <option value="<?php echo $country["name"]; ?>"><?php echo $country["name"]; ?></option>
+                    <?php
+                }
+                ?>
+            </select>
 
-            <select name="user_type" placeholder="Tipo de Utilizador" required>
-              <option value="owner">Proprietário</option>
-              <option value="reviewer">Cliente</option>
+            <select name="user_type" required>
+                <option value="" disabled selected hidden>Tipo</option>
+                <option value="owner">Proprietário</option>
+                <option value="reviewer">Cliente</option>
             </select>
 
             <button class="enter" type="submit" name="submit" value="user">Registar</button>

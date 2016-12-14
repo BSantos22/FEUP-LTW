@@ -4,6 +4,7 @@
     require_once('../database/connection.php');
     require_once ('../database/restaurant.php');
     require_once ('../database/user.php');
+    require_once('../database/countries.php');
 
     $id = $_GET['id'];
 
@@ -20,6 +21,7 @@
         die($e->getMessage());
     }
 
+    $countries = getCountries($db);
     $cssStyle = "../styles/editrestaurantstyle.css";
 
     require('../templates/header.php');
