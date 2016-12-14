@@ -24,10 +24,12 @@
 .td-icon {
     text-align: center;
     padding-right: 10px;
+    color: #cf2230;
 }
 
 .td-info {
     text-align: left;
+    color: #636363;
 }
 
 #myprofile img {

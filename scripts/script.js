@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     $('.bxslider').bxSlider({
         auto: true,
-        slideWidth: 800
+        slideWidth: 700
     });
 
     // Unlocks submit button only if a file has been chosen

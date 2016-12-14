@@ -22,7 +22,7 @@
             die("Not a gif/jpeg/png");
         }
 
-        if ($_FILES["userphoto"]["size"] > 1048576) {
+        if ($_FILES["userphoto"]["size"] > 1048576) { // 1MB
             header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
 
@@ -32,9 +32,9 @@
         $fileName = $_SESSION['username'] . '.' . $fileType;
         $targetFile = $targetDir . $fileName; // Final path to save the file
 
-        if(file_exists($fileName)) {
-            chmod($fileName); // Change the file permissions if allowed
-            unlink($fileName); // Remove the file
+        if(file_exists($targetFile)) {
+            chmod($targetFile); // Change the file permissions if allowed
+            unlink($targetFile); // Remove the file
         }
 
         if (move_uploaded_file($_FILES['userphoto']['tmp_name'], $targetFile)) {
@@ -42,5 +42,6 @@
         }
     }
 
-    header("Refresh:0; url=../pages/profile.php");
+    //header("Refresh:0; url=../pages/profile.php");
+    header('Location: ' . "../pages/profile.php");
 ?>

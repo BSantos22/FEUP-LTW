@@ -148,9 +148,13 @@ span.psw {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.7);
-    padding-top: 55px;
+    padding-top: 40px;
     font-family: 'Source Sans';
     color: #333333;
+}
+
+.modal form {
+    margin-bottom: 200px;
 }
 
 .modal-content {
