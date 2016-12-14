@@ -8,6 +8,14 @@ function userExists($db, $username, $password) {
     return $stmt->fetch() !== false;
 }
 
+function userEmailExists($db, $email, $password) {
+    $query = "SELECT * FROM user WHERE email = ? AND password = ?";
+    $stmt = $db->prepare($query);
+    $stmt->execute(array($email, hash('sha256', $password)));
+
+    return $stmt->fetch();
+}
+
 function getUserByUsername($db, $username) {
     $query = "SELECT * FROM user WHERE username = ?";
     $stmt = $db->prepare($query);
