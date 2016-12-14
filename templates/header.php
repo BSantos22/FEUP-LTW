@@ -134,7 +134,7 @@
             </select>
 
             <select name="user_type" required>
-                <option value="" disabled selected hidden>Tipo</option>
+                <option value="" disabled selected hidden>Tipo de utilizador</option>
                 <option value="owner">Proprietário</option>
                 <option value="reviewer">Cliente</option>
             </select>
