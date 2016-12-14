@@ -288,6 +288,21 @@ $(document).ready(function() {
         updateSbtBtn();
     });
 
+    $("#search-type").change(function() {
+        switch($("#search-type").prop('selectedIndex')) {
+            case 0:
+                $("#searchbar").attr("placeholder", "Procura por restaurante...");
+                break;
+            case 1:
+                $("#searchbar").attr("placeholder", "Procura por localização...");
+                break;
+            case 2:
+                $("#searchbar").attr("placeholder", "Procura por categoria...");
+                break;
+        }
+
+    });
+
 
 });
 

@@ -73,6 +73,12 @@
         <div id="search">
             <p>Encontre os melhores restaurantes ao virar da esquina</p> <br><br>
             <form class="search-restaurants" action="list_restaurants.php" method="get" autocomplete="off">
+                <select name="search-type" required id="search-type">
+                    <option value="restaurant">Restaurante</option>
+                    <option value="location">Localização</option>
+                    <option value="category">Categoria</option>
+                </select>
+
                 <input type="text" name="search" value="" alt="Search Restaurants" placeholder="Procura por restaurante..." id="searchbar"/>
                 <input type="submit" value="Procurar" id="butt-search">
             </form>
