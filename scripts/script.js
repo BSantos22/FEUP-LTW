@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+    $('.bxslider').bxSlider({
+        auto: true
+    });
+
     // Unlocks submit button only if a file has been chosen
     $('input:file').change(function(){
         if ($(this).val()) {

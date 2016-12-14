@@ -3,13 +3,14 @@
         <section class="contentRestaurant">
             <div class="restaurant box">
                 <div class="viewrestaurantphoto">
-                    <!--<img src="../uploads/restaurants/restaurant1.png">-->
-                    <ul class="bxslider">
-                        <li><img src="../uploads/restaurants/restaurant1.png"/></li>
-                        <li><img src="../uploads/restaurants/restaurant1.png"/></li>
-                        <li><img src="../uploads/restaurants/restaurant1.png"/></li>
-                        <li><img src="../uploads/restaurants/restaurant1.png"/></li>
-                    </ul>
+                    <div class="restaurantgallery">
+                        <ul class="bxslider">
+                            <li><img src="../uploads/restaurants/restaurant1.png"/></li>
+                            <li><img src="../uploads/restaurants/restaurant1.png"/></li>
+                            <li><img src="../uploads/restaurants/restaurant1.png"/></li>
+                            <li><img src="../uploads/restaurants/restaurant1.png"/></li>
+                        </ul>
+                    </div>
                     <div id="restaurantmap" class="gmap3"></div>
                 </div>
                 <div class="restaurantdescription">
