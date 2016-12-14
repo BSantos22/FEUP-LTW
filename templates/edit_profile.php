@@ -68,22 +68,16 @@
                             <td class="table-title">Nova password</td>
                         </tr>
                         <tr>
-                            <td><input type="password" name="newpassword" value=""></td>
+                            <td><input type="password" value=""></td>
                         </tr>
                         <tr>
                             <td class="table-title">Confirmar nova password</td>
                         </tr>
                         <tr>
-                            <td><input type="password" name="confirmnewpassword" value=""></td>
+                            <td><input type="password" value=""></td>
                         </tr>
                         <tr>
-                            <td class="table-title">Confirmar password atual</td>
-                        </tr>
-                        <tr>
-                            <td><input type="password" name="currentpassword" value="" required></td>
-                        </tr>
-                        <tr>
-                            <td><input type="submit" id="subeditprofile" class="btn" name="submiteditprofile"></td>
+                            <td><input type="submit" id="subeditprofile" class="btn" name="submiteditprofile"</td>
                         </tr>
                     </table>
                 </form>

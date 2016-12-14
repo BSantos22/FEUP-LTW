@@ -14,7 +14,7 @@
 .td-icon {
     text-align: center;
     padding-right: 10px;
-    color: #8e8e8e;
+    color: #cf2230;
 }
 
 .td-info {
@@ -43,10 +43,6 @@
 
 .edit-col {
     padding-right: 30px;
-}
-
-.edit-col i {
-    color: #8e8e8e;
 }
 
 .edit-col i:hover {
