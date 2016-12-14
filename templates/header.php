@@ -124,7 +124,8 @@
 
             <input type="text" name="country" placeholder="País" required>
 
-            <select name="user_type" placeholder="Tipo de Utilizador" required>
+            <select name="user_type" placeholder="Tipo de Utilizador" required id="user-dropdown">
+              <option value=""></option>
               <option value="owner">Proprietário</option>
               <option value="reviewer">Cliente</option>
             </select>
@@ -177,4 +178,3 @@
         </section>
     </form>
 </section>
-
