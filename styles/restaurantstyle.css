@@ -57,7 +57,20 @@
     font-weight: bolder;
 }
 
-.createreview {
+.central #price img {
+    height: 16px;
+}
+
+.restaurantgallery {
+    padding-top: 20px;
+}
+
+#restaurantbtns {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#addreviewphoto {
     width: 100%;
     padding-left: 10px;
     margin-bottom: 40px;
@@ -74,14 +87,6 @@
 #addreview {
     display: none;
     margin-bottom: 10px;
-}
-
-.central #price img {
-    height: 16px;
-}
-
-.restaurantgallery {
-    padding-top: 20px;
 }
 
 .userimage {
