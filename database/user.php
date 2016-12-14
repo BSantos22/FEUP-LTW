@@ -24,6 +24,14 @@ function getUserByUsername($db, $username) {
     return $stmt->fetch();
 }
 
+function getUserByEmail($db, $email) {
+    $query = "SELECT * FROM user WHERE email = ?";
+    $stmt = $db->prepare($query);
+    $stmt->execute(array($email));
+
+    return $stmt->fetch();
+}
+
 function createUser($db, $username, $name, $email, $password, $birthday, $city, $country, $status) {
     $query = "INSERT INTO user VALUES(?,?,?,?,?,?,?,?,?)";
     $stmt = $db->prepare($query);
@@ -42,7 +50,3 @@ function updateUserPhoto($dbh, $username, $photo){
 }
 
 ?>
-
-
-
-

@@ -131,6 +131,8 @@ $(document).ready(function() {
     var country = false;
     var type = false;
 
+    //aux functions
+
     function updateSbtBtn() {
       if(user && name && email && password && birthdate && city && country && type){
         $("#reg-btn").removeAttr("disabled");
@@ -142,11 +144,33 @@ $(document).ready(function() {
 
     };
 
+    function validUser(user){
+      console.log(user);
+      return false;
+    }
+
+    function validEmail(email){
+      console.log(email);
+      return false;
+    }
+    //main functions
+
     $("#reg-user").keyup(function() {
         if ($("#reg-user").val() == null || $("#reg-user").val() == ""){
             $("#reg-user").css("border", "1px solid #ccc");
             user = false;
         }else if (/^([A-Za-z0-9]*)$/.test($("#reg-user").val()) && /^\S/.test($("#reg-user").val())){
+            $("#reg-user").css("border", "2px solid #3fa246");
+            user = true;
+        }else{
+            $("#reg-user").css("border", "2px solid #c21212");
+            user = false;
+        }
+        updateSbtBtn();
+    });
+
+    $("#reg-user").keyup(function() {
+        if (!validUser($("#reg-user").val())){
             $("#reg-user").css("border", "2px solid #3fa246");
             user = true;
         }else{
@@ -174,7 +198,7 @@ $(document).ready(function() {
         if ($("#reg-mail").val() == null || $("#reg-mail").val() == ""){
             $("#reg-mail").css("border", "1px solid #ccc");
             email = false;
-        }else if (	/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test($("#reg-mail").val())){
+        }else if (!validEmail($("#reg-mail").val()) &&	/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test($("#reg-mail").val())){
             $("#reg-mail").css("border", "2px solid #3fa246");
             email = true;
         }else{
