@@ -3,6 +3,7 @@
     
     require_once('../database/connection.php');
     require_once('../database/restaurant.php');
+    require_once('../database/restaurantphoto.php');
     require_once('../database/review.php');
     require_once('../database/user.php');
 
@@ -13,6 +14,7 @@
             $user = getUserByUsername($db, $_SESSION['username']);
 
         $restaurant = getRestaurantById($db, $id);
+        $restaurantPhotos = getRestaurantPhotoByRestaurant($db, $id);
         $reviews = getReviewsByRestaurant($db, $id);
     } catch (PDOException $e) {
         die($e->getMessage());

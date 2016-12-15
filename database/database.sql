@@ -86,6 +86,10 @@ INSERT INTO owner VALUES('mgomes', 1);
 INSERT INTO owner VALUES('joseoliv', 2);
 INSERT INTO owner VALUES('bsantos', 3);
 
+INSERT INTO photo_restaurant VALUES (NULL, 1, 'defaultphoto.png');
+INSERT INTO photo_restaurant VALUES (NULL, 2, 'defaultphoto.png');
+INSERT INTO photo_restaurant VALUES (NULL, 3, 'defaultphoto.png');
+
 INSERT INTO review VALUES(1, 'mbrandao', 1, 5, 'Muito bom atendimento!');
 INSERT INTO review VALUES(2, 'ruibento', 1, 4.5, 'Pratos com muito boa apresentação');
 INSERT INTO review VALUES(3, 'mbrandao', 2, 3, 'Bom atendimento!');

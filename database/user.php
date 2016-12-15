@@ -44,8 +44,8 @@ function updateUser($db, $username, $name, $birthday, $email, $city, $country){
 }
 
 
-function updateUserPhoto($dbh, $username, $photo){
-    $stmt = $dbh->prepare('UPDATE user SET photopath = ? WHERE username = ?');
+function updateUserPhoto($db, $username, $photo){
+    $stmt = $db->prepare('UPDATE user SET photopath = ? WHERE username = ?');
     $stmt->execute(array($photo, $username));
 }
 

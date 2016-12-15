@@ -2,7 +2,8 @@ $(document).ready(function() {
 
     $('.bxslider').bxSlider({
         auto: true,
-        slideWidth: 700
+        slideWidth: 700,
+        adaptiveHeight: true
     });
 
     // Unlocks submit button only if a file has been chosen
@@ -84,8 +85,6 @@ $(document).ready(function() {
     // Show restaurant location using google maps
     $(function() {
         if ($('div').hasClass('restaurant')) {
-
-            console.log('sim');
             $.ajax({
                 url: "../scripts/get_map_info.php",
                 type: "get",
@@ -93,7 +92,6 @@ $(document).ready(function() {
                     id: getUrlParameterByName('id')
                 },
                 success: function(data) {
-                    console.log('sim');
                     var restaurantAddress = formatAddress(data);
 
                     $('#restaurantmap')
