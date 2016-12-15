@@ -208,6 +208,11 @@ header #butt-search {
     cursor: pointer;
 }
 
+header #add-field-button {
+    height: 30px;
+}
+
+
 header #butt-search:hover {
     background-color: #a72230;
 }

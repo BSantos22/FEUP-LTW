@@ -383,30 +383,73 @@ $(document).ready(function() {
 
     var max_fields = 4;
     var x = 0;
-    $(".add-field-button").click(function() {
+    $("#add-field-button").click(function() {
         if (x < max_fields) {
             x++;
-            $(".advanced-search").append('' +
-                '<div>' +
-                '<select name="filter-type[]" required id="filter-type">' +
+            $("#advanced-search").append('' +
+                '<div class="filter">' +
+                '<select name="filter-type[]" required id="filter-type" class="filter-type">' +
                 '<option value="rating">Rating</option>' +
                 '<option value="price">Preço</option>' +
                 '</select>' +
-                '<select name="filter-operator[]" required id="filter-operator">' +
+                '<select name="filter-operator[]" required id="filter-operator" class="filter-operator">' +
                 '<option value="equal">=</option>' +
                 '<option value="bigger">></option>' +
                 '<option value="smaller"><</option>' +
                 '<option value="bigger-equal">>=</option>' +
                 '<option value="smaller-equal"><=</option>' +
                 '</select>' +
-                '<input type="number" min="1" max="5" name="amount[]" id="amount"/>' +
-                '<button class="remove-filter" type="button">Remove</button>' +
+                '<input type="number" min="1" max="5" name="amount[]" id="amount" class="amount"/>' +
+                '<button class="remove-filter" type="button"><i class="fa fa-times" aria-hidden="true"></button>' +
                 '</div>');
         }
 
+        $(".filter").css({
+            'display': 'inline-block',
+            'vertical-align': 'top',
+            'text-align': 'center',
+            'font-family': 'Source Sans',
+            'margin': '0px 10px 0px 10px'});
+        $(".filter-type").css({
+            'height': '30px',
+            'width': '80px',
+            'padding': '5px 5px 5px 5px',
+            'margin': '0px'});
+        $(".filter-operator").css({
+            'height': '30px',
+            'width': '40px',
+            'padding': '2px 2px 2px 2px',
+            'margin': '0px'});
+        $(".amount").css({
+            'height': '30px',
+            'width': '50px',
+            'padding': '10px 10px 10px 10px',
+            'margin': '0px'});
+        $(".remove-filter").css({
+            'background-color': '#cf2230',
+            'color': '#ffffff',
+            'font-size': '10px',
+            'height': '20px',
+            'width': '20px',
+            'vertical-align': 'middle',
+            'border-width': '0px',
+            'border-radius': '3px',
+            'margin': '0px 0px 0px 5px'});
+        $(".remove-filter").hover(
+            function(){
+                $(this).css({'background-color': '#a72230', 'cursor': 'pointer'});},
+            function() {
+                $(this).css({'background-color': '#cf2230'})});
+
+/*
+        .close:hover,
+    .close:focus {
+        color: #a72230;
+        cursor: pointer;
+    }*/
     });
 
-    $(".advanced-search").on("click", ".remove-filter", function() { //user click on remove text
+    $("#advanced-search").on("click", ".remove-filter", function() { //user click on remove text
         $(this).parent('div').remove();
         x--;
     })
