@@ -140,3 +140,31 @@
 textarea {
     font-family: 'Source Sans';
 }
+
+.textreview {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+}
+
+.reply {
+    display: table;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.reply form {
+    width: 100%;
+}
+
+.reply .replytext {
+    display: table-cell;
+    width: 80%;
+    padding: 9px 12px;
+}
+
+#submitreply {
+    padding-top: 10px;
+    display: table-cell;
+    float: right;
+    vertical-align: middle;
+}

@@ -105,14 +105,26 @@
                 </div>
                 <?php foreach ($reviews as $review) { ?>
                     <article class="review box">
-                        <h4><?= $review['idReviewer'] ?></h4><br>
-                        <div class="rating">
-                            <?php for ($i = 0; $i < intval($review['rating']); $i++) { ?>
-                                <img src="../res/images/star.png">
-                            <?php } ?>
+                        <div class="textreview">
+                            <h4><?= $review['idReviewer'] ?></h4><br>
+                            <div class="rating">
+                                <?php for ($i = 0; $i < intval($review['rating']); $i++) { ?>
+                                    <img src="../res/images/star.png">
+                                <?php } ?>
+                            </div>
+                            <br>
+                            <p><?= $review['text'] ?></p>
                         </div>
-                        <br>
-                        <p><?= $review['text'] ?></p>
+                        <?php if (isset($_SESSION['username']) && ($user['status']=='owner') && ($restaurant['idOwner'] == $user['username'])){ ?>
+                            <div class="reply">
+                                <form class="modal-content animate" action="../actions/add_reply.php" method="post">
+                                    <input type="text" class="replytext" name="inputreview" placeholder="Escreva uma resposta ao comentário...">
+                                    <div id="submitreply">
+                                        <input type="submit" class="btn" id="btn-reply" value="Responder" title="Responder">
+                                    </div>
+                                </form>
+                            </div>
+                        <?php } ?>
                     </article>
                 <?php } ?>
             </section>
