@@ -1,9 +1,10 @@
 <?php
 function getReviewsByRestaurant($db, $id){
-  $stmt = $db->prepare('SELECT * FROM review WHERE idRestaurant = ?');
-  $stmt->execute(array($id));
+    $stmt = $db->prepare('SELECT review.id AS reviewID, review.idReviewer AS idReviewer, review.rating AS rating, review.text AS text, user.name AS username, user.photopath AS usernamephotopath
+                          FROM review LEFT JOIN user ON review.idReviewer = user.username WHERE idRestaurant = ?');
+    $stmt->execute(array($id));
 
-  return $stmt->fetchAll();
+    return $stmt->fetchAll();
 }
 
 function getReviewsByReviewer($db, $username){

@@ -1,9 +1,10 @@
 <?php
     include_once('../database/connection.php');
-    include_once('../database/reply.php');
+    include_once('../database/review.php');
 
-    insertReply($db, $_POST['idReview'], $_POST['idUser'], $_POST['content']);
+    insertReview($db, $_POST['idUsername'], $_POST['idRestaurant'], $_POST['rating'], $_POST['text']);
 
     $location = "../pages/restaurant.php?id=" . $_POST['idRestaurant'];
+
     header("Location: " . $location);
 ?>

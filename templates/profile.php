@@ -67,31 +67,52 @@
             </section>
         <?php } ?>
 
-        <section class="myreviews">
-            <div class="sectiondescription">
-                <h3>Minhas Avaliações
-                    <?php if (sizeof($reviews) > 0) { ?>
-                        <span class="number"><?= sizeof($reviews) ?></span>
-                    <?php } else { ?>
-                        <span class="zero"><?= sizeof($reviews) ?></span>
-                    <?php } ?>
-                </h3>
-                <p>Relembre as suas avaliações</p>
-            </div>
-            <?php foreach ($reviews as $review) { ?>
-                <article class="review box">
-                    <a href="../pages/restaurant.php?id=<?= $review['restaurantid'] ?>">
-                        <h4><?= $review['restaurantname'] ?></h4></a><br>
-                    <div class="rating">
-                        <?php for ($i = 0; $i < intval($review['rating']); $i++) { ?>
-                            <img src="../res/images/star.png">
+        <?php if($user['status']=='reviewer'){ ?>
+            <section class="myreviews">
+                <div class="sectiondescription">
+                    <h3>Minhas Avaliações
+                        <?php if (sizeof($reviews) > 0) { ?>
+                            <span class="number"><?= sizeof($reviews) ?></span>
+                        <?php } else { ?>
+                            <span class="zero"><?= sizeof($reviews) ?></span>
                         <?php } ?>
-                    </div>
-                    <br>
-                    <p><?= $review['text'] ?></p>
-                </article>
-            <?php } ?>
-        </section>
+                    </h3>
+                    <p>Relembre as suas avaliações</p>
+                </div>
+                <?php foreach ($reviews as $review) { ?>
+                    <article class="review box">
+                        <a href="../pages/restaurant.php?id=<?= $review['restaurantid'] ?>">
+                            <h4><?= $review['restaurantname'] ?></h4></a><br>
+                        <div class="rating">
+                            <?php for ($i = 0; $i < intval($review['rating']); $i++) { ?>
+                                <img src="../res/images/star.png">
+                            <?php } ?>
+                        </div>
+                        <br>
+                        <p><?= $review['text'] ?></p>
+                    </article>
+                <?php } ?>
+            </section>
+
+        <?php } else if ($user['status']=='owner'){ ?>
+            <section class="myreplys">
+                <div class="sectiondescription">
+                    <h3>Minhas Respostas
+                        <?php if (sizeof($replys) > 0) { ?>
+                            <span class="number"><?= sizeof($replys) ?></span>
+                        <?php } else { ?>
+                            <span class="zero"><?= sizeof($replys) ?></span>
+                        <?php } ?>
+                    </h3>
+                    <p>Relembre as suas respostas</p>
+                </div>
+                <?php foreach ($replys as $reply) { ?>
+                    <article class="replyprofile box">
+                        <p><?= $reply['content'] ?></p>
+                    </article>
+                <?php } ?>
+            </section>
+        <?php } ?>
     </div>
 </section>
 

@@ -106,18 +106,27 @@
                 <?php foreach ($reviews as $review) { ?>
                     <article class="review box">
                         <div class="textreview">
-                            <h4><?= $review['idReviewer'] ?></h4><br>
-                            <div class="rating">
-                                <?php for ($i = 0; $i < intval($review['rating']); $i++) { ?>
-                                    <img src="../res/images/star.png">
-                                <?php } ?>
+                            <div class="userimage">
+                                <img src="../uploads/users/<?= $review['usernamephotopath'] ?>">
                             </div>
-                            <br>
-                            <p><?= $review['text'] ?></p>
+                            <h4><?= $review['idReviewer'] ?></h4><br>
+                            <div class="reviewdescription">
+                                <div class="rating">
+                                    <?php for ($i = 0; $i < intval($review['rating']); $i++) { ?>
+                                        <img src="../res/images/star.png">
+                                    <?php } ?>
+                                </div>
+                                <br>
+                                <br>
+                                <p><?= $review['text'] ?></p>
+                            </div>
                         </div>
                         <?php if (isset($_SESSION['username']) && ($user['status']=='owner') && ($restaurant['idOwner'] == $user['username'])){ ?>
                             <div class="reply">
                                 <form class="modal-content animate" action="../actions/add_reply.php" method="post">
+                                    <input type="hidden" name="idUsername" value="<?= $_SESSION['username'] ?>">
+                                    <input type="hidden" name="idReview" value="<?= $review['reviewID']?>">
+                                    <input type="hidden" name="idRestaurant" value="<?= $restaurant['id'] ?>">
                                     <input type="text" class="replytext" name="inputreview" placeholder="Escreva uma resposta ao comentário...">
                                     <div id="submitreply">
                                         <input type="submit" class="btn" id="btn-reply" value="Responder" title="Responder">

@@ -143,10 +143,10 @@ textarea {
 
 .textreview {
     padding-bottom: 30px;
-    border-bottom: 1px solid #ccc;
 }
 
 .reply {
+    border-top: 1px solid #ccc;
     display: table;
     padding-top: 10px;
     width: 100%;
@@ -167,4 +167,8 @@ textarea {
     display: table-cell;
     float: right;
     vertical-align: middle;
+}
+
+.reviewdescription {
+    display: inline-block;
 }
