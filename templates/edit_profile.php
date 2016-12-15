@@ -50,6 +50,7 @@
                             <td class="table-title">E-mail</td>
                         </tr>
                         <tr>
+                            <input type="hidden" id="logged-user-email" value="<?= $user['email'] ?>" />
                             <td><input type="email" value="<?= $user['email'] ?>" name="email" required  id="edit-user-email"></td>
                         </tr>
                         <tr>

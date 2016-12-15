@@ -476,6 +476,43 @@ $(document).ready(function() {
         updateUserEditBtn();
     });
 
+    function emailEditAv(mail) {
+        var tempEmail = mail;
+        $.ajax({
+            url: "../scripts/valid_email.php",
+            type: "get",
+            data: {
+                email: tempEmail
+            },
+            success: function(temp) {
+                if ($("#edit-user-email").val() == null || $("#edit-user-email").val() == "") {
+                    $("#edit-user-email").css("border", "1px solid #ccc");
+                    bueEmail = false;
+                } else if (temp == "true" && /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test($("#edit-user-email").val())) {
+                    $("#edit-user-email").css("border", "1px solid #3fa246");
+                    bueEmail = true;
+                } else {
+                    $("#edit-user-email").css("border", "1px solid #c21212");
+                    bueEmail = false;
+                }
+            },
+            async: false
+
+        });
+    }
+
+    $("#edit-user-email").keyup(function() {
+        if ($("#edit-user-email").val() == $("#logged-user-email").val()) {
+            $("#edit-user-email").css("border", "1px solid #3fa246");
+            bueEmail = true;
+        }
+        else {
+            emailEditAv($("#edit-user-email").val());
+        }
+        updateUserEditBtn();
+    });
+
+
     function isPassU(pass) {
         var tempPass = pass.val();
         $.ajax({
@@ -675,7 +712,6 @@ $(document).ready(function() {
             });
         x--;
     })
-
 });
 
 /* $.ajax({
