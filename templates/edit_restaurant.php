@@ -78,7 +78,7 @@
                             <td class="table-title">Palavra-passe</td>
                         </tr>
                         <tr>
-                            <td><input type="time" name="closetime" required></td>
+                            <td><input type="password" name="password" required></td>
                         </tr>
                         <tr>
                             <td><input type="submit" class="btn" name="submiteditretaurant"></td>
