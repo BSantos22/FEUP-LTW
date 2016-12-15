@@ -7,10 +7,10 @@ $(document).ready(function() {
     });
 
     // Unlocks submit button only if a file has been chosen
-    $('input:file').change(function(){
+    $('input:file').change(function() {
         if ($(this).val()) {
-            $('input:submit').attr('disabled',false);
-            $('input:submit').css('background-color','#cf2230');
+            $('input:submit').attr('disabled', false);
+            $('input:submit').css('background-color', '#cf2230');
         }
     });
 
@@ -115,8 +115,7 @@ $(document).ready(function() {
                 $("#btn-createreview").toggle();
                 $("#addreview").toggle("show");
                 $("#btn-createreviewcancel").toggle("show");
-            }
-            else
+            } else
                 $("#modal-login").show();
 
         });
@@ -129,8 +128,7 @@ $(document).ready(function() {
                 $("#btn-createreview").toggle();
                 $("#addreview").toggle("show");
                 $("#btn-createreviewcancel").toggle("show");
-            }
-            else
+            } else
                 $("#modal-login").show();
 
         });
@@ -168,13 +166,13 @@ $(document).ready(function() {
     //aux functions
 
     function updateSbtBtn() {
-      if(bUser && bName && bEmail && bPassword && bBirthdate && bCity && bCountry && bType){
-        $("#reg-btn").removeAttr("disabled");
-          $("#reg-btn").css("background-color", "#c21212");
-      }else {
-        $("#reg-btn").css("background-color","#8e8e8e");
-        $("#reg-btn").attr("disabled", true);
-      }
+        if (bUser && bName && bEmail && bPassword && bBirthdate && bCity && bCountry && bType) {
+            $("#reg-btn").removeAttr("disabled");
+            $("#reg-btn").css("background-color", "#c21212");
+        } else {
+            $("#reg-btn").css("background-color", "#8e8e8e");
+            $("#reg-btn").attr("disabled", true);
+        }
 
     };
 
@@ -227,6 +225,33 @@ $(document).ready(function() {
 
         });
     }
+
+    function dateInRange(date) {
+
+        if (!/^\d{4}\-\d{1,2}\-\d{1,2}$/.test(date))
+            return false;
+        // Parse the date parts to integers
+        var temp = date.split("-");
+        var tempDate = new Date();
+        var day = parseInt(temp[2]);
+        var month = parseInt(temp[1]);
+        var year = parseInt(temp[0]);
+        if ((tempDate.getYear() + 1900) - year > 18) {
+            return true;
+        } else if ((tempDate.getYear() + 1900) - year == 18) {
+            if (((tempDate.getMonth() + 1) - month) > 0)
+                return true;
+            else if (((tempDate.getMonth() + 1) - month) == 0) {
+                if (tempDate.getDate() - day >= 0)
+                    return true;
+                else
+                    return false;
+            }
+        } else {
+          return false
+        }
+    }
+
     //main functions
 
     $("#reg-user").keyup(function() {
@@ -235,13 +260,13 @@ $(document).ready(function() {
     });
 
     $("#reg-name").keyup(function() {
-        if ($("#reg-name").val() == null || $("#reg-name").val() == ""){
+        if ($("#reg-name").val() == null || $("#reg-name").val() == "") {
             $("#reg-name").css("border", "1px solid #ccc");
             bName = false;
-        }else if (/^([^0-9]*)$/.test($("#reg-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#reg-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#reg-user").val())){
+        } else if (/^([^0-9]*)$/.test($("#reg-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#reg-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#reg-user").val())) {
             $("#reg-name").css("border", "1px solid #3fa246");
             bName = true;
-        }else{
+        } else {
             $("#reg-name").css("border", "1px solid #c21212");
             bName = false;
         }
@@ -254,14 +279,14 @@ $(document).ready(function() {
     });
 
     $("#reg-pass2").blur(function() {
-        if ($("#reg-pass2").val() == null || $("#reg-pass2").val() == ""){
+        if ($("#reg-pass2").val() == null || $("#reg-pass2").val() == "") {
             $("#reg-pass2").css("border", "1px solid #ccc");
             bPassword = false;
-        }else if($("#reg-pass2").val() == $("#reg-pass1").val()){
+        } else if ($("#reg-pass2").val() == $("#reg-pass1").val()) {
             $("#reg-pass1").css("border", "1px solid #3fa246");
             $("#reg-pass2").css("border", "1px solid #3fa246");
             bPassword = true;
-        }else{
+        } else {
             $("#reg-pass1").css("border", "1px solid #c21212");
             $("#reg-pass2").css("border", "1px solid #c21212");
             bPassword = false;
@@ -276,33 +301,40 @@ $(document).ready(function() {
     $("#reg-bdate").blur(function() {
         if ($("#reg-bdate").val() == "") {
             document.getElementById("reg-bdate").type = "text";
+            $("#reg-bdate").css("border", "1px solid #ccc");
             bBirthdate = false;
-        }else{
-          $("#reg-bdate").css("border", "1px solid #3fa246");
-          bBirthdate = true;
+        } else if (dateInRange($("#reg-bdate").val())) {
+            $("#reg-bdate").css("border", "1px solid #3fa246");
+            bBirthdate = true;
+        } else {
+            $("#reg-bdate").css("border", "1px solid #c21212");
+            bBirthdate = false;
         }
         updateSbtBtn();
     });
 
     $("#reg-bdate").keyup(function() {
-        if ($("#reg-bdate").val() == null || $("#reg-bdate").val() == ""){
+        if ($("#reg-bdate").val() == null || $("#reg-bdate").val() == "") {
             $("#reg-bdate").css("border", "1px solid #ccc");
             bBirthdate = false;
-        }else{
-          $("#reg-bdate").css("border", "1px solid #3fa246");
-          bBirthdate = true;
+        } else if (dateInRange($("#reg-bdate").val())) {
+            $("#reg-bdate").css("border", "1px solid #3fa246");
+            bBirthdate = true;
+        } else {
+            $("#reg-bdate").css("border", "1px solid #c21212");
+            bBirthdate = false;
         }
         updateSbtBtn();
     });
 
     $("#city").keyup(function() {
-        if ($("#city").val() == null || $("#city").val() == ""){
+        if ($("#city").val() == null || $("#city").val() == "") {
             $("#city").css("border", "1px solid #ccc");
             bCity = false;
-        }else if (/^([^0-9]*)$/.test($("#city").val())){
+        } else if (/^([^0-9]*)$/.test($("#city").val())) {
             $("#city").css("border", "1px solid #3fa246");
             bCity = true;
-        }else{
+        } else {
             $("#city").css("border", "1px solid #c21212");
             bCity = false;
         }
@@ -310,31 +342,31 @@ $(document).ready(function() {
     });
 
     $(".country").click(function() {
-        if ($(".country").val() == null || $(".country").val() == ""){
+        if ($(".country").val() == null || $(".country").val() == "") {
             $(".country").css("color", "#adadad");
             bCountry = false;
-        }else{
-          $(".country").css("color", "#000");
-          $(".country").css("border", "1px solid #3fa246");
-          bCountry = true;
+        } else {
+            $(".country").css("color", "#000");
+            $(".country").css("border", "1px solid #3fa246");
+            bCountry = true;
         }
         updateSbtBtn();
     });
 
     $("#sel-ut").click(function() {
-        if ($("#sel-ut").val() == null || $("#sel-ut").val() == ""){
+        if ($("#sel-ut").val() == null || $("#sel-ut").val() == "") {
             $("#sel-ut").css("color", "#adadad");
             bType = false;
-        }else{
-          $("#sel-ut").css("color", "#000");
-          $("#sel-ut").css("border", "1px solid #3fa246");
-          bType = true;
+        } else {
+            $("#sel-ut").css("color", "#000");
+            $("#sel-ut").css("border", "1px solid #3fa246");
+            bType = true;
         }
         updateSbtBtn();
     });
 
     $("#search-type").change(function() {
-        switch($("#search-type").prop('selectedIndex')) {
+        switch ($("#search-type").prop('selectedIndex')) {
             case 0:
                 $("#searchbar").attr("placeholder", "Procura por restaurante...");
                 break;
@@ -356,25 +388,25 @@ $(document).ready(function() {
             x++;
             $(".advanced-search").append('' +
                 '<div>' +
-                    '<select name="filter-type[]" required id="filter-type">' +
-                        '<option value="rating">Rating</option>' +
-                        '<option value="price">Preço</option>' +
-                    '</select>' +
-                    '<select name="filter-operator[]" required id="filter-operator">' +
-                        '<option value="equal">=</option>' +
-                        '<option value="bigger">></option>' +
-                        '<option value="smaller"><</option>' +
-                        '<option value="bigger-equal">>=</option>' +
-                        '<option value="smaller-equal"><=</option>' +
-                    '</select>' +
-                    '<input type="number" min="1" max="5" name="amount[]" id="amount"/>' +
-                    '<button class="remove-filter" type="button">Remove</button>' +
+                '<select name="filter-type[]" required id="filter-type">' +
+                '<option value="rating">Rating</option>' +
+                '<option value="price">Preço</option>' +
+                '</select>' +
+                '<select name="filter-operator[]" required id="filter-operator">' +
+                '<option value="equal">=</option>' +
+                '<option value="bigger">></option>' +
+                '<option value="smaller"><</option>' +
+                '<option value="bigger-equal">>=</option>' +
+                '<option value="smaller-equal"><=</option>' +
+                '</select>' +
+                '<input type="number" min="1" max="5" name="amount[]" id="amount"/>' +
+                '<button class="remove-filter" type="button">Remove</button>' +
                 '</div>');
         }
 
     });
 
-    $(".advanced-search").on("click",".remove-filter", function(){ //user click on remove text
+    $(".advanced-search").on("click", ".remove-filter", function() { //user click on remove text
         $(this).parent('div').remove();
         x--;
     })
