@@ -132,7 +132,7 @@
                             </tr>
 
                             <?php if ($review['idOwner'] == null) {
-                                if ($user['username'] == $restaurant['idOwner']) { ?>
+                                if (isset($_SESSION['username']) && $user['username'] == $restaurant['idOwner']) { ?>
                                     <tr>
                                         <td rowspan="2"></td>
                                         <td class="replyrow userreviewid">

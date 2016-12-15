@@ -8,17 +8,20 @@
     require_once('../database/reply.php');
 
     try {
-        if (isset($_SESSION['username']))
+        if (isset($_SESSION['username'])) {
             $user = getUserByUsername($db, $_SESSION['username']);
 
-        if ($user['status'] == 'owner') {
-            $restaurants = getRestaurantByOwner($db, $_SESSION['username']);
-            $replys = getReplyByUser($db, $_SESSION['username']);
-        }
+            if ($user['status'] == 'owner') {
+                $restaurants = getRestaurantByOwner($db, $_SESSION['username']);
+                $replys = getReplyByUser($db, $_SESSION['username']);
+            }
 
-        if ($user['status'] == 'reviewer') {
-            $reviews = getReviewsByReviewer($db, $_SESSION['username']);
-        }
+            if ($user['status'] == 'reviewer') {
+                $reviews = getReviewsByReviewer($db, $_SESSION['username']);
+            }
+        } else
+            header('Location: ' . 'home.php');
+
 
     } catch (PDOException $e) {
         die($e->getMessage());

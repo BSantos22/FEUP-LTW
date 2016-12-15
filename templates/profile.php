@@ -106,6 +106,22 @@
                             <tr>
                                 <td colspan="2" class="comment"><p><?= $review['text'] ?></p></td>
                             </tr>
+
+                            <?php if ($review['idOwner'] != null) { ?>
+                                <tr>
+                                    <td rowspan="2"></td>
+                                    <td class="replyrow userreviewid">
+                                        <div class="reviewuserimage">
+                                            <img src="../uploads/users/<?= $review['ownerphotopath'] ?>">
+                                        </div>
+                                        <h4><?= $review['idOwner'] ?></h4>
+                                        <div class="btn btnowner">Proprietário</div>
+                                    </td>
+                                    <td class="comment replyrow replycontent">
+                                        <p><?= $review['replyContent'] ?></p>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </table>
                     </article>
                 <?php } ?>
@@ -152,6 +168,7 @@
                                         <img src="../uploads/users/<?= $user['photopath'] ?>">
                                     </div>
                                     <h4><?= $user['username'] ?></h4>
+                                    <div class="btn btnowner">Proprietário</div>
                                 </td>
                                 <td class="comment replyrow replycontent">
                                     <p><?= $reply['replyContent'] ?></p>
