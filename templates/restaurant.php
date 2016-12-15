@@ -109,7 +109,6 @@
                     </h3>
                 </div>
 
-
                 <?php foreach ($reviews as $review) { ?>
                     <article class="review box">
                         <table>
@@ -141,6 +140,7 @@
                                                 <img src="../uploads/users/<?= $user['photopath'] ?>">
                                             </div>
                                             <h4><?= $user['username'] ?></h4>
+                                            <div class="btn btnowner">Proprietário</div>
                                         </td>
                                         <td class="comment replyrow replycontent">
                                             <div class="reply">
@@ -164,7 +164,7 @@
                                             <img src="../uploads/users/<?= $review['ownerphotopath'] ?>">
                                         </div>
                                         <h4><?= $review['idOwner'] ?></h4>
-                                        <div class="btn">Proprietário</div>
+                                        <div class="btn btnowner">Proprietário</div>
                                     </td>
                                     <td class="comment replyrow replycontent">
                                         <p><?= $review['replyContent'] ?></p>

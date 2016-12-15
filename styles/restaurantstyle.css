@@ -148,11 +148,12 @@ textarea {
 .reply {
     display: table;
     width: 100%;
-    background-color: red;
+    background-color: #f3f3f3;
 }
 
 .reply form {
     width: 100%;
+    background-color: #f3f3f3;
 }
 
 .reply .replytext {
@@ -199,5 +200,10 @@ textarea {
 }
 
 .replycontent {
-    vertical-align: middle;
+    vertical-align: top;
+}
+
+.btnowner {
+    margin-top: 10px;
+    font-size: 12px;
 }
