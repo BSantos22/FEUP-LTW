@@ -399,9 +399,9 @@ $(document).ready(function() {
                 '<option value="bigger-equal">>=</option>' +
                 '<option value="smaller-equal"><=</option>' +
                 '</select>' +
-                '<input type="number" min="1" max="5" name="amount[]" id="amount" class="amount"/>' +
+                '<input type="number" min="1" name="amount[]" id="amount" class="amount"/>' +
                 '<button class="remove-filter" type="button"><i class="fa fa-times" aria-hidden="true"></button>' +
-                '</div>').appendTo("#advanced-search").css({'width': '0px', 'white-space': 'nowrap'}).hide().animate({width: '200px'}, 400);
+                '</div>').appendTo("#advanced-search").css({'width': '0px', 'white-space': 'nowrap'}).hide().animate({width: '250px'}, 400);
         }
 
         $(".filter").css({
@@ -419,14 +419,14 @@ $(document).ready(function() {
             'background-color': 'rgba(255, 255, 255, 0.85098)'});
         $(".filter-operator").css({
             'height': '30px',
-            'width': '40px',
+            'width': '60px',
             'padding': '2px 2px 2px 2px',
             'margin': '0px',
             'color': '#000',
             'background-color': 'rgba(255, 255, 255, 0.85098)'});
         $(".amount").css({
             'height': '30px',
-            'width': '50px',
+            'width': '80px',
             'padding': '10px 10px 10px 10px',
             'margin': '0px',
             'color': '#000',
