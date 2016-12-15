@@ -18,6 +18,7 @@
                 $result = getAllRestaurants($db);
             }
             else {
+                $_SESSION['search'] = $_GET['search'];
                 $result = searchRestaurantsByKeywords($db, $keywords, $_GET['search-type'], $filters);
             }
         }

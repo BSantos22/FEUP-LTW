@@ -91,7 +91,7 @@
                     <option value="category">Categoria</option>
                 </select>
 
-                <input type="text" name="search" value="" alt="Search Restaurants" placeholder="Procura por restaurante..." id="searchbar"/>
+                <input type="text" name="search" value="<?php echo($_SESSION['search']); ?>" alt="Search Restaurants" placeholder="Procura por restaurante..." id="searchbar"/>
                 <input type="submit" value="Procurar" id="butt-search">
 
                 <div id="advanced-search">
