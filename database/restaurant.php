@@ -40,36 +40,95 @@ function getRestaurantByOwner($db, $owner) {
     return $stmt->fetchAll();
 }
 
-function searchRestaurant($db, $parameter ,$keyword) {
+function searchRestaurant($db, $parameter ,$keyword, $filters) {
     $results = [];
     $word = "%{$keyword}%";
 
+    $query = 'SELECT * FROM restaurant WHERE ';
+    $n = 0;
+
     switch($parameter) {
         case "name":
-            $stmt = $db->prepare('SELECT * FROM restaurant WHERE name LIKE ?');
+            $query .= 'name LIKE ?';
+            $n = 1;
             break;
         case "street":
-            $stmt = $db->prepare('SELECT * FROM restaurant WHERE street LIKE ?');
+            $query .= 'street LIKE ?';
+            $n = 1;
             break;
         case "zipcode":
-            $stmt = $db->prepare('SELECT * FROM restaurant WHERE zipcode LIKE ?');
+            $query .= 'zipcode LIKE ?';
+            $n = 1;
             break;
         case "city":
-            $stmt = $db->prepare('SELECT * FROM restaurant WHERE city LIKE ?');
+            $query .= 'city LIKE ?';
+            $n = 1;
             break;
         case "country":
-            $stmt = $db->prepare('SELECT * FROM restaurant WHERE country LIKE ?');
+            $query .= 'country LIKE ?';
+            $n = 1;
             break;
         case "category":
-            $stmt = $db->prepare('SELECT * FROM restaurant WHERE category LIKE ?');
+            $query .= 'category LIKE ?';
+            $n = 1;
             break;
     }
 
+    $values = [];
+    foreach($filters as $filter) {
+        switch ($filter[0]) {
+            case "rating":
+                if ($n == 1) {
+                    $query .= ' AND ';
+                }
+                $query .= 'reviewersRating';
+                break;
+            case "price":
+                if ($n == 1) {
+                    $query .= ' AND ';
+                }
+                $query .= 'price';
+                break;
+        }
+
+        switch($filter[1]) {
+            case "equal":
+                $query .= ' = ?';
+                break;
+            case "bigger":
+                $query .= ' > ?';
+                break;
+            case "smaller":
+                $query .= ' < ?';
+                break;
+            case "bigger-equal":
+                $query .= ' >= ?';
+                break;
+            case "smaller-equal":
+                $query .= ' <= ?';
+                break;
+        }
+
+        array_push($values, $filter[2]);
+    }
+
+
+    $stmt = $db->prepare($query);
+
+    // Filter only search
+    if (strlen($keyword) == 0) {
+        $stmt->execute($values);
+        $results = $stmt->fetchAll();
+    }
+
+    // Keyword and filter search
     for ($i=1; $i<strlen($keyword); $i++) {
         $approximate_word = $word;
         $approximate_word[$i] = '_';
 
-        $stmt->execute(array($approximate_word));
+        $execute = array_merge(array($approximate_word), $values);
+
+        $stmt->execute($execute);
         $result = $stmt->fetchAll();
         $results = array_merge($results, $result);
     }
@@ -77,26 +136,36 @@ function searchRestaurant($db, $parameter ,$keyword) {
     return $results;
 }
 
-function searchRestaurantsByKeywords($db, $keywords, $type) {
+function searchRestaurantsByKeywords($db, $keywords, $type, $filters) {
     $entries = [];
     $final_results = [];
 
+    // Filter only search
+    if ($keywords[0] == null) {
+        $result = searchRestaurant($db, "", "", $filters);
+
+        foreach($result as $restaurant) {
+            add_entry($entries, $restaurant);
+        }
+    }
+
+    // Keyword and filter search
     foreach ($keywords as $value) {
         $result = [];
 
         switch($type) {
             case "restaurant":
-                $result = searchRestaurant($db, "name", $value);
+                $result = searchRestaurant($db, "name", $value, $filters);
                 break;
             case "location":
-                $result1 = searchRestaurant($db, "street", $value);
-                $result2 = searchRestaurant($db, "zipcode", $value);
-                $result3 = searchRestaurant($db, "city", $value);
-                $result4 = searchRestaurant($db, "country", $value);
+                $result1 = searchRestaurant($db, "street", $value, $filters);
+                $result2 = searchRestaurant($db, "zipcode", $value, $filters);
+                $result3 = searchRestaurant($db, "city", $value, $filters);
+                $result4 = searchRestaurant($db, "country", $value, $filters);
                 $result = array_merge($result1, $result2, $result3, $result4);
                 break;
             case "category":
-                $result = searchRestaurant($db, "category", $value);
+                $result = searchRestaurant($db, "category", $value, $filters);
                 break;
         }
 

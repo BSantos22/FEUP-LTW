@@ -81,6 +81,10 @@
 
                 <input type="text" name="search" value="" alt="Search Restaurants" placeholder="Procura por restaurante..." id="searchbar"/>
                 <input type="submit" value="Procurar" id="butt-search">
+
+                <div class="advanced-search">
+                    <button class="add-field-button" type="button">Add Filter</button>
+                </div>
             </form>
         </div>
     </section>

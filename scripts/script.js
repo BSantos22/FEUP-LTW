@@ -349,6 +349,36 @@ $(document).ready(function() {
     });
 
 
+    var max_fields = 4;
+    var x = 0;
+    $(".add-field-button").click(function() {
+        if (x < max_fields) {
+            x++;
+            $(".advanced-search").append('' +
+                '<div>' +
+                    '<select name="filter-type[]" required id="filter-type">' +
+                        '<option value="rating">Rating</option>' +
+                        '<option value="price">Preço</option>' +
+                    '</select>' +
+                    '<select name="filter-operator[]" required id="filter-operator">' +
+                        '<option value="equal">=</option>' +
+                        '<option value="bigger">></option>' +
+                        '<option value="smaller"><</option>' +
+                        '<option value="bigger-equal">>=</option>' +
+                        '<option value="smaller-equal"><=</option>' +
+                    '</select>' +
+                    '<input type="number" min="1" max="5" name="amount[]" id="amount"/>' +
+                    '<button class="remove-filter" type="button">Remove</button>' +
+                '</div>');
+        }
+
+    });
+
+    $(".advanced-search").on("click",".remove-filter", function(){ //user click on remove text
+        $(this).parent('div').remove();
+        x--;
+    })
+
 });
 
 /* $.ajax({
