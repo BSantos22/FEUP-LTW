@@ -82,12 +82,14 @@ function searchRestaurant($db, $parameter ,$keyword, $filters) {
                     $query .= ' AND ';
                 }
                 $query .= 'CAST(reviewersRating AS INT)';
+                $n = 1;
                 break;
             case "price":
                 if ($n == 1) {
                     $query .= ' AND ';
                 }
                 $query .= 'CAST(price AS INT)';
+                $n = 1;
                 break;
         }
 
