@@ -178,39 +178,59 @@ $(document).ready(function() {
 
     };
 
-    function validUser(user){
-      console.log(user);
-      return false;
+    function userAv(user) {
+        var tempUser = user;
+        $.ajax({
+            url: "../scripts/valid_user.php",
+            type: "get",
+            data: {
+                username: tempUser
+            },
+            success: function(temp) {
+                if ($("#reg-user").val() == null || $("#reg-user").val() == "") {
+                    bUser = false;
+                    $("#reg-user").css("border", "1px solid #ccc");
+                } else if (temp == "true" && /^([A-Za-z0-9]*)$/.test($("#reg-user").val()) && /^\S/.test($("#reg-user").val())) {
+                    bUser = true;
+                    $("#reg-user").css("border", "1px solid #3fa246");
+                } else {
+                    bUser = false;
+                    $("#reg-user").css("border", "1px solid #c21212");
+                }
+            },
+            async: false
+        });
     }
 
-    function validEmail(email){
-      console.log(email);
-      return false;
+
+    function emailAv(mail) {
+        var tempEmail = mail;
+        $.ajax({
+            url: "../scripts/valid_email.php",
+            type: "get",
+            data: {
+                email: tempEmail
+            },
+            success: function(temp) {
+                if ($("#reg-mail").val() == null || $("#reg-mail").val() == "") {
+                    $("#reg-mail").css("border", "1px solid #ccc");
+                    bEmail = false;
+                } else if (temp == "true" && /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test($("#reg-mail").val())) {
+                    $("#reg-mail").css("border", "1px solid #3fa246");
+                    bEmail = true;
+                } else {
+                    $("#reg-mail").css("border", "1px solid #c21212");
+                    bEmail = false;
+                }
+            },
+            async: false
+
+        });
     }
     //main functions
 
     $("#reg-user").keyup(function() {
-        if ($("#reg-user").val() == null || $("#reg-user").val() == ""){
-            $("#reg-user").css("border", "1px solid #ccc");
-            bUser = false;
-        }else if (/^([A-Za-z0-9]*)$/.test($("#reg-user").val()) && /^\S/.test($("#reg-user").val())){
-            $("#reg-user").css("border", "2px solid #3fa246");
-            bUser = true;
-        }else{
-            $("#reg-user").css("border", "2px solid #c21212");
-            bUser = false;
-        }
-        updateSbtBtn();
-    });
-
-    $("#reg-user").keyup(function() {
-        if (!validUser($("#reg-user").val())){
-            $("#reg-user").css("border", "2px solid #3fa246");
-            bUser = true;
-        }else{
-            $("#reg-user").css("border", "2px solid #c21212");
-            bUser = false;
-        }
+        userAv($("#reg-user").val());
         updateSbtBtn();
     });
 
@@ -219,26 +239,17 @@ $(document).ready(function() {
             $("#reg-name").css("border", "1px solid #ccc");
             bName = false;
         }else if (/^([^0-9]*)$/.test($("#reg-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#reg-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#reg-user").val())){
-            $("#reg-name").css("border", "2px solid #3fa246");
+            $("#reg-name").css("border", "1px solid #3fa246");
             bName = true;
         }else{
-            $("#reg-name").css("border", "2px solid #c21212");
+            $("#reg-name").css("border", "1px solid #c21212");
             bName = false;
         }
         updateSbtBtn();
     });
 
-    $("#reg-mail").blur(function() {
-        if ($("#reg-mail").val() == null || $("#reg-mail").val() == ""){
-            $("#reg-mail").css("border", "1px solid #ccc");
-            bEmail = false;
-        }else if (!validEmail($("#reg-mail").val()) &&	/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test($("#reg-mail").val())){
-            $("#reg-mail").css("border", "2px solid #3fa246");
-            bEmail = true;
-        }else{
-            $("#reg-mail").css("border", "2px solid #c21212");
-            bEmail = false;
-        }
+    $("#reg-mail").keyup(function() {
+        emailAv($("#reg-mail").val());
         updateSbtBtn();
     });
 
@@ -247,12 +258,12 @@ $(document).ready(function() {
             $("#reg-pass2").css("border", "1px solid #ccc");
             bPassword = false;
         }else if($("#reg-pass2").val() == $("#reg-pass1").val()){
-            $("#reg-pass1").css("border", "2px solid #3fa246");
-            $("#reg-pass2").css("border", "2px solid #3fa246");
+            $("#reg-pass1").css("border", "1px solid #3fa246");
+            $("#reg-pass2").css("border", "1px solid #3fa246");
             bPassword = true;
         }else{
-            $("#reg-pass1").css("border", "2px solid #c21212");
-            $("#reg-pass2").css("border", "2px solid #c21212");
+            $("#reg-pass1").css("border", "1px solid #c21212");
+            $("#reg-pass2").css("border", "1px solid #c21212");
             bPassword = false;
         }
         updateSbtBtn();
@@ -267,7 +278,7 @@ $(document).ready(function() {
             document.getElementById("reg-bdate").type = "text";
             bBirthdate = false;
         }else{
-          $("#reg-bdate").css("border", "2px solid #3fa246");
+          $("#reg-bdate").css("border", "1px solid #3fa246");
           bBirthdate = true;
         }
         updateSbtBtn();
@@ -278,7 +289,7 @@ $(document).ready(function() {
             $("#reg-bdate").css("border", "1px solid #ccc");
             bBirthdate = false;
         }else{
-          $("#reg-bdate").css("border", "2px solid #3fa246");
+          $("#reg-bdate").css("border", "1px solid #3fa246");
           bBirthdate = true;
         }
         updateSbtBtn();
@@ -289,10 +300,10 @@ $(document).ready(function() {
             $("#city").css("border", "1px solid #ccc");
             bCity = false;
         }else if (/^([^0-9]*)$/.test($("#city").val())){
-            $("#city").css("border", "2px solid #3fa246");
+            $("#city").css("border", "1px solid #3fa246");
             bCity = true;
         }else{
-            $("#city").css("border", "2px solid #c21212");
+            $("#city").css("border", "1px solid #c21212");
             bCity = false;
         }
         updateSbtBtn();
@@ -304,7 +315,7 @@ $(document).ready(function() {
             bCountry = false;
         }else{
           $(".country").css("color", "#000");
-          $(".country").css("border", "2px solid #3fa246");
+          $(".country").css("border", "1px solid #3fa246");
           bCountry = true;
         }
         updateSbtBtn();
@@ -316,7 +327,7 @@ $(document).ready(function() {
             bType = false;
         }else{
           $("#sel-ut").css("color", "#000");
-          $("#sel-ut").css("border", "2px solid #3fa246");
+          $("#sel-ut").css("border", "1px solid #3fa246");
           bType = true;
         }
         updateSbtBtn();
