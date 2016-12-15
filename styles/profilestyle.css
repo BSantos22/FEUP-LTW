@@ -54,3 +54,11 @@
 .myreviews > article:not(:last-child) {
     margin-bottom: 10px;
 }
+
+.replyprofile {
+    padding: 10px;
+}
+
+.myreplys > article:not(:last-child){
+    margin-bottom: 10px;
+}

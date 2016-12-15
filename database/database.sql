@@ -97,5 +97,5 @@ INSERT INTO review VALUES(4, 'ruibento', 2, 3.5, 'Prato muito bom mas demorado.'
 INSERT INTO review VALUES(5, 'jonhy', 2, 2, 'Not the quickest service.');
 INSERT INTO review VALUES(6, 'jonhy', 3, 4.5, 'Amazing atmosphere with delicious wines to taste!');
 
-INSERT INTO reply VALUES(1, 1, 'mgomes', 'ty');
+INSERT INTO reply VALUES(1, 1, 'mgomes', 'obrigado');
 INSERT INTO reply VALUES(2, 2, 'joseoliv', 'nao se pode ter tudo');

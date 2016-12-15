@@ -178,7 +178,7 @@ header #search-type:hover {
 
 header #searchbar{
     height: 40px;
-    width: 250px;
+    width: 40%;
     border: none;
     border-radius: 3px;
     background:url(../res/images/brush.png);
@@ -194,7 +194,7 @@ header #searchbar{
 
 header #searchbar:focus {
     outline : none;
-    width: 500px;
+    width: 50%;
 }
 
 header #butt-search {
