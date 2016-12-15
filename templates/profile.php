@@ -86,15 +86,27 @@
                 </div>
                 <?php foreach ($reviews as $review) { ?>
                     <article class="review box">
-                        <a href="../pages/restaurant.php?id=<?= $review['restaurantid'] ?>">
-                            <h4><?= $review['restaurantname'] ?></h4></a><br>
-                        <div class="rating">
-                            <?php for ($i = 0; $i < intval($review['rating']); $i++) { ?>
-                                <img src="../res/images/star.png">
-                            <?php } ?>
-                        </div>
-                        <br>
-                        <p><?= $review['text'] ?></p>
+                        <table>
+                            <tr>
+                                <td rowspan="2" class="userreviewid">
+                                    <div class="reviewuserimage">
+                                        <img src="../uploads/users/<?= $review['reviewerphotopath'] ?>">
+                                    </div>
+                                    <h4><?= $review['idReviewer'] ?></h4>
+                                </td>
+                                <td colspan="2">
+                                    <a href="../pages/restaurant.php?id=<?=$review['idRestaurant']?>"><h3><?=$review['restaurantname']?></h3></a><br>
+                                    <div class="rating">
+                                        <?php for ($i = 0; $i < intval($review['rating']); $i++) { ?>
+                                            <img src="../res/images/star.png">
+                                        <?php } ?>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="comment"><p><?= $review['text'] ?></p></td>
+                            </tr>
+                        </table>
                     </article>
                 <?php } ?>
             </section>
@@ -115,15 +127,14 @@
                     <article class="replyprofile box">
                         <table>
                             <tr>
-                                <td rowspan="2" class="userreviewid" style="border: 1px solid red">
+                                <td rowspan="2" class="userreviewid">
                                     <div class="userimage">
                                         <img src="../uploads/users/<?= $reply['userphotopath'] ?>">
                                     </div>
                                     <h4><?= $reply['idReviewer'] ?></h4>
                                 </td>
                                 <td colspan="2">
-                                    <a href="../pages/restaurant.php?id=<?= $reply['idRestaurant'] ?>"><h3>Ver
-                                            Restaurante</h3></a><br>
+                                    <a href="../pages/restaurant.php?id=<?=$reply['idRestaurant']?>"><h3><?=$reply['restaurantname']?></h3></a><br>
                                     <div class="rating">
                                         <?php for ($i = 0; $i < intval($reply['rating']); $i++) { ?>
                                             <img src="../res/images/star.png">

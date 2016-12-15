@@ -20,7 +20,6 @@
     cursor: pointer;
 }
 
-
 #td-user {
     text-align: left;
 }
@@ -96,3 +95,59 @@
 .replycontent {
     vertical-align: top;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.textreview {
+    padding-bottom: 30px;
+}
+
+.review table {
+    width: 100%;
+    border-collapse:collapse;
+}
+
+.review table td {
+    padding: 10px;
+}
+
+.reviewuserimage img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.userreviewid {
+    width: 10%;
+    text-align: center;
+    vertical-align: top;
+}
+
+.comment {
+    font-size: 14px;
+}
+
+.replyrow {
+    border-top: 1px solid #e1e1e1;
+    background-color: #f3f3f3;
+}
+
+.replycontent {
+    vertical-align: top;
+}
+
+.btnowner {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
