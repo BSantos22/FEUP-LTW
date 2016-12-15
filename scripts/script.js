@@ -372,9 +372,10 @@ $(document).ready(function() {
     var bueEmail = true;
     var bueCity = true;
     var bueCountry = true;
-    var bueOldPass = true;
+    var bueOldPass = false;
     var bueNewPass = true;
     var bueNewPass2 = true;
+    updateUserEditBtn();
 
     function updateUserEditBtn() {
         if (bueName && bueBirthdate && bueEmail && bueCity && bueCountry && bueOldPass && bueNewPass && bueNewPass2) {
@@ -429,11 +430,6 @@ $(document).ready(function() {
         if ($("#edit-user-new-pass").val() == null || $("#edit-user-new-pass").val() == "") {
             $("#edit-user-new-pass").css("border", "1px solid #ccc");
             bueNewPass = true;
-            if (($("#edit-user-old-pass").val() == null || $("#edit-user-old-pass").val() == "")) {
-                bueOldPass = true;
-            } else {
-                bueOldPass = true;
-            }
             if (($("#edit-user-new-pass2").val() == null || $("#edit-user-new-pass2").val() == "")) {
                 bueNewPass2 = true;
             } else {
@@ -442,7 +438,6 @@ $(document).ready(function() {
         }else {
           bueNewPass = false;
           bueNewPass2 = false;
-          bueOldPass = false;
         }
         updateUserEditBtn();
     });
@@ -481,11 +476,88 @@ $(document).ready(function() {
         updateUserEditBtn();
     });
 
-    $("#edit-user-old-pass").blur(function() {
-        bueOldPass = true;
+    function isPassU(pass) {
+        var tempPass = pass.val();
+        $.ajax({
+            url: "../scripts/valid_pass.php",
+            type: "post",
+            data: {
+                password: tempPass
+            },
+            success: function(temp) {
+              if (pass.val() == null || pass.val() == "") {
+                  pass.css("border", "1px solid #ccc");
+                  bueOldPass = false;
+              }else if (temp == "true") {
+                  pass.css("border", "1px solid #c21212");
+                  bueOldPass = false;
+                } else {
+                  pass.css("border", "1px solid #3fa246");
+                  bueOldPass = true;
+                }
+            },
+            async: false
+        });
+    }
+
+    function isPassR(pass) {
+        var tempPass = pass.val();
+        $.ajax({
+            url: "../scripts/valid_pass.php",
+            type: "post",
+            data: {
+                password: tempPass
+            },
+            success: function(temp) {
+              if (pass.val() == null || pass.val() == "") {
+                  pass.css("border", "1px solid #ccc");
+                  brePass = false;
+              }else if (temp == "true") {
+                  pass.css("border", "1px solid #c21212");
+                  brePass = false;
+                } else {
+                  pass.css("border", "1px solid #3fa246");
+                  brePass = true;
+                }
+            },
+            async: false
+        });
+    }
+
+    $("#edit-user-old-pass").on("blur", function() {
+        isPassU($("#edit-user-old-pass"));
+
         updateUserEditBtn();
     });
 
+    //edit restaurant validation functions
+    function updateRestEditBtn() {
+        if (breName && breStreet && brePC && breCity && breCountry && brePrice && breOpT && brePass) {
+            $("#edit-rest-sbt").removeAttr("disabled");
+            $("#edit-rest-sbt").css("background-color", "#c21212");
+        } else {
+            $("#edit-rest-sbt").css("background-color", "#8e8e8e");
+            $("#edit-rest-sbt").attr("disabled", true);
+        }
+    }
+
+    var breName = true;
+    var breStreet = true;
+    var brePC = true;
+    var breCity = true;
+    var breCountry = true;
+    var brePrice = true;
+    var breOpT = true;
+    var brePass = false;
+    updateRestEditBtn();
+
+
+
+
+    $("#edit-rest-pass").on("blur", function() {
+        isPassR($("#edit-rest-pass"));
+        updateRestEditBtn();
+    });
 
 
 

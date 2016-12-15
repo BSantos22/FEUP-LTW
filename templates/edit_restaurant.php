@@ -78,10 +78,10 @@
                             <td class="table-title">Palavra-passe</td>
                         </tr>
                         <tr>
-                            <td><input type="password" name="password" required></td>
+                            <td><input type="password" name="password" required id="edit-rest-pass"></td>
                         </tr>
                         <tr>
-                            <td><input type="submit" class="btn" name="submiteditretaurant"></td>
+                            <td><input type="submit" class="btn" name="submiteditrestaurant" id="edit-rest-sbt"></td>
                         </tr>
                     </table>
                 </form>
