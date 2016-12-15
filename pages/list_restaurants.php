@@ -5,6 +5,8 @@
     require_once ('../database/restaurant.php');
     require_once ('../database/user.php');
 
+    $_SESSION['search-type'] = $_GET['search-type'];
+
     try {
         if (isset($_SESSION['username']))
             $user = getUserByUsername($db, $_SESSION['username']);

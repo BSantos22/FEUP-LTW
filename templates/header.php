@@ -85,11 +85,31 @@
         <div id="search">
             <p>Encontre os melhores restaurantes ao virar da esquina</p> <br><br>
             <form class="search-restaurants" action="list_restaurants.php" method="get" autocomplete="off">
-                <select name="search-type" required id="search-type">
-                    <option value="restaurant">Restaurante</option>
-                    <option value="location">Localização</option>
-                    <option value="category">Categoria</option>
-                </select>
+                <?php
+                    echo('<select name="search-type" required id="search-type">');
+                    switch($_SESSION["search-type"]) {
+                        case "restaurant":
+                            echo('<option value="restaurant" selected>Restaurante</option>
+                                    <option value="location">Localização</option>
+                                    <option value="category">Categoria</option>');
+                            break;
+                        case "location":
+                            echo('<option value="restaurant">Restaurante</option>
+                                    <option value="location" selected>Localização</option>
+                                    <option value="category">Categoria</option>');
+                            break;
+                        case "category":
+                            echo('<option value="restaurant">Restaurante</option>
+                                    <option value="location">Localização</option>
+                                    <option value="category" selected>Categoria</option>');
+                            break;
+                        default:
+                            echo('<option value="restaurant">Restaurante</option>
+                                    <option value="location">Localização</option>
+                                    <option value="category">Categoria</option>');
+                    }
+                    echo('</select>');
+                ?>
 
                 <input type="text" name="search" value="<?php echo($_SESSION['search']); ?>" alt="Search Restaurants" placeholder="Procura por restaurante..." id="searchbar"/>
                 <input type="submit" value="Procurar" id="butt-search">

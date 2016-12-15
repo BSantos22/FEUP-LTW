@@ -6,6 +6,7 @@
     require_once('../database/user.php');
 
     $_SESSION['search'] = "";
+    $_SESSION['search-type'] = "";
 
     try {
         if (isset($_SESSION['username']))
