@@ -10,9 +10,16 @@
             $user = getUserByUsername($db, $_SESSION['username']);
 
         if (isset($_GET['search'])) {
+            $array = str_split($_GET['search']);
             $keywords = preg_split("/[^a-zA-Z0-9À-ỳ]/u", $_GET['search']);
             $filters = getFiltersArray();
-            $result = searchRestaurantsByKeywords($db, $keywords, $_GET['search-type'], $filters);
+
+            if ($array[0] == null && empty($filters)) {
+                $result = getAllRestaurants($db);
+            }
+            else {
+                $result = searchRestaurantsByKeywords($db, $keywords, $_GET['search-type'], $filters);
+            }
         }
         else {
             $result = getAllRestaurants($db);
