@@ -263,7 +263,7 @@ $(document).ready(function() {
         if ($("#reg-name").val() == null || $("#reg-name").val() == "") {
             $("#reg-name").css("border", "1px solid #ccc");
             bName = false;
-        } else if (/^([^0-9]*)$/.test($("#reg-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#reg-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#reg-user").val())) {
+        } else if (/^([^0-9]*)$/.test($("#reg-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#reg-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#reg-name").val())) {
             $("#reg-name").css("border", "1px solid #3fa246");
             bName = true;
         } else {
@@ -363,6 +363,41 @@ $(document).ready(function() {
             bType = true;
         }
         updateSbtBtn();
+    });
+
+    //edit profile main functions
+    //(b)oolean (u)ser (e)dit Name
+    var bueName = true;
+    var bueBirthdate = true;
+    var bueEmail = true;
+    var bueCity = true;
+    var bueCountry = true;
+    var bueOldPass = true;
+    var bueNewPass = true;
+    var bueNewPass2 = true;
+
+    function updateUserEditBtn(){
+      if (bueName && bueBirthdate && bueEmail && bueCity && bueCountry && bueOldPass && bueNewPass && bueNewPass2){
+          $("#subeditprofile").removeAttr("disabled");
+          $("#subeditprofile").css("background-color", "#c21212");
+      } else {
+          $("#subeditprofile").css("background-color", "#8e8e8e");
+          $("#subeditprofile").attr("disabled", true);
+      }
+    }
+
+    $("#edit-user-name").on("change",function() {
+        if ($("#edit-user-name").val() == null || $("#edit-user-name").val() == "") {
+            $("#edit-user-name").css("border", "1px solid #ccc");
+            bueName = false;
+        } else if (/^([^0-9]*)$/.test($("#edit-user-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#edit-user-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#edit-user-user").val())) {
+            $("#edit-user-name").css("border", "1px solid #3fa246");
+            bueName = true;
+        } else {
+            $("#edit-user-name").css("border", "1px solid #c21212");
+            bueName = false;
+        }
+        updateUserEditBtn();
     });
 
     $("#search-type").change(function() {

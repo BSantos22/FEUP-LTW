@@ -38,32 +38,32 @@
                             <td class="table-title">Nome completo</td>
                         </tr>
                         <tr>
-                            <td><input type="text" value="<?= $user['name'] ?>" name="name" required></td>
+                            <td><input type="text" value="<?= $user['name'] ?>" name="name" required id="edit-user-name"></td>
                         </tr>
                         <tr>
                             <td class="table-title">Data de nascimento</td>
                         </tr>
                         <tr>
-                            <td><input type="date" value="<?= $user['birthday'] ?>" name="birthday" required></td>
+                            <td><input type="date" value="<?= $user['birthday'] ?>" name="birthday" required id="edit-user-date"></td>
                         </tr>
                         <tr>
                             <td class="table-title">E-mail</td>
                         </tr>
                         <tr>
-                            <td><input type="email" value="<?= $user['email'] ?>" name="email" required></td>
+                            <td><input type="email" value="<?= $user['email'] ?>" name="email" required  id="edit-user-email"></td>
                         </tr>
                         <tr>
                             <td class="table-title">Cidade</td>
                         </tr>
                         <tr>
-                            <td><input type="text" value="<?= $user['city'] ?>" name="city" required></td>
+                            <td><input type="text" value="<?= $user['city'] ?>" name="city" required id="edit-user-city"></td>
                         </tr>
                         <tr>
                             <td class="table-title">País</td>
                         </tr>
                         <tr>
                             <td>
-                                <select name="country" id="country-list" class="country" required>
+                                <select name="country" id="country-list" class="country" required id="edit-user-country">
                                     <option value="" disabled selected hidden>País</option>
                                     <?php
                                     require('../templates/countries.php');
@@ -75,22 +75,22 @@
                             <td class="table-title">Nova password</td>
                         </tr>
                         <tr>
-                            <td><input type="password" name="newpassword" value=""></td>
+                            <td><input type="password" name="newpassword" value="" id="edit-user-new-pass"></td>
                         </tr>
                         <tr>
                             <td class="table-title">Confirmar nova password</td>
                         </tr>
                         <tr>
-                            <td><input type="password" name="confirmnewpassword" value=""></td>
+                            <td><input type="password" name="confirmnewpassword" value="" id="edit-user-new-pass2"></td>
                         </tr>
                         <tr>
                             <td class="table-title">Confirmar password atual</td>
                         </tr>
                         <tr>
-                            <td><input type="password" name="currentpassword" value="" required></td>
+                            <td><input type="password" name="currentpassword" value="" required id="edit-user-old-pass"></td>
                         </tr>
                         <tr>
-                            <td><input type="submit" id="subeditprofile" class="btn" name="submiteditprofile"></td>
+                            <td><input type="submit" id="subeditprofile" class="btn" disabled="false" name="submiteditprofile"></td>
                         </tr>
                     </table>
                 </form>
