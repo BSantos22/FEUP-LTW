@@ -426,6 +426,9 @@ $(document).ready(function() {
         updateUserEditBtn();
     });
 
+    $("#edit-user-country").val($("#logged-user-country").val());
+
+
     $("#edit-user-new-pass").keyup(function() {
         if ($("#edit-user-new-pass").val() == null || $("#edit-user-new-pass").val() == "") {
             $("#edit-user-new-pass").css("border", "1px solid #ccc");
@@ -713,16 +716,3 @@ $(document).ready(function() {
         x--;
     })
 });
-
-/* $.ajax({
- url: '../scripts/session_status.php',
- type: 'get',
- data: {},
- dataType: 'json',
- success: function(data) {
- if (data.logged) // User is logged
- $("#addreview").toggle("show");
- else
- $("#modal-login").show();
- }
- });*/

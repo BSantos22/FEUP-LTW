@@ -64,7 +64,8 @@
                         </tr>
                         <tr>
                             <td>
-                                <select name="country" id="country-list" class="country" required id="edit-user-country">
+                                <input type="hidden" id="logged-user-country" value="<?= $user['country'] ?>" />
+                                <select name="country" class="country" required id="edit-user-country">
                                     <option value="" disabled selected hidden>País</option>
                                     <?php
                                     require('../templates/countries.php');
