@@ -154,25 +154,21 @@ $(document).ready(function() {
         });
     });
 
-
-
-
-
     //validation of the register fields
 
-    var user = false;
-    var name = false;
-    var email = false;
-    var password = false;
-    var birthdate = false;
-    var city = false;
-    var country = false;
-    var type = false;
+    var bUser = false;
+    var bName = false;
+    var bEmail = false;
+    var bPassword = false;
+    var bBirthdate = false;
+    var bCity = false;
+    var bCountry = false;
+    var bType = false;
 
     //aux functions
 
     function updateSbtBtn() {
-      if(user && name && email && password && birthdate && city && country && type){
+      if(bUser && bName && bEmail && bPassword && bBirthdate && bCity && bCountry && bType){
         $("#reg-btn").removeAttr("disabled");
           $("#reg-btn").css("background-color", "#c21212");
       }else {
@@ -196,13 +192,13 @@ $(document).ready(function() {
     $("#reg-user").keyup(function() {
         if ($("#reg-user").val() == null || $("#reg-user").val() == ""){
             $("#reg-user").css("border", "1px solid #ccc");
-            user = false;
+            bUser = false;
         }else if (/^([A-Za-z0-9]*)$/.test($("#reg-user").val()) && /^\S/.test($("#reg-user").val())){
             $("#reg-user").css("border", "2px solid #3fa246");
-            user = true;
+            bUser = true;
         }else{
             $("#reg-user").css("border", "2px solid #c21212");
-            user = false;
+            bUser = false;
         }
         updateSbtBtn();
     });
@@ -210,10 +206,10 @@ $(document).ready(function() {
     $("#reg-user").keyup(function() {
         if (!validUser($("#reg-user").val())){
             $("#reg-user").css("border", "2px solid #3fa246");
-            user = true;
+            bUser = true;
         }else{
             $("#reg-user").css("border", "2px solid #c21212");
-            user = false;
+            bUser = false;
         }
         updateSbtBtn();
     });
@@ -221,13 +217,13 @@ $(document).ready(function() {
     $("#reg-name").keyup(function() {
         if ($("#reg-name").val() == null || $("#reg-name").val() == ""){
             $("#reg-name").css("border", "1px solid #ccc");
-            name = false;
+            bName = false;
         }else if (/^([^0-9]*)$/.test($("#reg-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#reg-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#reg-user").val())){
             $("#reg-name").css("border", "2px solid #3fa246");
-            name = true;
+            bName = true;
         }else{
             $("#reg-name").css("border", "2px solid #c21212");
-            name = false;
+            bName = false;
         }
         updateSbtBtn();
     });
@@ -235,13 +231,13 @@ $(document).ready(function() {
     $("#reg-mail").blur(function() {
         if ($("#reg-mail").val() == null || $("#reg-mail").val() == ""){
             $("#reg-mail").css("border", "1px solid #ccc");
-            email = false;
+            bEmail = false;
         }else if (!validEmail($("#reg-mail").val()) &&	/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test($("#reg-mail").val())){
             $("#reg-mail").css("border", "2px solid #3fa246");
-            email = true;
+            bEmail = true;
         }else{
             $("#reg-mail").css("border", "2px solid #c21212");
-            email = false;
+            bEmail = false;
         }
         updateSbtBtn();
     });
@@ -249,15 +245,15 @@ $(document).ready(function() {
     $("#reg-pass2").blur(function() {
         if ($("#reg-pass2").val() == null || $("#reg-pass2").val() == ""){
             $("#reg-pass2").css("border", "1px solid #ccc");
-            password = false;
+            bPassword = false;
         }else if($("#reg-pass2").val() == $("#reg-pass1").val()){
             $("#reg-pass1").css("border", "2px solid #3fa246");
             $("#reg-pass2").css("border", "2px solid #3fa246");
-            password = true;
+            bPassword = true;
         }else{
             $("#reg-pass1").css("border", "2px solid #c21212");
             $("#reg-pass2").css("border", "2px solid #c21212");
-            password = false;
+            bPassword = false;
         }
         updateSbtBtn();
     });
@@ -269,10 +265,10 @@ $(document).ready(function() {
     $("#reg-bdate").blur(function() {
         if ($("#reg-bdate").val() == "") {
             document.getElementById("reg-bdate").type = "text";
-            birthdate = false;
+            bBirthdate = false;
         }else{
           $("#reg-bdate").css("border", "2px solid #3fa246");
-          birthdate = true;
+          bBirthdate = true;
         }
         updateSbtBtn();
     });
@@ -280,10 +276,10 @@ $(document).ready(function() {
     $("#reg-bdate").keyup(function() {
         if ($("#reg-bdate").val() == null || $("#reg-bdate").val() == ""){
             $("#reg-bdate").css("border", "1px solid #ccc");
-            birthdate = false;
+            bBirthdate = false;
         }else{
           $("#reg-bdate").css("border", "2px solid #3fa246");
-          birthdate = true;
+          bBirthdate = true;
         }
         updateSbtBtn();
     });
@@ -291,13 +287,13 @@ $(document).ready(function() {
     $("#city").keyup(function() {
         if ($("#city").val() == null || $("#city").val() == ""){
             $("#city").css("border", "1px solid #ccc");
-            city = false;
+            bCity = false;
         }else if (/^([^0-9]*)$/.test($("#city").val())){
             $("#city").css("border", "2px solid #3fa246");
-            city = true;
+            bCity = true;
         }else{
             $("#city").css("border", "2px solid #c21212");
-            city = false;
+            bCity = false;
         }
         updateSbtBtn();
     });
@@ -305,11 +301,11 @@ $(document).ready(function() {
     $(".country").click(function() {
         if ($(".country").val() == null || $(".country").val() == ""){
             $(".country").css("color", "#adadad");
-            country = false;
+            bCountry = false;
         }else{
           $(".country").css("color", "#000");
           $(".country").css("border", "2px solid #3fa246");
-          country = true;
+          bCountry = true;
         }
         updateSbtBtn();
     });
@@ -317,11 +313,11 @@ $(document).ready(function() {
     $("#sel-ut").click(function() {
         if ($("#sel-ut").val() == null || $("#sel-ut").val() == ""){
             $("#sel-ut").css("color", "#adadad");
-            type = false;
+            bType = false;
         }else{
           $("#sel-ut").css("color", "#000");
           $("#sel-ut").css("border", "2px solid #3fa246");
-          type = true;
+          bType = true;
         }
         updateSbtBtn();
     });
