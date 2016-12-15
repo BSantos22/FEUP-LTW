@@ -89,8 +89,8 @@
 }
 
 .replyrow {
+    border-top: 1px solid #e1e1e1;
     background-color: #f3f3f3;
-    border-radius: 3px;
 }
 
 .replycontent {

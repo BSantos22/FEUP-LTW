@@ -115,7 +115,7 @@
                     <article class="replyprofile box">
                         <table>
                             <tr>
-                                <td rowspan="2" class="userreviewid">
+                                <td rowspan="2" class="userreviewid" style="border: 1px solid red">
                                     <div class="userimage">
                                         <img src="../uploads/users/<?= $reply['userphotopath'] ?>">
                                     </div>

@@ -2,11 +2,11 @@
     <div class="container">
         <section class="contentRestaurant">
             <div class="restaurant box">
-                <?php if (sizeof($restaurantPhotos)>0) { ?>
+                <?php if (sizeof($restaurantPhotos) > 0) { ?>
                     <div class="restaurantgallery">
                         <ul class="bxslider">
                             <?php foreach ($restaurantPhotos as $restaurantPhoto) { ?>
-                                <li><img src="../uploads/restaurants/<?=$restaurantPhoto['name']?>"/></li>
+                                <li><img src="../uploads/restaurants/<?= $restaurantPhoto['name'] ?>"/></li>
                             <?php } ?>
                         </ul>
                     </div>
@@ -61,8 +61,10 @@
                         </div>
                     <?php } ?>
                     <?php if (!isset($_SESSION['username']) || $user['status'] == 'reviewer') { ?>
-                        <input type="text" id="input-ativatereview"placeholder="Escreva uma avaliação...">
-                        <button type="button" id="btn-createreview" class="btn btnreview" title="Criar avaliação">Criar avaliação</button>
+                        <input type="text" id="input-ativatereview" placeholder="Escreva uma avaliação...">
+                        <button type="button" id="btn-createreview" class="btn btnreview" title="Criar avaliação">Criar
+                            avaliação
+                        </button>
                     <?php } ?>
                     <button type="button" id="btn-addphoto" class="btn" title="Adicionar foto">Adicionar foto</button>
                 </div>
@@ -87,8 +89,11 @@
                         <label>Opinião:<br>
                             <textarea rows="4" cols="100" name="text" value=""></textarea>
                         </label><br>
-                        <button type="button" id="btn-createreviewcancel" class="btn btnreview" title="Cancelar">Cancelar</button>
-                        <input type="submit" id="#btn-createreview" id="btn-submit" class="btn" name="btnSubmit" value="Publicar">
+                        <button type="button" id="btn-createreviewcancel" class="btn btnreview" title="Cancelar">
+                            Cancelar
+                        </button>
+                        <input type="submit" id="#btn-createreview" id="btn-submit" class="btn" name="btnSubmit"
+                               value="Publicar">
                     </section>
                 </form>
             </section>
@@ -105,45 +110,70 @@
                 </div>
 
 
-
-
                 <?php foreach ($reviews as $review) { ?>
                     <article class="review box">
-                        <div class="textreview">
-                            <div class="userimage">
-                                <img src="../uploads/users/<?= $review['usernamephotopath'] ?>">
-                            </div>
-                            <h4><?= $review['idReviewer'] ?></h4><br>
-                            <div class="reviewdescription">
-                                <div class="rating">
-                                    <?php for ($i = 0; $i < intval($review['rating']); $i++) { ?>
-                                        <img src="../res/images/star.png">
-                                    <?php } ?>
-                                </div>
-                                <br>
-                                <br>
-                                <p><?= $review['text'] ?></p>
-                            </div>
-                        </div>
-                        <?php if (isset($_SESSION['username']) && ($user['status']=='owner') && ($restaurant['idOwner'] == $user['username'])){ ?>
-                            <div class="reply">
-                                <form class="modal-content animate" action="../actions/add_reply.php" method="post">
-                                    <input type="hidden" name="idUsername" value="<?= $_SESSION['username'] ?>">
-                                    <input type="hidden" name="idReview" value="<?= $review['reviewID']?>">
-                                    <input type="hidden" name="idRestaurant" value="<?= $restaurant['id'] ?>">
-                                    <input type="text" class="replytext" name="inputreview" placeholder="Escreva uma resposta ao comentário...">
-                                    <div id="submitreply">
-                                        <input type="submit" class="btn" id="btn-reply" value="Responder" title="Responder">
+                        <table>
+                            <tr>
+                                <td rowspan="2" class="userreviewid">
+                                    <div class="reviewuserimage">
+                                        <img src="../uploads/users/<?= $review['reviewerphotopath'] ?>">
                                     </div>
-                                </form>
-                            </div>
-                        <?php } ?>
+                                    <h4><?= $review['idReviewer'] ?></h4>
+                                </td>
+                                <td colspan="2">
+                                    <div class="rating">
+                                        <?php for ($i = 0; $i < intval($review['rating']); $i++) { ?>
+                                            <img src="../res/images/star.png">
+                                        <?php } ?>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="comment"><p><?= $review['text'] ?></p></td>
+                            </tr>
+
+                            <?php if ($review['idOwner'] == null) {
+                                if ($user['username'] == $restaurant['idOwner']) { ?>
+                                    <tr>
+                                        <td rowspan="2"></td>
+                                        <td class="replyrow userreviewid">
+                                            <div class="reviewuserimage">
+                                                <img src="../uploads/users/<?= $user['photopath'] ?>">
+                                            </div>
+                                            <h4><?= $user['username'] ?></h4>
+                                        </td>
+                                        <td class="comment replyrow replycontent">
+                                            <div class="reply">
+                                                <form class="modal-content animate" action="../actions/add_reply.php" method="post">
+                                                    <input type="hidden" name="idUsername" value="<?= $_SESSION['username'] ?>">
+                                                    <input type="hidden" name="idReview" value="<?= $review['reviewID']?>">
+                                                    <input type="hidden" name="idRestaurant" value="<?= $restaurant['id'] ?>">
+                                                    <input type="text" class="replytext" name="inputreview" placeholder="Escreva uma resposta ao comentário...">
+                                                    <div id="submitreply">
+                                                        <input type="submit" class="btn" id="btn-reply" value="Responder" title="Responder">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                            <?php } } else { ?>
+                                <tr>
+                                    <td rowspan="2"></td>
+                                    <td class="replyrow userreviewid">
+                                        <div class="reviewuserimage">
+                                            <img src="../uploads/users/<?= $review['ownerphotopath'] ?>">
+                                        </div>
+                                        <h4><?= $review['idOwner'] ?></h4>
+                                        <div class="btn">Proprietário</div>
+                                    </td>
+                                    <td class="comment replyrow replycontent">
+                                        <p><?= $review['replyContent'] ?></p>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </table>
                     </article>
                 <?php } ?>
-
-
-
-                
             </section>
         </section>
     </div>
@@ -151,7 +181,8 @@
 
 <!--UPLOAD RESTAURANT PHOTO-->
 <section id="modal-uploadrestaurantphoto" class="modal">
-    <form class="modal-content animate" action="../actions/upload_restaurant_photo.php" method="post" enctype="multipart/form-data">
+    <form class="modal-content animate" action="../actions/upload_restaurant_photo.php" method="post"
+          enctype="multipart/form-data">
         <section class="imgcontainer">
             <img src="../res/images/logo.png">
             <span class="close" title="Fechar"><i class="fa fa-times" aria-hidden="true"></i></span>

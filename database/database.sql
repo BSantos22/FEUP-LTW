@@ -98,4 +98,4 @@ INSERT INTO review VALUES(5, 'jonhy', 2, 2, 'Not the quickest service.');
 INSERT INTO review VALUES(6, 'jonhy', 3, 4.5, 'Amazing atmosphere with delicious wines to taste!');
 
 INSERT INTO reply VALUES(1, 1, 'mgomes', 'obrigado');
-INSERT INTO reply VALUES(2, 2, 'joseoliv', 'nao se pode ter tudo');
+INSERT INTO reply VALUES(2, 3, 'joseoliv', 'nao se pode ter tudo');
