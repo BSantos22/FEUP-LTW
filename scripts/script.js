@@ -263,7 +263,7 @@ $(document).ready(function() {
         if ($("#reg-name").val() == null || $("#reg-name").val() == "") {
             $("#reg-name").css("border", "1px solid #ccc");
             bName = false;
-        } else if (/^([^0-9]*)$/.test($("#reg-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#reg-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#reg-user").val())) {
+        } else if (/^([^0-9]*)$/.test($("#reg-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#reg-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#reg-name").val())) {
             $("#reg-name").css("border", "1px solid #3fa246");
             bName = true;
         } else {
@@ -365,6 +365,41 @@ $(document).ready(function() {
         updateSbtBtn();
     });
 
+    //edit profile main functions
+    //(b)oolean (u)ser (e)dit Name
+    var bueName = true;
+    var bueBirthdate = true;
+    var bueEmail = true;
+    var bueCity = true;
+    var bueCountry = true;
+    var bueOldPass = true;
+    var bueNewPass = true;
+    var bueNewPass2 = true;
+
+    function updateUserEditBtn(){
+      if (bueName && bueBirthdate && bueEmail && bueCity && bueCountry && bueOldPass && bueNewPass && bueNewPass2){
+          $("#subeditprofile").removeAttr("disabled");
+          $("#subeditprofile").css("background-color", "#c21212");
+      } else {
+          $("#subeditprofile").css("background-color", "#8e8e8e");
+          $("#subeditprofile").attr("disabled", true);
+      }
+    }
+
+    $("#edit-user-name").on("change",function() {
+        if ($("#edit-user-name").val() == null || $("#edit-user-name").val() == "") {
+            $("#edit-user-name").css("border", "1px solid #ccc");
+            bueName = false;
+        } else if (/^([^0-9]*)$/.test($("#edit-user-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#edit-user-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#edit-user-user").val())) {
+            $("#edit-user-name").css("border", "1px solid #3fa246");
+            bueName = true;
+        } else {
+            $("#edit-user-name").css("border", "1px solid #c21212");
+            bueName = false;
+        }
+        updateUserEditBtn();
+    });
+
     $("#search-type").change(function() {
         switch ($("#search-type").prop('selectedIndex')) {
             case 0:
@@ -386,7 +421,7 @@ $(document).ready(function() {
     $("#add-field-button").click(function() {
         if (x < max_fields) {
             x++;
-            $("#advanced-search").append('' +
+            $('' +
                 '<div class="filter">' +
                 '<select name="filter-type[]" required id="filter-type" class="filter-type">' +
                 '<option value="rating">Rating</option>' +
@@ -399,9 +434,9 @@ $(document).ready(function() {
                 '<option value="bigger-equal">>=</option>' +
                 '<option value="smaller-equal"><=</option>' +
                 '</select>' +
-                '<input type="number" min="1" max="5" name="amount[]" id="amount" class="amount"/>' +
+                '<input type="number" min="1" name="amount[]" id="amount" class="amount"/>' +
                 '<button class="remove-filter" type="button"><i class="fa fa-times" aria-hidden="true"></button>' +
-                '</div>');
+                '</div>').appendTo("#advanced-search").css({'width': '0px', 'white-space': 'nowrap'}).hide().animate({width: '250px'}, 400);
         }
 
         $(".filter").css({
@@ -414,17 +449,23 @@ $(document).ready(function() {
             'height': '30px',
             'width': '80px',
             'padding': '5px 5px 5px 5px',
-            'margin': '0px'});
+            'margin': '0px',
+            'color': '#000',
+            'background-color': 'rgba(255, 255, 255, 0.85098)'});
         $(".filter-operator").css({
             'height': '30px',
-            'width': '40px',
+            'width': '60px',
             'padding': '2px 2px 2px 2px',
-            'margin': '0px'});
+            'margin': '0px',
+            'color': '#000',
+            'background-color': 'rgba(255, 255, 255, 0.85098)'});
         $(".amount").css({
             'height': '30px',
-            'width': '50px',
+            'width': '80px',
             'padding': '10px 10px 10px 10px',
-            'margin': '0px'});
+            'margin': '0px',
+            'color': '#000',
+            'background-color': 'rgba(255, 255, 255, 0.85098)'});
         $(".remove-filter").css({
             'background-color': '#cf2230',
             'color': '#ffffff',
@@ -441,16 +482,18 @@ $(document).ready(function() {
             function() {
                 $(this).css({'background-color': '#cf2230'})});
 
-/*
-        .close:hover,
-    .close:focus {
-        color: #a72230;
-        cursor: pointer;
-    }*/
     });
 
     $("#advanced-search").on("click", ".remove-filter", function() { //user click on remove text
-        $(this).parent('div').remove();
+        $parent = $(this).parent('div')
+
+        $parent.animate(
+            {width: '0px'},
+            400,
+            "linear",
+            function() {
+                $parent.remove();
+            });
         x--;
     })
 
