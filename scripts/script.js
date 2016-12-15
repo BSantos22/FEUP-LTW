@@ -248,7 +248,7 @@ $(document).ready(function() {
                     return false;
             }
         } else {
-          return false
+            return false
         }
     }
 
@@ -376,21 +376,21 @@ $(document).ready(function() {
     var bueNewPass = true;
     var bueNewPass2 = true;
 
-    function updateUserEditBtn(){
-      if (bueName && bueBirthdate && bueEmail && bueCity && bueCountry && bueOldPass && bueNewPass && bueNewPass2){
-          $("#subeditprofile").removeAttr("disabled");
-          $("#subeditprofile").css("background-color", "#c21212");
-      } else {
-          $("#subeditprofile").css("background-color", "#8e8e8e");
-          $("#subeditprofile").attr("disabled", true);
-      }
+    function updateUserEditBtn() {
+        if (bueName && bueBirthdate && bueEmail && bueCity && bueCountry && bueOldPass && bueNewPass && bueNewPass2) {
+            $("#subeditprofile").removeAttr("disabled");
+            $("#subeditprofile").css("background-color", "#c21212");
+        } else {
+            $("#subeditprofile").css("background-color", "#8e8e8e");
+            $("#subeditprofile").attr("disabled", true);
+        }
     }
 
-    $("#edit-user-name").on("change",function() {
+    $("#edit-user-name").on("change keydown", function() {
         if ($("#edit-user-name").val() == null || $("#edit-user-name").val() == "") {
             $("#edit-user-name").css("border", "1px solid #ccc");
             bueName = false;
-        } else if (/^([^0-9]*)$/.test($("#edit-user-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#edit-user-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#edit-user-user").val())) {
+        } else if (/^([^0-9]*)$/.test($("#edit-user-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#edit-user-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#edit-user-name").val())) {
             $("#edit-user-name").css("border", "1px solid #3fa246");
             bueName = true;
         } else {
@@ -399,6 +399,95 @@ $(document).ready(function() {
         }
         updateUserEditBtn();
     });
+
+    $("#edit-user-date").blur(function() {
+        if (dateInRange($("#edit-user-date").val())) {
+            $("#edit-user-date").css("border", "1px solid #3fa246");
+            bueBirthdate = true;
+        } else {
+            $("#edit-user-date").css("border", "1px solid #c21212");
+            bueBirthdate = false;
+        }
+        updateUserEditBtn();
+    });
+
+    $("#edit-user-city").on("change keydown", function() {
+        if ($("#edit-user-city").val() == null || $("#edit-user-city").val() == "") {
+            $("#edit-user-city").css("border", "1px solid #ccc");
+            bueCity = false;
+        } else if (/^([^0-9]*)$/.test($("#edit-user-city").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#edit-user-city").val()) && /^([A-zÀ-ÿ]*)$/.test($("#edit-user-city").val())) {
+            $("#edit-user-city").css("border", "1px solid #3fa246");
+            bueCity = true;
+        } else {
+            $("#edit-user-city").css("border", "1px solid #c21212");
+            bueCity = false;
+        }
+        updateUserEditBtn();
+    });
+
+    $("#edit-user-new-pass").keyup(function() {
+        if ($("#edit-user-new-pass").val() == null || $("#edit-user-new-pass").val() == "") {
+            $("#edit-user-new-pass").css("border", "1px solid #ccc");
+            bueNewPass = true;
+            if (($("#edit-user-old-pass").val() == null || $("#edit-user-old-pass").val() == "")) {
+                bueOldPass = true;
+            } else {
+                bueOldPass = true;
+            }
+            if (($("#edit-user-new-pass2").val() == null || $("#edit-user-new-pass2").val() == "")) {
+                bueNewPass2 = true;
+            } else {
+                bueNewPass2 = false;
+            }
+        }else {
+          bueNewPass = false;
+          bueNewPass2 = false;
+          bueOldPass = false;
+        }
+        updateUserEditBtn();
+    });
+
+    $("#edit-user-new-pass2").blur(function() {
+        if ($("#edit-user-new-pass2").val() == null || $("#edit-user-new-pass2").val() == "") {
+            $("#edit-user-new-pass2").css("border", "1px solid #ccc");
+            bueNewPass2 = true;
+        } else if ($("#edit-user-new-pass2").val() == $("#edit-user-new-pass").val()) {
+            $("#edit-user-new-pass").css("border", "1px solid #3fa246");
+            $("#edit-user-new-pass2").css("border", "1px solid #3fa246");
+            bueNewPass2 = true;
+            bueNewPass = true;
+        } else {
+            $("#edit-user-new-pass").css("border", "1px solid #c21212");
+            $("#edit-user-new-pass2").css("border", "1px solid #c21212");
+            bueNewPass2 = false;
+        }
+        updateUserEditBtn();
+    });
+
+    $("#edit-user-new-pass2").blur(function() {
+        if ($("#edit-user-new-pass2").val() == null || $("#edit-user-new-pass2").val() == "") {
+            $("#edit-user-new-pass2").css("border", "1px solid #ccc");
+            bueNewPass2 = true;
+        } else if ($("#edit-user-new-pass2").val() == $("#edit-user-new-pass").val()) {
+            $("#edit-user-new-pass").css("border", "1px solid #3fa246");
+            $("#edit-user-new-pass2").css("border", "1px solid #3fa246");
+            bueNewPass2 = true;
+            bueNewPass = true;
+        } else {
+            $("#edit-user-new-pass").css("border", "1px solid #c21212");
+            $("#edit-user-new-pass2").css("border", "1px solid #c21212");
+            bueNewPass2 = false;
+        }
+        updateUserEditBtn();
+    });
+
+    $("#edit-user-old-pass").blur(function() {
+        bueOldPass = true;
+        updateUserEditBtn();
+    });
+
+
+
 
     $("#search-type").change(function() {
         switch ($("#search-type").prop('selectedIndex')) {
@@ -436,7 +525,12 @@ $(document).ready(function() {
                 '</select>' +
                 '<input type="number" min="1" name="amount[]" id="amount" class="amount"/>' +
                 '<button class="remove-filter" type="button"><i class="fa fa-times" aria-hidden="true"></button>' +
-                '</div>').appendTo("#advanced-search").css({'width': '0px', 'white-space': 'nowrap'}).hide().animate({width: '250px'}, 400);
+                '</div>').appendTo("#advanced-search").css({
+                'width': '0px',
+                'white-space': 'nowrap'
+            }).hide().animate({
+                width: '250px'
+            }, 400);
         }
 
         $(".filter").css({
@@ -444,28 +538,32 @@ $(document).ready(function() {
             'vertical-align': 'top',
             'text-align': 'center',
             'font-family': 'Source Sans',
-            'margin': '0px 10px 0px 10px'});
+            'margin': '0px 10px 0px 10px'
+        });
         $(".filter-type").css({
             'height': '30px',
             'width': '80px',
             'padding': '5px 5px 5px 5px',
             'margin': '0px',
             'color': '#000',
-            'background-color': 'rgba(255, 255, 255, 0.85098)'});
+            'background-color': 'rgba(255, 255, 255, 0.85098)'
+        });
         $(".filter-operator").css({
             'height': '30px',
             'width': '60px',
             'padding': '2px 2px 2px 2px',
             'margin': '0px',
             'color': '#000',
-            'background-color': 'rgba(255, 255, 255, 0.85098)'});
+            'background-color': 'rgba(255, 255, 255, 0.85098)'
+        });
         $(".amount").css({
             'height': '30px',
             'width': '80px',
             'padding': '10px 10px 10px 10px',
             'margin': '0px',
             'color': '#000',
-            'background-color': 'rgba(255, 255, 255, 0.85098)'});
+            'background-color': 'rgba(255, 255, 255, 0.85098)'
+        });
         $(".remove-filter").css({
             'background-color': '#cf2230',
             'color': '#ffffff',
@@ -475,20 +573,29 @@ $(document).ready(function() {
             'vertical-align': 'middle',
             'border-width': '0px',
             'border-radius': '3px',
-            'margin': '0px 0px 0px 5px'});
+            'margin': '0px 0px 0px 5px'
+        });
         $(".remove-filter").hover(
-            function(){
-                $(this).css({'background-color': '#a72230', 'cursor': 'pointer'});},
             function() {
-                $(this).css({'background-color': '#cf2230'})});
+                $(this).css({
+                    'background-color': '#a72230',
+                    'cursor': 'pointer'
+                });
+            },
+            function() {
+                $(this).css({
+                    'background-color': '#cf2230'
+                })
+            });
 
     });
 
     $("#advanced-search").on("click", ".remove-filter", function() { //user click on remove text
         $parent = $(this).parent('div')
 
-        $parent.animate(
-            {width: '0px'},
+        $parent.animate({
+                width: '0px'
+            },
             400,
             "linear",
             function() {
