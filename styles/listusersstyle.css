@@ -1,0 +1,14 @@
+.userprofile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.td-image {
+    padding-right: 20px;
+    text-align: left;
+}
+
+.container > article:not(:last-child){
+    margin-bottom: 10px;
+}

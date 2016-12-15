@@ -108,7 +108,24 @@
                 </div>
                 <?php foreach ($replys as $reply) { ?>
                     <article class="replyprofile box">
-                        <p><?= $reply['content'] ?></p>
+
+                        <h4><?= $reply['idReviewer'] ?></h4><br>
+                        <div class="reviewdescription">
+                            <div class="rating">
+                                <?php for ($i = 0; $i < intval($reply['rating']); $i++) { ?>
+                                    <img src="../res/images/star.png">
+                                <?php } ?>
+                            </div>
+                            <br>
+                            <br>
+                            <p><?= $reply['text'] ?></p>
+                        </div>
+
+
+
+
+                        <a href="../pages/restaurant.php?id=<?=$reply['idRestaurant']?>"><button type="button" class="btn btn-sestaurant">Ver Restaurante</button></a>
+                        <p><?= $reply['replyContent'] ?></p>
                     </article>
                 <?php } ?>
             </section>

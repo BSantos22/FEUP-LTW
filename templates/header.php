@@ -46,7 +46,7 @@
                                 <a href="../actions/action_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Sair</a>
                             </div>
                         </div>
-                    <?php } else { ?>
+                    <?php } else if ($user['status']=='reviewer'){ ?>
                         <div id="user" class="dropdown">
                             <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
                             <div class="menu-dropdown">
@@ -56,7 +56,19 @@
                                 <a href="../actions/action_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Sair</a>
                             </div>
                         </div>
-                 <?php }} else { ?>
+                 <?php } else { ?>
+                        <div id="user" class="dropdown">
+                            <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
+                            <div class="menu-dropdown">
+                                <div href="profile.php" id="btn-image" class="arrow_box"><img src="../uploads/users/<?= $user['photopath'] ?>">&nbsp;&nbsp;Olá<br><?= $user['name'] ?></div>
+                                <a href="profile.php" id="btn-profile"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Ver Perfil</a>
+                                <a href="edit_profile.php"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Editar Perfil</a>
+                                <a href="list_restaurants.php"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Ver Restaurantes</a>
+                                <a href="list_users.php"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Ver Utilizadores</a>
+                        <a href="../actions/action_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Sair</a>
+                        </div>
+                        </div>
+                   <?php } } else { ?>
                     <div id="user" class="dropdown">
                         <button type="button" id="btn-user" title="Entrar/Registar"><img src="../res/images/user.png"></button>
                         <div class="menu-dropdown">
