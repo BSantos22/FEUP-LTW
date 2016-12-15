@@ -3,12 +3,17 @@
         <article id="myprofile" class="box">
             <table>
                 <tr>
-                    <td id="td-image" class="img-col" rowspan="5"><img src="../uploads/users/<?= $user['photopath'] ?>"></td>
+                    <td id="td-image" class="img-col" rowspan="5"><img src="../uploads/users/<?= $user['photopath'] ?>">
+                    </td>
                 </tr>
                 <tr>
-                    <td class="edit-col"><a href="#" alt="Editar foto de perfil"><i class="fa fa-pencil" aria-hidden="true" id="btn-uploaduserphoto"></i></a></td>
+                    <td class="edit-col"><a href="#" alt="Editar foto de perfil"><i class="fa fa-pencil"
+                                                                                    aria-hidden="true"
+                                                                                    id="btn-uploaduserphoto"></i></a>
+                    </td>
                     <td colspan="2" id="td-user"><h2><?= $user['name'] ?></h2></td>
-                    <td class="edit-col">&nbsp;&nbsp;<a href="edit_profile.php" alt="Editar perfil"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                    <td class="edit-col">&nbsp;&nbsp;<a href="edit_profile.php" alt="Editar perfil"><i
+                                class="fa fa-pencil" aria-hidden="true"></i></a></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -67,7 +72,7 @@
             </section>
         <?php } ?>
 
-        <?php if($user['status']=='reviewer'){ ?>
+        <?php if ($user['status'] == 'reviewer') { ?>
             <section class="myreviews">
                 <div class="sectiondescription">
                     <h3>Minhas Avaliações
@@ -94,7 +99,7 @@
                 <?php } ?>
             </section>
 
-        <?php } else if ($user['status']=='owner'){ ?>
+        <?php } else if ($user['status'] == 'owner') { ?>
             <section class="myreplys">
                 <div class="sectiondescription">
                     <h3>Minhas Respostas
@@ -108,24 +113,40 @@
                 </div>
                 <?php foreach ($replys as $reply) { ?>
                     <article class="replyprofile box">
-
-                        <h4><?= $reply['idReviewer'] ?></h4><br>
-                        <div class="reviewdescription">
-                            <div class="rating">
-                                <?php for ($i = 0; $i < intval($reply['rating']); $i++) { ?>
-                                    <img src="../res/images/star.png">
-                                <?php } ?>
-                            </div>
-                            <br>
-                            <br>
-                            <p><?= $reply['text'] ?></p>
-                        </div>
-
-
-
-
-                        <a href="../pages/restaurant.php?id=<?=$reply['idRestaurant']?>"><button type="button" class="btn btn-sestaurant">Ver Restaurante</button></a>
-                        <p><?= $reply['replyContent'] ?></p>
+                        <table>
+                            <tr>
+                                <td rowspan="2" class="userreviewid">
+                                    <div class="userimage">
+                                        <img src="../uploads/users/<?= $reply['userphotopath'] ?>">
+                                    </div>
+                                    <h4><?= $reply['idReviewer'] ?></h4>
+                                </td>
+                                <td colspan="2">
+                                    <a href="../pages/restaurant.php?id=<?= $reply['idRestaurant'] ?>"><h3>Ver
+                                            Restaurante</h3></a><br>
+                                    <div class="rating">
+                                        <?php for ($i = 0; $i < intval($reply['rating']); $i++) { ?>
+                                            <img src="../res/images/star.png">
+                                        <?php } ?>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="comment"><p><?= $reply['text'] ?></p></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"></td>
+                                <td class="replyrow userreviewid">
+                                    <div class="userimage">
+                                        <img src="../uploads/users/<?= $user['photopath'] ?>">
+                                    </div>
+                                    <h4><?= $user['username'] ?></h4>
+                                </td>
+                                <td class="comment replyrow replycontent">
+                                    <p><?= $reply['replyContent'] ?></p>
+                                </td>
+                            </tr>
+                        </table>
                     </article>
                 <?php } ?>
             </section>
@@ -135,7 +156,8 @@
 
 <!--UPLOAD USER PHOTO-->
 <section id="modal-uploaduserphoto" class="modal">
-    <form class="modal-content animate" action="../actions/upload_user_photo.php" method="post" enctype="multipart/form-data">
+    <form class="modal-content animate" action="../actions/upload_user_photo.php" method="post"
+          enctype="multipart/form-data">
         <section class="imgcontainer">
             <img src="../res/images/logo.png">
             <span class="close" title="Fechar"><i class="fa fa-times" aria-hidden="true"></i></span>

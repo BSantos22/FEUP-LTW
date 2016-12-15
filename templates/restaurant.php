@@ -103,6 +103,10 @@
                         <?php } ?>
                     </h3>
                 </div>
+
+
+
+
                 <?php foreach ($reviews as $review) { ?>
                     <article class="review box">
                         <div class="textreview">
@@ -136,6 +140,10 @@
                         <?php } ?>
                     </article>
                 <?php } ?>
+
+
+
+                
             </section>
         </section>
     </div>
