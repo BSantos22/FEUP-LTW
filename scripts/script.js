@@ -386,7 +386,7 @@ $(document).ready(function() {
     $("#add-field-button").click(function() {
         if (x < max_fields) {
             x++;
-            $("#advanced-search").append('' +
+            $('' +
                 '<div class="filter">' +
                 '<select name="filter-type[]" required id="filter-type" class="filter-type">' +
                 '<option value="rating">Rating</option>' +
@@ -401,7 +401,7 @@ $(document).ready(function() {
                 '</select>' +
                 '<input type="number" min="1" max="5" name="amount[]" id="amount" class="amount"/>' +
                 '<button class="remove-filter" type="button"><i class="fa fa-times" aria-hidden="true"></button>' +
-                '</div>');
+                '</div>').appendTo("#advanced-search").css({'width': '0px', 'white-space': 'nowrap'}).hide().animate({width: '200px'}, 400);
         }
 
         $(".filter").css({
@@ -414,17 +414,23 @@ $(document).ready(function() {
             'height': '30px',
             'width': '80px',
             'padding': '5px 5px 5px 5px',
-            'margin': '0px'});
+            'margin': '0px',
+            'color': '#000',
+            'background-color': 'rgba(255, 255, 255, 0.85098)'});
         $(".filter-operator").css({
             'height': '30px',
             'width': '40px',
             'padding': '2px 2px 2px 2px',
-            'margin': '0px'});
+            'margin': '0px',
+            'color': '#000',
+            'background-color': 'rgba(255, 255, 255, 0.85098)'});
         $(".amount").css({
             'height': '30px',
             'width': '50px',
             'padding': '10px 10px 10px 10px',
-            'margin': '0px'});
+            'margin': '0px',
+            'color': '#000',
+            'background-color': 'rgba(255, 255, 255, 0.85098)'});
         $(".remove-filter").css({
             'background-color': '#cf2230',
             'color': '#ffffff',
@@ -441,16 +447,18 @@ $(document).ready(function() {
             function() {
                 $(this).css({'background-color': '#cf2230'})});
 
-/*
-        .close:hover,
-    .close:focus {
-        color: #a72230;
-        cursor: pointer;
-    }*/
     });
 
     $("#advanced-search").on("click", ".remove-filter", function() { //user click on remove text
-        $(this).parent('div').remove();
+        $parent = $(this).parent('div')
+
+        $parent.animate(
+            {width: '0px'},
+            400,
+            "linear",
+            function() {
+                $parent.remove();
+            });
         x--;
     })
 
