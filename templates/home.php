@@ -8,7 +8,7 @@
                 <div class= "content">
                     <a href="../pages/restaurant.php?id=<?=$restaurant['id']?>"><h3><?=$restaurant['name']?></h3></a>
                     <div class="rating">
-                        <?php for ($i = 0; $i < intval($restaurant['reviewersRating']); $i++){ ?>
+                        <?php for ($i = 0; $i < round($restaurant['reviewersRating']); $i++){ ?>
                             <img src="../res/images/star.png">
                         <?php } ?>
                     </div>

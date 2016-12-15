@@ -54,7 +54,7 @@
                             <a href="../pages/restaurant.php?id=<?= $restaurant['id'] ?>">
                                 <h3><?= $restaurant['name'] ?></h3></a>
                             <div class="rating">
-                                <?php for ($i = 0; $i < intval($restaurant['reviewersRating']); $i++) { ?>
+                                <?php for ($i = 0; $i < round($restaurant['reviewersRating']); $i++) { ?>
                                     <img src="../res/images/star.png">
                                 <?php } ?>
                             </div>
@@ -97,7 +97,7 @@
                                 <td colspan="2">
                                     <a href="../pages/restaurant.php?id=<?=$review['idRestaurant']?>"><h3><?=$review['restaurantname']?></h3></a><br>
                                     <div class="rating">
-                                        <?php for ($i = 0; $i < intval($review['rating']); $i++) { ?>
+                                        <?php for ($i = 0; $i < round($review['rating']); $i++) { ?>
                                             <img src="../res/images/star.png">
                                         <?php } ?>
                                     </div>
@@ -152,7 +152,7 @@
                                 <td colspan="2">
                                     <a href="../pages/restaurant.php?id=<?=$reply['idRestaurant']?>"><h3><?=$reply['restaurantname']?></h3></a><br>
                                     <div class="rating">
-                                        <?php for ($i = 0; $i < intval($reply['rating']); $i++) { ?>
+                                        <?php for ($i = 0; $i < round($reply['rating']); $i++) { ?>
                                             <img src="../res/images/star.png">
                                         <?php } ?>
                                     </div>

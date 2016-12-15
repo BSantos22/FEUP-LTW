@@ -17,13 +17,13 @@
                         &middot <?= $restaurant['country'] ?></p><br>
                     <p><?= $restaurant['category'] ?></p><br>
                     <div class="rating">
-                        <?php for ($i = 0; $i < intval($restaurant['reviewersRating']); $i++) { ?>
+                        <?php for ($i = 0; $i < round($restaurant['reviewersRating']); $i++) { ?>
                             <img src="../res/images/star.png">
                         <?php } ?>
                     </div>
                     <p id="price">
                         <br>
-                        <?php for ($i = 0; $i < intval($restaurant['price']); $i++) { ?>
+                        <?php for ($i = 0; $i < round($restaurant['price']); $i++) { ?>
                             $
                         <?php } ?>
                         <br>
@@ -121,7 +121,7 @@
                                 </td>
                                 <td colspan="2">
                                     <div class="rating">
-                                        <?php for ($i = 0; $i < intval($review['rating']); $i++) { ?>
+                                        <?php for ($i = 0; $i < round($review['rating']); $i++) { ?>
                                             <img src="../res/images/star.png">
                                         <?php } ?>
                                     </div>
