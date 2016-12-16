@@ -1,7 +1,13 @@
 <?php
-
     function getRestaurantPhotoByRestaurant($db, $idRestaurant) {
         $stmt = $db->prepare('SELECT * FROM photo_restaurant WHERE idRestaurant = ?');
+        $stmt->execute(array($idRestaurant));
+
+        return $stmt->fetchAll();
+    }
+
+    function getRestaurantPhotoByRestaurant1($db, $idRestaurant) {
+        $stmt = $db->prepare('SELECT * FROM photo_restaurant LEFT JOIN restaurant on photo_restarurantWHERE idRestaurant = ?');
         $stmt->execute(array($idRestaurant));
 
         return $stmt->fetchAll();

@@ -77,10 +77,20 @@ INSERT INTO user VALUES('bsantos', 'Bruno Santos', 'bsantos@hotmail.com', '6ca13
 INSERT INTO user VALUES('ruibento', 'Rui Bento', 'ruibento@gmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1983-08-20', 'Braga', 'Portugal', 'reviewer', 'defaultlogo.png');
 INSERT INTO user VALUES('jonhy', 'John Adams', 'adams@yahoo.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1973-03-04', 'London', 'United Kingdom', 'reviewer', 'defaultlogo.png');
 INSERT INTO user VALUES('mbrandao', 'Miguel Brandão', 'mdrandao@hotmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1971-03-01', 'Lisboa', 'Portugal', 'reviewer', 'defaultlogo.png');
+INSERT INTO user VALUES('rfernandes', 'Rui Fernandes', 'rfernandes@hotmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1993-04-04', 'Aveiro', 'Portugal', 'reviewer', 'defaultlogo.png');
+INSERT INTO user VALUES('raulramos', 'Raul Ramos', 'rramos@gmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1990-05-21', 'Madrid', 'Espanha', 'reviewer', 'defaultlogo.png');
 
-INSERT INTO restaurant VALUES(1, 'Flow Restaurant & Bar', 'mgomes', 'Rua da Conceição 63', '4050-213', 'Porto', 'Portugal', 'Contemporâneo', 4.0, '11:00', '01:00', NULL);
-INSERT INTO restaurant VALUES(2, 'Restaurante Filha da Mãe Preta', 'joseoliv', 'Cais da Ribeira 39','4050-510', 'Porto', 'Portugal', 'Tradicional', 3.0,'10:30', '23:00', NULL);
-INSERT INTO restaurant VALUES(3, 'Ode Porto Wine House', 'bsantos', 'Largo do Terreiro 7', '4050-603','Porto', 'Portugal', 'Mediterrâneo', 5.0,'11:30:00', '00:00', NULL);
+INSERT INTO restaurant VALUES(1, 'Flow Restaurant & Bar', 'mgomes', 'Rua da Conceição 63', '4050-213', 'Porto', 'Portugal', 'Contemporâneo', 4.0, '11:00', '01:00', 0.0);
+INSERT INTO restaurant VALUES(2, 'Restaurante Filha da Mãe Preta', 'joseoliv', 'Cais da Ribeira 39','4050-510', 'Porto', 'Portugal', 'Tradicional', 3.0,'10:30', '23:00',0.0);
+INSERT INTO restaurant VALUES(3, 'Ode Porto Wine House', 'bsantos', 'Largo do Terreiro 7', '4050-603','Porto', 'Portugal', 'Mediterrâneo', 5.0,'11:30:00', '00:00', 0.0);
+
+
+
+
+
+
+
+
 
 INSERT INTO owner VALUES('mgomes', 1);
 INSERT INTO owner VALUES('joseoliv', 2);

@@ -3,7 +3,7 @@
 function createRestaurant($db, $name, $username, $address, $zipcode, $city, $country, $category, $price, $opentime, $closetime) {
     $query = "INSERT INTO restaurant VALUES(NULL, ?,?,?,?,?,?,?,?,?,?,?)";
     $stmt = $db->prepare($query);
-    $stmt->execute(array($name, $username, $address, $zipcode, $city, $country, $category, $price, $opentime, $closetime, 5));
+    $stmt->execute(array($name, $username, $address, $zipcode, $city, $country, $category, $price, $opentime, $closetime, 0.0));
 }
 
 function updateRestaurant($db, $id, $name, $street, $zipcode, $city, $country, $category, $price, $opentime, $closetime) {
