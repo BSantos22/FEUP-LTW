@@ -39,7 +39,11 @@
         }
 
         if (move_uploaded_file($_FILES['restaurantphoto']['tmp_name'], $targetFile)) {
-            insertRestaurantPhoto($db, $_POST['idRestaurant'], $fileName);
+            try{
+                insertRestaurantPhoto($db, $_POST['idRestaurant'], $fileName);
+            } catch(PDOException $e) {
+                die($e->getMessage());
+            }
         }
     }
 

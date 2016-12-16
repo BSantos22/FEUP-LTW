@@ -38,10 +38,13 @@
         }
 
         if (move_uploaded_file($_FILES['userphoto']['tmp_name'], $targetFile)) {
-            updateUserPhoto($db, $_SESSION['username'], $_SESSION['username']);
+            try{
+                updateUserPhoto($db, $_SESSION['username'], $_SESSION['username']);
+            } catch(PDOException $e) {
+                die($e->getMessage());
+            }
         }
     }
 
-    //header("Refresh:0; url=../pages/profile.php");
     header('Location: ' . "../pages/profile.php");
 ?>
