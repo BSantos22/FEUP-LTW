@@ -675,7 +675,7 @@ $(document).ready(function() {
                 '<option value="bigger-equal">>=</option>' +
                 '<option value="smaller-equal"><=</option>' +
                 '</select>' +
-                '<input type="number" min="1" name="amount[]" id="amount" class="amount"/>' +
+                '<input type="number" min="1" max="5" name="amount[]" id="amount" class="amount"/>' +
                 '<button class="remove-filter" type="button"><i class="fa fa-times" aria-hidden="true"></button>' +
                 '</div>').appendTo("#advanced-search").css({
                 'width': '0px',
