@@ -26,7 +26,8 @@ CREATE TABLE restaurant (
 	price FLOAT,	
 	open TIME,
 	close TIME,
-	reviewersRating FLOAT
+	reviewersRating FLOAT,
+	restaurantphoto VARCHAR
 );
 
 DROP TABLE IF EXISTS review;
@@ -74,15 +75,15 @@ INSERT INTO user VALUES('mbrandao', 'Micaela Brandão', 'mdrandao@hotmail.com', 
 INSERT INTO user VALUES('rfernandes', 'Rita Fernandes', 'rfernandes@hotmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1993-04-04', 'Aveiro', 'Portugal', 'reviewer', 'rfernandes.jpeg');
 INSERT INTO user VALUES('raulramos', 'Raul Ramos', 'rramos@gmail.com', '6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090', '1990-05-21', 'Madrid', 'Espanha', 'reviewer', 'defaultlogo.png');
 
-INSERT INTO restaurant VALUES(1, 'Flow Restaurant & Bar', 'mgomes', 'Rua da Conceição 63', '4050-213', 'Porto', 'Portugal', 'Contemporâneo', 4.0, '11:00', '01:00', 0.0);
-INSERT INTO restaurant VALUES(2, 'Restaurante Filha da Mãe Preta', 'joseoliv', 'Cais da Ribeira 39','4050-510', 'Porto', 'Portugal', 'Tradicional', 3.0,'10:30', '23:00',0.0);
-INSERT INTO restaurant VALUES(3, 'Ode Porto Wine House', 'bsantos', 'Largo do Terreiro 7', '4050-603','Porto', 'Portugal', 'Mediterrâneo', 5.0,'11:30:00', '00:00', 0.0);
-INSERT INTO restaurant VALUES(4, 'Eleven', 'mgomes', 'Rua Marquês da Fronteira Jardim Amália Rodrigues', '1070-000', 'Lisboa', 'Portugal', 'Tradicional', 4.0, '12:30', '23:00', 0.0);
-INSERT INTO restaurant VALUES(5, 'Restaurante Belcanto', 'joseoliv', 'Largo de São Carlos 10','1200-410', 'Lisboa', 'Portugal', 'Comida saudável', 5.0,'12:30', '23:00',0.0);
-INSERT INTO restaurant VALUES(6, 'Restaurante Pizzarte', 'bsantos', 'Rua Engenheiro Von Haff 27', '3800-177','Aveiro', 'Portugal', 'Pizza', 4,'12:30', '02:00', 0.0);
-INSERT INTO restaurant VALUES(7, 'Torre di Pizza', 'mgomes', 'Avenida Cidade de Aveiro Lote 16', '3510-720', 'Viseu', 'Portugal', 'Pizza', 3.0, '11:30', '23:30', 0.0);
-INSERT INTO restaurant VALUES(8, 'Restaurante Grelhados do Candal', 'joseoliv', 'Alameda Empresa 110','4400-133', 'Vila Nova de Gaia', 'Portugal', 'Grelhados', 3.0,'11:00', '22:30',0.0);
-INSERT INTO restaurant VALUES(9, 'Restaurante Centurium', 'bsantos', 'Avenida Central 134', '4710-000','Braga', 'Portugal', 'Mediterrâneo', 4.0,'11:30:00', '00:00', 0.0);
+INSERT INTO restaurant VALUES(1, 'Flow Restaurant & Bar', 'mgomes', 'Rua da Conceição 63', '4050-213', 'Porto', 'Portugal', 'Contemporâneo', 4.0, '11:00', '01:00', 0.0, 'defaultphoto.png');
+INSERT INTO restaurant VALUES(2, 'Restaurante Filha da Mãe Preta', 'joseoliv', 'Cais da Ribeira 39','4050-510', 'Porto', 'Portugal', 'Tradicional', 3.0,'10:30', '23:00',0.0, 'defaultphoto.png');
+INSERT INTO restaurant VALUES(3, 'Ode Porto Wine House', 'bsantos', 'Largo do Terreiro 7', '4050-603','Porto', 'Portugal', 'Mediterrâneo', 5.0,'11:30:00', '00:00', 0.0, 'defaultphoto.png');
+INSERT INTO restaurant VALUES(4, 'Eleven', 'mgomes', 'Rua Marquês da Fronteira Jardim Amália Rodrigues', '1070-000', 'Lisboa', 'Portugal', 'Tradicional', 4.0, '12:30', '23:00', 0.0, 'defaultphoto.png');
+INSERT INTO restaurant VALUES(5, 'Restaurante Belcanto', 'joseoliv', 'Largo de São Carlos 10','1200-410', 'Lisboa', 'Portugal', 'Comida saudável', 5.0,'12:30', '23:00',0.0, 'defaultphoto.png');
+INSERT INTO restaurant VALUES(6, 'Restaurante Pizzarte', 'bsantos', 'Rua Engenheiro Von Haff 27', '3800-177','Aveiro', 'Portugal', 'Pizza', 4,'12:30', '02:00', 0.0, 'defaultphoto.png');
+INSERT INTO restaurant VALUES(7, 'Torre di Pizza', 'mgomes', 'Avenida Cidade de Aveiro Lote 16', '3510-720', 'Viseu', 'Portugal', 'Pizza', 3.0, '11:30', '23:30', 0.0, 'defaultphoto.png');
+INSERT INTO restaurant VALUES(8, 'Restaurante Grelhados do Candal', 'joseoliv', 'Alameda Empresa 110','4400-133', 'Vila Nova de Gaia', 'Portugal', 'Grelhados', 3.0,'11:00', '22:30', 0.0, 'defaultphoto.png');
+INSERT INTO restaurant VALUES(9, 'Restaurante Centurium', 'bsantos', 'Avenida Central 134', '4710-000','Braga', 'Portugal', 'Mediterrâneo', 4.0,'11:30:00', '00:00', 0.0, 'defaultphoto.png');
 
 INSERT INTO photo_restaurant VALUES (NULL, 1, '18681008_WAP4e.jpeg');
 INSERT INTO photo_restaurant VALUES (NULL, 1, '18681011_oemRn.jpeg');
