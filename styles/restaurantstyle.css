@@ -108,12 +108,25 @@
     border-radius: 50%;
 }
 
+.ratingrestaurant {
+    display: inline-block;
+}
+
+.ratingrestaurant div {
+    display: inline-block;
+}
+
+.ratingrestaurant #text {
+    padding-left: 10px;
+}
+
 .rating {
     overflow: hidden;
     display: inline-block;
     font-size: 0;
     position: relative;
 }
+
 .rating-input {
     float: right;
     width: 16px;

@@ -14,12 +14,21 @@
                 <div class="restaurantdescription">
                     <h2><?= $restaurant['name'] ?></h2>
                     <p><?= $restaurant['category'] ?></p><br>
-                    <div class="rating">
-                        <?php for ($i = 0; $i < round($restaurant['reviewersRating']); $i++){ ?>
-                            <img src="../res/images/star.png">
-                        <?php } for ($j = 0; $j < 5-round($restaurant['reviewersRating']); $j++){ ?>
-                            <img src="../res/images/emptystar.png">
-                        <?php } ?>
+                    <div class="ratingrestaurant">
+                        <div>
+                            <?php for ($i = 0; $i < round($restaurant['reviewersRating']); $i++){ ?>
+                                <img src="../res/images/star.png">
+                            <?php } for ($j = 0; $j < 5-round($restaurant['reviewersRating']); $j++){ ?>
+                                <img src="../res/images/emptystar.png">
+                            <?php } ?>
+                        </div>
+                        <div id="text">
+                            <?php if (sizeof($reviews) > 1) { ?>
+                                <span class="number"><?= sizeof($reviews) ?> Avaliações</span>
+                            <?php } else if (sizeof($reviews) == 1) { ?>
+                                <span class="zero"><?= sizeof($reviews) ?> Avaliação</span>
+                            <?php } ?>
+                        </div>
                     </div>
                     <p id="price">
                         <br>
