@@ -639,6 +639,47 @@ $(document).ready(function() {
         updateRestEditBtn();
     });
 
+    $("#edit-rest-city").on("keyup", function() {
+        if ($("#edit-rest-city").val() == null || $("#edit-rest-city").val() == "") {
+            $("#edit-rest-city").css("border", "1px solid #ccc");
+            breCity = false;
+        } else if (/^([^0-9]*)$/.test($("#edit-rest-city").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#edit-rest-city").val()) && /^([A-zÀ-ÿ ]*)$/.test($("#edit-rest-city").val())) {
+            $("#edit-rest-city").css("border", "1px solid #3fa246");
+            breCity = true;
+        } else {
+            $("#edit-rest-city").css("border", "1px solid #c21212");
+            breCity = false;
+        }
+        updateRestEditBtn();
+    });
+
+    $("#edit-rest-country").on("keyup", function() {
+        if ($("#edit-rest-country").val() == null || $("#edit-rest-country").val() == "") {
+            $("#edit-rest-country").css("border", "1px solid #ccc");
+            breCountry = false;
+        } else if (/^([^0-9]*)$/.test($("#edit-rest-country").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#edit-rest-country").val()) && /^([A-zÀ-ÿ ]*)$/.test($("#edit-rest-country").val())) {
+            $("#edit-rest-country").css("border", "1px solid #3fa246");
+            breCountry = true;
+        } else {
+            $("#edit-rest-country").css("border", "1px solid #c21212");
+            breCountry = false;
+        }
+        updateRestEditBtn();
+    });
+
+    $("#edit-rest-price").on("blur", function() {
+        if ($("#edit-rest-price").val() == null || $("#edit-rest-price").val() == "") {
+            $("#edit-rest-price").css("border", "1px solid #ccc");
+            breCountry = false;
+        } else if ($("#edit-rest-price").val() >= 1 && $("#edit-rest-price").val() <= 5) {
+            $("#edit-rest-price").css("border", "1px solid #3fa246");
+            breCountry = true;
+        } else {
+            $("#edit-rest-price").css("border", "1px solid #c21212");
+            breCountry = false;
+        }
+        updateRestEditBtn();
+    });
 
 
     $("#search-type").change(function() {
