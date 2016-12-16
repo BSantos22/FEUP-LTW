@@ -208,3 +208,12 @@ textarea {
     font-size: 12px;
 }
 
+.bx-wrapper img {
+    height: 300px !important;
+    overflow: hidden;
+}
+
+.bx-wrapper, .bx-viewport {
+    height: 300px !important;
+    width: 596px! important;
+}
