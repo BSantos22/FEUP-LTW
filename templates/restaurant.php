@@ -13,8 +13,6 @@
                 <?php } ?>
                 <div class="restaurantdescription">
                     <h2><?= $restaurant['name'] ?></h2>
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;<?= $restaurant['city'] ?>
-                        &middot <?= $restaurant['country'] ?></p><br>
                     <p><?= $restaurant['category'] ?></p><br>
                     <div class="rating">
                         <?php for ($i = 0; $i < round($restaurant['reviewersRating']); $i++){ ?>
@@ -50,8 +48,11 @@
                                 echo "<span id=\"close\">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFechado agora </span>";
                             ?>
                         </span>
-                    </p>
+                    </p><br>
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;<?= $restaurant['street'] ?>,&nbsp;&nbsp;<?= $restaurant['zipcode'] ?>,&nbsp;&nbsp;<?= $restaurant['city'] ?>
+                        &middot <?= $restaurant['country'] ?></p><br>
                     <div id="restaurantmap" class="gmap3"></div>
+
                 </div>
             </div>
 
