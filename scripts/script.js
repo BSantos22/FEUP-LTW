@@ -625,7 +625,7 @@ $(document).ready(function() {
             $('' +
                 '<div class="filter">' +
                 '<select name="filter-type[]" required id="filter-type" class="filter-type">' +
-                '<option value="rating">Rating</option>' +
+                '<option value="rating">Avaliação</option>' +
                 '<option value="price">Preço</option>' +
                 '</select>' +
                 '<select name="filter-operator[]" required id="filter-operator" class="filter-operator">' +
