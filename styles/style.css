@@ -308,7 +308,12 @@ header a {
 .central .container .listrestaurant .restaurantphoto {
     display: table-cell;
     width: 300px;
+    height: 150px;
     padding: 2px 30px 2px 2px;
+}
+
+.restaurantphoto img{
+    height: 150px;
 }
 
 .central .container .listrestaurant .restaurantphoto img {

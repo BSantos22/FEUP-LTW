@@ -29,10 +29,19 @@ $(document).ready(function() {
         $("#modal-register").toggle();
     });
 
-    // Shows login dialog
+    // Shows upload user photo dialog
     $("#btn-uploaduserphoto").click(function() {
         $("#modal-uploaduserphoto").toggle();
     });
+
+    // Shows uoload user photo dialog
+    $("#btn-editrestaurantphoto").click(function() {
+        $("#modal-uploadrestaurantprofilephoto").toggle();
+    });
+
+
+
+
 
     // Hides any modal dialog when clicking in close
     $(".close").click(function() {

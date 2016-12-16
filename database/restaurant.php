@@ -7,9 +7,15 @@ function createRestaurant($db, $name, $username, $address, $zipcode, $city, $cou
 }
 
 function updateRestaurant($db, $id, $name, $street, $zipcode, $city, $country, $category, $price, $opentime, $closetime) {
-    $query = $db->prepare('UPDATE restaurant SET name = ?, street = ?, zipcode = ?, city = ?, country = ?, category = ?, price = ?, opentime = ?, closetime = ? WHERE id = ?');
+    $query = "UPDATE restaurant SET name = ?, street = ?, zipcode = ?, city = ?, country = ?, category = ?, price = ?, opentime = ?, closetime = ? WHERE id = ?";
     $stmt = $db->prepare($query);
     $stmt->execute(array($name, $street, $zipcode, $city, $country, $category, $price, $opentime, $closetime, $id));
+}
+
+function updateRestaurantPhoto($db, $id, $photo) {
+    $query = "UPDATE restaurant SET restaurantphoto = ?  WHERE id = ?";
+    $stmt = $db->prepare($query);
+    $stmt->execute(array($photo, $id));
 }
 
 function getAllRestaurants($db){

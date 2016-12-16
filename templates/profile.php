@@ -62,6 +62,9 @@
                             </div>
                             <br>
                             <p><?= $restaurant['city'] ?>&middot<?= $restaurant['country'] ?></p><br>
+
+                                <button class="btn" id="btn-editrestaurantphoto">Editar foto</button>
+
                             <a href="../pages/restaurant.php?id=<?= $restaurant['id'] ?>">
                                 <button class="btn" id="btn-details">Ver detalhes</button>
                             </a>
@@ -69,6 +72,31 @@
                                 <button class="btn" id="btn-editrestaurant">Editar restaurante</button>
                             </a>
                         </div>
+
+
+                        <!--UPLOAD RESTAURANT PHOTO-->
+                        <section id="modal-uploadrestaurantprofilephoto" class="modal">
+                            <form class="modal-content animate" action="../actions/upload_restaurant_profilephoto.php" method="post"
+                                  enctype="multipart/form-data">
+                                <section class="imgcontainer">
+                                    <img src="../res/images/logo.png">
+                                    <span class="close" title="Fechar"><i class="fa fa-times" aria-hidden="true"></i></span>
+                                </section>
+
+                                <section class="container">
+                                    Carregar imagem (Tamanho Máximo: 1 MB):<br>
+                                    <input type="hidden" name="idRestaurant" value="<?= $restaurant['id'] ?>">
+                                    <input type="file" class="inputfile" name="restaurantphoto" accept="image/*">
+                                    <input type="submit" class="btn btn-submitfile" name="uploadrestaurantphoto" disabled>
+                                </section>
+
+                                <section class="cancelar-container">
+                                    <button type="button" class="btn-cancel">Cancelar</button>
+                                </section>
+                            </form>
+                        </section>
+
+
                     </article>
                 <?php } ?>
             </section>
@@ -208,3 +236,4 @@
         </section>
     </form>
 </section>
+

@@ -92,21 +92,13 @@
     background-color: #f3f3f3;
 }
 
+.restaurantphoto img{
+    height: 150px;
+}
+
 .replycontent {
     vertical-align: top;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .textreview {
     padding-bottom: 30px;

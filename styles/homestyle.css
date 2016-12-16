@@ -18,6 +18,10 @@
     src: url("../res/fonts/SourceSansPro-Regular.otf"); /*URL to font*/
 }
 
+.restaurantphoto img{
+    height: 150px;
+}
+
 
 @media screen and (max-width: 767px) {
 
