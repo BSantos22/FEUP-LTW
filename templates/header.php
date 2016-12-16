@@ -86,7 +86,7 @@
             <p>Encontre os melhores restaurantes ao virar da esquina</p> <br><br>
             <form class="search-restaurants" action="list_restaurants.php" method="get" autocomplete="off">
                 <?php
-                    echo('<select name="search-type" required id="search-type">');
+                    echo('<select name="search-type" required id="search-type" class="search-dropdown">');
                     switch($_SESSION["search-type"]) {
                         case "restaurant":
                             echo('<option value="restaurant" selected>Restaurante</option>

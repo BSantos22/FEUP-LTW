@@ -948,4 +948,25 @@ $(document).ready(function() {
             });
         x--;
     })
+
+    $("#order-type, #order-orientation").change(function() {
+        var type = document.getElementById("order-type").selectedIndex;
+        var orient = document.getElementById("order-orientation").selectedIndex;
+
+        $.ajax({
+            type: "post",
+            url: "../scripts/change_restaurants.php",
+            data: {type: type, orientation: orient},
+            async: false,
+            success: function(data, textStatus ){
+                $string = "../pages/list_restaurants.php";
+                $url = window.location.href;
+                $split = $url.split(".php");
+                $string += $split[1];
+
+                window.location.href = $string;
+            }
+        });
+    });
 });
+;

@@ -155,7 +155,7 @@ header #search p {
     color: white;
 }
 
-header #search-type {
+.search-dropdown  {
     height: 40px;
     width: 120px;
     border: none;
@@ -166,13 +166,13 @@ header #search-type {
     padding:0px 6px;
 }
 
-header #search-type option{
+.search-dropdown option{
     background-color: #cf2230;
     font-family: 'Source Sans';
     color: white;
 }
 
-header #search-type:hover {
+.search-dropdown:hover {
     outline : none;
 }
 

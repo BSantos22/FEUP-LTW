@@ -7,6 +7,10 @@
 
     $_SESSION['search'] = "";
     $_SESSION['search-type'] = "";
+    $_SESSION['type'] = 0;
+    $_SESSION['ptype'] = 0;
+    $_SESSION['orientation'] = 0;
+    $_SESSION['porientation'] = 0;
 
     try {
         if (isset($_SESSION['username']))
