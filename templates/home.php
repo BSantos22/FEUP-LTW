@@ -10,6 +10,8 @@
                     <div class="rating">
                         <?php for ($i = 0; $i < round($restaurant['reviewersRating']); $i++){ ?>
                             <img src="../res/images/star.png">
+                        <?php } for ($j = 0; $j < 5-round($restaurant['reviewersRating']); $j++){ ?>
+                            <img src="../res/images/emptystar.png">
                         <?php } ?>
                     </div>
                     <br>

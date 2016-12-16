@@ -17,8 +17,10 @@
                         &middot <?= $restaurant['country'] ?></p><br>
                     <p><?= $restaurant['category'] ?></p><br>
                     <div class="rating">
-                        <?php for ($i = 0; $i < round($restaurant['reviewersRating']); $i++) { ?>
+                        <?php for ($i = 0; $i < round($restaurant['reviewersRating']); $i++){ ?>
                             <img src="../res/images/star.png">
+                        <?php } for ($j = 0; $j < 5-round($restaurant['reviewersRating']); $j++){ ?>
+                            <img src="../res/images/emptystar.png">
                         <?php } ?>
                     </div>
                     <p id="price">
@@ -121,8 +123,10 @@
                                 </td>
                                 <td colspan="2">
                                     <div class="rating">
-                                        <?php for ($i = 0; $i < round($review['rating']); $i++) { ?>
+                                        <?php for ($i = 0; $i < round($review['rating']); $i++){ ?>
                                             <img src="../res/images/star.png">
+                                        <?php } for ($j = 0; $j < 5-round($review['rating']); $j++){ ?>
+                                            <img src="../res/images/emptystar.png">
                                         <?php } ?>
                                     </div>
                                 </td>
