@@ -654,7 +654,7 @@ $(document).ready(function() {
         });
         $(".filter-type").css({
             'height': '30px',
-            'width': '80px',
+            'width': '100px',
             'padding': '5px 5px 5px 5px',
             'margin': '0px',
             'color': '#000',
