@@ -84,9 +84,14 @@ INSERT INTO restaurant VALUES(7, 'Torre di Pizza', 'mgomes', 'Avenida Cidade de 
 INSERT INTO restaurant VALUES(8, 'Restaurante Grelhados do Candal', 'joseoliv', 'Alameda Empresa 110','4400-133', 'Vila Nova de Gaia', 'Portugal', 'Grelhados', 3.0,'11:00', '22:30',0.0);
 INSERT INTO restaurant VALUES(9, 'Restaurante Centurium', 'bsantos', 'Avenida Central 134', '4710-000','Braga', 'Portugal', 'Mediterrâneo', 4.0,'11:30:00', '00:00', 0.0);
 
-INSERT INTO photo_restaurant VALUES (NULL, 1, 'defaultphoto.png');
-INSERT INTO photo_restaurant VALUES (NULL, 2, 'defaultphoto.png');
-INSERT INTO photo_restaurant VALUES (NULL, 3, 'defaultphoto.png');
+INSERT INTO photo_restaurant VALUES (NULL, 1, '18681008_WAP4e.jpeg');
+INSERT INTO photo_restaurant VALUES (NULL, 1, '18681011_oemRn.jpeg');
+INSERT INTO photo_restaurant VALUES (NULL, 2, 'filhamaepreta.jpg');
+INSERT INTO photo_restaurant VALUES (NULL, 3, '4-ode3.jpg');
+INSERT INTO photo_restaurant VALUES (NULL, 3, 'ode-wine-house.jpg');
+INSERT INTO photo_restaurant VALUES (NULL, 4, 'eleven-Lisboa-2.jpg');
+INSERT INTO photo_restaurant VALUES (NULL, 5, 'Belcanto-pedro-garcia-1_LOW.jpg');
+INSERT INTO photo_restaurant VALUES (NULL, 6, 'Pizzarte3.jpg');
 
 INSERT INTO review VALUES(1, 'mbrandao', 1, 5, 'Muito bom atendimento!');
 INSERT INTO review VALUES(2, 'ruibento', 1, 4.5, 'Pratos com muito boa apresentação');
