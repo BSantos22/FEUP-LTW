@@ -11,37 +11,37 @@
                             <td class="table-title">Nome</td>
                         </tr>
                         <tr>
-                            <td><input type="text" name="name" required></td>
+                            <td><input type="text" name="name" required id="add-rest-name"></td>
                         </tr>
                         <tr>
                             <td class="table-title">Rua</td>
                         </tr>
                         <tr>
-                            <td><input type="text" name="address" required></td>
+                            <td><input type="text" name="address" required id="add-rest-street"></td>
                         </tr>
                         <tr>
                             <td class="table-title">Código Postal</td>
                         </tr>
                         <tr>
-                            <td><input type="text" name="zipcode" required></td>
+                            <td><input type="text" name="zipcode" required id="add-rest-pc"></td>
                         </tr>
                         <tr>
                             <td class="table-title">Cidade</td>
                         </tr>
                         <tr>
-                            <td><input type="text" name="city" required></td>
+                            <td><input type="text" name="city" required id="add-rest-city"></td>
                         </tr>
                         <tr>
                             <td class="table-title">País</td>
                         </tr>
                         <tr>
-                            <td><input type="text" name="country" required></td>
+                            <td><input type="text" name="country" required id="add-rest-country"></td>
                         </tr>
                         <tr>
                             <td class="table-title">Categoria</td>
                         </tr>
                         <tr>
-                            <td><select name="category" required>
+                            <td><select name="category" required id="add-rest-category">
                                     <option value="Contemporâneo">Contemporâneo</option>
                                     <option value="Tradicional">Tradicional</option>
                                     <option value="Mediterrâneo">Mediterrâneo</option>
@@ -60,28 +60,28 @@
                             <td class="table-title">Preço</td>
                         </tr>
                         <tr>
-                            <td><input type="number" name="price" required></td>
+                            <td><input type="number" name="price" min="1" max="5" required id="add-rest-price"></td>
                         </tr>
                         <tr>
                             <td class="table-title">Horário de abertura</td>
                         </tr>
                         <tr>
-                            <td><input type="time" name="opentime" required></td>
+                            <td><input type="time" name="opentime" required id="add-rest-ot"></td>
                         </tr>
                         <tr>
                             <td class="table-title">Horário de fecho</td>
                         </tr>
                         <tr>
-                            <td><input type="time" name="closetime" required></td>
+                            <td><input type="time" name="closetime" required id="add-rest-ct"></td>
                         </tr>
                         <tr>
                             <td class="table-title">Palavra-passe</td>
                         </tr>
                         <tr>
-                            <td><input type="password" name="currentpassword" value="" required></td>
+                            <td><input type="password" name="currentpassword" value="" required id="add-rest-pass"></td>
                         </tr>
                         <tr>
-                            <td><input type="submit" class="btn" name="submitaddrestaurant"</td>
+                            <td><input type="submit" class="btn" name="submitaddrestaurant" id="add-rest-sbt"</td>
                         </tr>
                     </table>
                 </form>
