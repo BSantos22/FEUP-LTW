@@ -263,7 +263,7 @@ $(document).ready(function() {
         if ($("#reg-name").val() == null || $("#reg-name").val() == "") {
             $("#reg-name").css("border", "1px solid #ccc");
             bName = false;
-        } else if (/^([^0-9]*)$/.test($("#reg-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#reg-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#reg-name").val())) {
+        } else if (/^([^0-9]*)$/.test($("#reg-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#reg-name").val()) && /^([A-zÀ-ÿ ]*)$/.test($("#reg-name").val())) {
             $("#reg-name").css("border", "1px solid #3fa246");
             bName = true;
         } else {
@@ -387,11 +387,11 @@ $(document).ready(function() {
         }
     }
 
-    $("#edit-user-name").on("change keydown", function() {
+    $("#edit-user-name").on("keyup", function() {
         if ($("#edit-user-name").val() == null || $("#edit-user-name").val() == "") {
             $("#edit-user-name").css("border", "1px solid #ccc");
             bueName = false;
-        } else if (/^([^0-9]*)$/.test($("#edit-user-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#edit-user-name").val()) && /^([A-zÀ-ÿ]*)$/.test($("#edit-user-name").val())) {
+        } else if (/^([^0-9]*)$/.test($("#edit-user-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#edit-user-name").val()) && /^([A-zÀ-ÿ ]*)$/.test($("#edit-user-name").val())) {
             $("#edit-user-name").css("border", "1px solid #3fa246");
             bueName = true;
         } else {
@@ -412,7 +412,7 @@ $(document).ready(function() {
         updateUserEditBtn();
     });
 
-    $("#edit-user-city").on("change keydown", function() {
+    $("#edit-user-city").on("keyup", function() {
         if ($("#edit-user-city").val() == null || $("#edit-user-city").val() == "") {
             $("#edit-user-city").css("border", "1px solid #ccc");
             bueCity = false;
@@ -591,7 +591,47 @@ $(document).ready(function() {
     var brePass = false;
     updateRestEditBtn();
 
+    $("#edit-rest-name").on("keyup", function() {
+        if ($("#edit-rest-name").val() == null || $("#edit-rest-name").val() == "") {
+            $("#edit-rest-name").css("border", "1px solid #ccc");
+            breStreet = false;
+        } else if (/^([^0-9]*)$/.test($("#edit-rest-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#edit-rest-name").val()) && /^([A-zÀ-ÿ ]*)$/.test($("#edit-rest-name").val())) {
+            $("#edit-rest-name").css("border", "1px solid #3fa246");
+            breStreet = true;
+        } else {
+            $("#edit-rest-name").css("border", "1px solid #c21212");
+            breStreet = false;
+        }
+        updateRestEditBtn();
+    });
 
+    $("#edit-rest-street").on("keyup", function() {
+        if ($("#edit-rest-street").val() == null || $("#edit-rest-street").val() == "") {
+            $("#edit-rest-street").css("border", "1px solid #ccc");
+            breStreet = false;
+        } else if (/^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#edit-rest-street").val()) && /^([A-zÀ-ÿ0-9 ]*)$/.test($("#edit-rest-street").val())) {
+            $("#edit-rest-street").css("border", "1px solid #3fa246");
+            breStreet = true;
+        } else {
+            $("#edit-rest-street").css("border", "1px solid #c21212");
+            breStreet = false;
+        }
+        updateRestEditBtn();
+    });
+
+    $("#edit-rest-pc").on("keyup", function() {
+        if ($("#edit-rest-pc").val() == null || $("#edit-rest-pc").val() == "") {
+            $("#edit-rest-pc").css("border", "1px solid #ccc");
+            brePC = false;
+        } else if (/^\d{4}(?:[-\s]\d{3})?$/.test($("#edit-rest-pc").val())) {
+            $("#edit-rest-pc").css("border", "1px solid #3fa246");
+            brePC = true;
+        } else {
+            $("#edit-rest-pc").css("border", "1px solid #c21212");
+            brePC = false;
+        }
+        updateRestEditBtn();
+    });
 
 
     $("#edit-rest-pass").on("blur", function() {

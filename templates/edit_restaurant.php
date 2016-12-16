@@ -11,19 +11,19 @@
                             <td class="table-title">Nome</td>
                         </tr>
                         <tr>
-                            <td><input type="text" name="name" value="<?=$restaurant['name']?>" required></td>
+                            <td><input type="text" id="edit-rest-name" name="name" value="<?=$restaurant['name']?>" required></td>
                         </tr>
                         <tr>
                             <td class="table-title">Rua</td>
                         </tr>
                         <tr>
-                            <td><input type="text" name="street" value="<?=$restaurant['street']?>" required></td>
+                            <td><input type="text" id="edit-rest-street" name="street" value="<?=$restaurant['street']?>" required></td>
                         </tr>
                         <tr>
                             <td class="table-title">Código Postal</td>
                         </tr>
                         <tr>
-                            <td><input type="text" name="zipcode" value="<?=$restaurant['zipcode']?>" required></td>
+                            <td><input type="text" id="edit-rest-pc" name="zipcode" value="<?=$restaurant['zipcode']?>" required></td>
                         </tr>
                         <tr>
                             <td class="table-title">Cidade</td>
