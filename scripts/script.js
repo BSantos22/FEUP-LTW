@@ -670,16 +670,159 @@ $(document).ready(function() {
     $("#edit-rest-price").on("blur", function() {
         if ($("#edit-rest-price").val() == null || $("#edit-rest-price").val() == "") {
             $("#edit-rest-price").css("border", "1px solid #ccc");
-            breCountry = false;
+            brePrice = false;
         } else if ($("#edit-rest-price").val() >= 1 && $("#edit-rest-price").val() <= 5) {
             $("#edit-rest-price").css("border", "1px solid #3fa246");
-            breCountry = true;
+            brePrice = true;
         } else {
             $("#edit-rest-price").css("border", "1px solid #c21212");
-            breCountry = false;
+            brePrice = false;
         }
         updateRestEditBtn();
     });
+
+    //add restaurant validation functions
+    function updateRestAddBtn() {
+        console.log("name:" + baeName + " st:" + baeStreet + " pc:" + baePC + " city:" + baeCity + " ctr:" + baeCountry + " price:" + baePrice + " ot:" + baeOpT + " pass:" + baePass);
+        if (baeName && baeStreet && baePC && baeCity && baeCountry && baePrice && baeOpT && baePass) {
+            $("#add-rest-sbt").removeAttr("disabled");
+            $("#add-rest-sbt").css("background-color", "#c21212");
+        } else {
+            $("#add-rest-sbt").css("background-color", "#8e8e8e");
+            $("#add-rest-sbt").attr("disabled", true);
+        }
+    }
+
+    var baeName = false;
+    var baeStreet = false;
+    var baePC = false;
+    var baeCity = false;
+    var baeCountry = false;
+    var baePrice = false;
+    var baeOpT = true;
+    var baePass = false;
+    updateRestAddBtn();
+
+    function isPassAR(pass) {
+        var tempPass = pass.val();
+        $.ajax({
+            url: "../scripts/valid_pass.php",
+            type: "post",
+            data: {
+                password: tempPass
+            },
+            success: function(temp) {
+              if (pass.val() == null || pass.val() == "") {
+                  pass.css("border", "1px solid #ccc");
+                  baePass = false;
+              }else if (temp == "true") {
+                  pass.css("border", "1px solid #c21212");
+                  baePass = false;
+                } else {
+                  pass.css("border", "1px solid #3fa246");
+                  baePass = true;
+                }
+            },
+            async: false
+        });
+    }
+
+    $("#add-rest-name").on("keyup", function() {
+        if ($("#add-rest-name").val() == null || $("#add-rest-name").val() == "") {
+            $("#add-rest-name").css("border", "1px solid #ccc");
+            baeName = false;
+        } else if (/^([^0-9]*)$/.test($("#add-rest-name").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#add-rest-name").val()) && /^([A-zÀ-ÿ ]*)$/.test($("#add-rest-name").val())) {
+            $("#add-rest-name").css("border", "1px solid #3fa246");
+            baeName = true;
+        } else {
+            $("#add-rest-name").css("border", "1px solid #c21212");
+            baeName = false;
+        }
+        updateRestAddBtn();
+    });
+
+    $("#add-rest-street").on("keyup", function() {
+        if ($("#add-rest-street").val() == null || $("#add-rest-street").val() == "") {
+            $("#add-rest-street").css("border", "1px solid #ccc");
+            baeStreet = false;
+        } else if (/^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#add-rest-street").val()) && /^([A-zÀ-ÿ0-9 ]*)$/.test($("#add-rest-street").val())) {
+            $("#add-rest-street").css("border", "1px solid #3fa246");
+            baeStreet = true;
+        } else {
+            $("#add-rest-street").css("border", "1px solid #c21212");
+            baeStreet = false;
+        }
+        updateRestAddBtn();
+    });
+
+    $("#add-rest-pc").on("keyup", function() {
+        if ($("#add-rest-pc").val() == null || $("#add-rest-pc").val() == "") {
+            $("#add-rest-pc").css("border", "1px solid #ccc");
+            baePC = false;
+        } else if (/^\d{4}(?:[-\s]\d{3})?$/.test($("#add-rest-pc").val())) {
+            $("#add-rest-pc").css("border", "1px solid #3fa246");
+            baePC = true;
+        } else {
+            $("#add-rest-pc").css("border", "1px solid #c21212");
+            baePC = false;
+        }
+        updateRestAddBtn();
+    });
+
+
+    $("#add-rest-pass").on("blur", function() {
+        isPassR($("#add-rest-pass"));
+        updateRestAddBtn();
+    });
+
+    $("#add-rest-city").on("keyup", function() {
+        if ($("#add-rest-city").val() == null || $("#add-rest-city").val() == "") {
+            $("#add-rest-city").css("border", "1px solid #ccc");
+            baeCity = false;
+        } else if (/^([^0-9]*)$/.test($("#add-rest-city").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#add-rest-city").val()) && /^([A-zÀ-ÿ ]*)$/.test($("#add-rest-city").val())) {
+            $("#add-rest-city").css("border", "1px solid #3fa246");
+            baeCity = true;
+        } else {
+            $("#add-rest-city").css("border", "1px solid #c21212");
+            baeCity = false;
+        }
+        updateRestAddBtn();
+    });
+
+    $("#add-rest-country").on("keyup", function() {
+        if ($("#add-rest-country").val() == null || $("#add-rest-country").val() == "") {
+            $("#add-rest-country").css("border", "1px solid #ccc");
+            baeCountry = false;
+        } else if (/^([^0-9]*)$/.test($("#add-rest-country").val()) && /^([^.,\/#!$%\^&\*;:{}=\-+_`~()]*)$/.test($("#add-rest-country").val()) && /^([A-zÀ-ÿ ]*)$/.test($("#add-rest-country").val())) {
+            $("#add-rest-country").css("border", "1px solid #3fa246");
+            baeCountry = true;
+        } else {
+            $("#add-rest-country").css("border", "1px solid #c21212");
+            baeCountry = false;
+        }
+        updateRestAddBtn();
+    });
+
+    $("#add-rest-price").on("blur", function() {
+        if ($("#add-rest-price").val() == null || $("#add-rest-price").val() == "") {
+            $("#add-rest-price").css("border", "1px solid #ccc");
+            baePrice = false;
+        } else if ($("#add-rest-price").val() >= 1 && $("#add-rest-price").val() <= 5) {
+            $("#add-rest-price").css("border", "1px solid #3fa246");
+            baePrice = true;
+        } else {
+            $("#add-rest-price").css("border", "1px solid #c21212");
+            baePrice = false;
+        }
+        updateRestAddBtn();
+    });
+
+    $("#add-rest-pass").on("blur", function() {
+        isPassAR($("#add-rest-pass"));
+        updateRestAddBtn();
+    });
+
+    //-------------------------------------------------------------
 
 
     $("#search-type").change(function() {
