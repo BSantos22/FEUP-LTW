@@ -48,7 +48,7 @@
                 <?php foreach ($restaurants as $restaurant) { ?>
                     <article class="listrestaurant box">
                         <div class="restaurantphoto">
-                            <img src="../uploads/restaurants/defaultphoto.png">
+                            <img src="../uploads/restaurants/<?=$restaurant['restaurantphoto']?>">
                         </div>
                         <div class="content">
                             <a href="../pages/restaurant.php?id=<?= $restaurant['id'] ?>">

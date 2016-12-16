@@ -3,19 +3,7 @@
         <?php foreach($restaurants as $restaurant) { ?>
             <article class="listrestaurant box">
                 <div class="restaurantphoto">
-                    <img src="../uploads/restaurants/defaultphoto.png">
-
-                    <!--
-                    <?php if (sizeof($restaurantPhotos) > 0) { ?>
-                    <div class="restaurantgallery">
-                        <ul class="bxslider">
-                            <?php foreach ($restaurantPhotos as $restaurantPhoto) { ?>
-                                <li><img src="../uploads/restaurants/<?= $restaurantPhoto['name'] ?>"/></li>
-                            <?php } ?>
-                        </ul>
-                    </div>
-                <?php } ?>
-                    -->
+                    <img src="../uploads/restaurants/<?=$restaurant['restaurantphoto']?>">
                 </div>
                 <div class= "content">
                     <a href="../pages/restaurant.php?id=<?=$restaurant['id']?>"><h3><?=$restaurant['name']?></h3></a>
